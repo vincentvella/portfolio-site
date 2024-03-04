@@ -1,0 +1,13 @@
+{
+  "title": "education",
+  "type": "object",
+  "properties": {
+    "location": {
+      "required": true,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Location"
+    }
+  }
+}

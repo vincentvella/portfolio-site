@@ -1,132 +1,453 @@
 {
-  "commit": "4b8ca15309d4a1e235ba3f30a95acb6fe267baa6",
-  "generated": "Mon, 06 Feb 2023 00:55:33 GMT",
+  "commit": "6e444ccd0821d42e2895a6517fda3b5fa0d0eec0",
+  "generated": "2024-03-04T04:12:59.408Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "2e47122b5b6d49d6d1ddb15bcd33edc4a0c1256e",
-        "hash": "217348983",
-        "path": "/outstatic/content/pages/home.md"
+        "commit": "599d3f6ea43f5ce9d8edefcec21fdde73728dcc1",
+        "hash": "2650474677",
+        "path": "outstatic/content/contact-methods/email.md"
       },
       "author": {
-        "name": "Andre Vitorio",
-        "picture": ""
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
-      "collection": "pages",
+      "collection": "contact-methods",
       "coverImage": "",
-      "description": "This is my blog.",
-      "publishedAt": "2022-03-17T05:35:07.322Z",
-      "slug": "home",
+      "description": "",
+      "publishedAt": "2024-03-04T02:19:18.815Z",
+      "slug": "email",
       "status": "published",
-      "title": "Home"
+      "title": "Email",
+      "type": "contact"
     },
     {
       "__outstatic": {
-        "commit": "bf4993b965319da4cb9de4a3810fb4af12bdebd6",
-        "hash": "2596208214",
-        "path": "/outstatic/content/posts/how-to-create-an-outstatic-blog.md"
+        "commit": "536ea4a217356c92e172ea2eb183377b3bc2fc10",
+        "hash": "3552959580",
+        "path": "outstatic/content/contact-methods/phone.md"
       },
       "author": {
-        "name": "Andre Vitorio"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
-      "collection": "posts",
-      "coverImage": "/images/jupiter-spaceship.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-      "publishedAt": "2022-07-14T02:34:02.322Z",
-      "slug": "how-to-create-an-outstatic-blog",
+      "collection": "contact-methods",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T02:21:19.563Z",
+      "slug": "phone",
       "status": "published",
-      "title": "Learn how to create your blog with Outstatic",
-      "tags": [
-        { "label": "NextJs", "value": "nextJs" },
-        { "label": "GitHub", "value": "gitHub" },
-        { "label": "Outstatic", "value": "outstatic" }
-      ]
+      "title": "Phone",
+      "type": "contact"
     },
     {
       "__outstatic": {
-        "commit": "998b7f74af83e46bbdb4ab5302c8e4c39963278f",
-        "hash": "3707858083",
-        "path": "/outstatic/content/posts/the-wrong-decision.md"
+        "commit": "862a7f6b6f93e7f376586ca124a5f6abf10df4e3",
+        "hash": "4177455817",
+        "path": "outstatic/content/contact-methods/github.md"
       },
       "author": {
-        "name": "Naval Ravikant"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
-      "collection": "posts",
-      "coverImage": "/images/skyline.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-      "publishedAt": "2022-03-26T05:35:07.322Z",
-      "slug": "the-wrong-decision",
+      "collection": "contact-methods",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T02:22:38.807Z",
+      "slug": "github",
       "status": "published",
-      "title": "If you want to make the wrong decision, ask everyone"
+      "title": "Github",
+      "type": "social"
     },
     {
       "__outstatic": {
-        "commit": "d2f316fd04def3347c906f5227da5daf79971f61",
-        "hash": "4086614036",
-        "path": "/outstatic/content/posts/nothing-wrong.md"
+        "commit": "65e302f8f9cf37e008bf10c59483e461904958b0",
+        "hash": "11082466",
+        "path": "outstatic/content/contact-methods/x.md"
       },
       "author": {
-        "name": "Andre Vitorio"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
-      "collection": "posts",
-      "coverImage": "/images/industrial-pattern.png",
-      "description": "One more day, one more joy. I feel blessed.",
-      "publishedAt": "2022-09-14T17:55:40.452Z",
-      "slug": "nothing-wrong",
+      "collection": "contact-methods",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T02:23:10.805Z",
+      "slug": "x",
       "status": "published",
-      "title": "Nothing is wrong. Everything is perfect"
+      "title": "X",
+      "type": "social"
     },
     {
       "__outstatic": {
-        "commit": "aa1f387e5c66347e675bed0862b070d8946c95f4",
-        "hash": "1055690014",
-        "path": "/outstatic/content/projects/couple-pizza.md"
+        "commit": "30bc73fa6f6b006f7bf58d537102702ab058600f",
+        "hash": "2732822949",
+        "path": "outstatic/content/contact-methods/linkedin.md"
       },
       "author": {
-        "name": "Bob Marley"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "contact-methods",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T02:25:48.876Z",
+      "slug": "linkedin",
+      "status": "published",
+      "title": "Linkedin",
+      "type": "social"
+    },
+    {
+      "__outstatic": {
+        "commit": "fb725e94fc2667f134052920b0eda5259c160227",
+        "hash": "957132934",
+        "path": "outstatic/content/contact-methods/vellapps.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "contact-methods",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T02:26:59.811Z",
+      "slug": "vellapps",
+      "status": "published",
+      "title": "Vellapps",
+      "type": "social"
+    },
+    {
+      "__outstatic": {
+        "commit": "587481ae28f94ed34f67698132bde998148dd7a8",
+        "hash": "224788881",
+        "path": "outstatic/content/positions/software-engineer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "positions",
+      "company": "Holman",
+      "coverImage": "",
+      "description": "",
+      "endDate": "10/2020",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:56:18.752Z",
+      "slug": "software-engineer",
+      "startDate": "05/2018",
+      "status": "published",
+      "title": "Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "39512a3a190ce1f9762f83ea0f1ff52ffecdf60d",
+        "hash": "471447627",
+        "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "positions",
+      "company": "Gopuff",
+      "coverImage": "",
+      "description": "",
+      "endDate": "",
+      "location": "Philadelphia, PA (Remote)",
+      "publishedAt": "2024-03-04T02:53:17.837Z",
+      "slug": "gopuff-senior-software-engineer",
+      "startDate": "10/2020",
+      "status": "published",
+      "title": "Senior Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "c3033d326b226b603a766b388350c7ecc82573f1",
+        "hash": "3841017841",
+        "path": "outstatic/content/positions/software-developer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "positions",
+      "company": "Holman",
+      "coverImage": "",
+      "description": "",
+      "endDate": "05/2018",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:57:59.719Z",
+      "slug": "software-developer",
+      "startDate": "01/2016",
+      "status": "published",
+      "title": "Software Developer"
+    },
+    {
+      "__outstatic": {
+        "commit": "167f10bf8506bad7fa448afd799cb0555f34d951",
+        "hash": "3485948595",
+        "path": "outstatic/content/positions/software-development-intern.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "positions",
+      "company": "Holman",
+      "coverImage": "",
+      "description": "",
+      "endDate": "08/2015",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:58:50.816Z",
+      "slug": "software-development-intern",
+      "startDate": "05/2015",
+      "status": "published",
+      "title": "Software Development Intern"
+    },
+    {
+      "__outstatic": {
+        "commit": "7c468e33cb37d30d27af546aac3b5db7d92fd065",
+        "hash": "4160427643",
+        "path": "outstatic/content/education/pennsylvania-state-university.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "education",
+      "coverImage": "",
+      "description": "",
+      "location": "State College, PA",
+      "publishedAt": "2024-03-04T03:01:35.754Z",
+      "slug": "pennsylvania-state-university",
+      "status": "published",
+      "title": "Pennsylvania State University"
+    },
+    {
+      "__outstatic": {
+        "commit": "24eb8c77207ec9a2540d61c4f6aa83ad25d48e81",
+        "hash": "2369707582",
+        "path": "outstatic/content/projects/metamobi.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
       "collection": "projects",
-      "coverImage": "/images/couple-pizza.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-      "publishedAt": "2022-03-16T05:35:07.322Z",
-      "slug": "couple-pizza",
+      "coverImage": "",
+      "description": "Self-Service Website & Mobile App Building Platform",
+      "publishedAt": "2024-03-04T03:04:03.425Z",
+      "slug": "metamobi",
+      "stack": [
+        {
+          "label": "React",
+          "value": "react"
+        },
+        {
+          "label": "React Native",
+          "value": "reactNative"
+        },
+        {
+          "label": "GraphQL",
+          "value": "graphQl"
+        },
+        {
+          "label": "Typescript",
+          "value": "typescript"
+        },
+        {
+          "label": "NodeJS",
+          "value": "nodeJs"
+        },
+        {
+          "label": "Postgres",
+          "value": "postgres"
+        },
+        {
+          "label": "NextJS",
+          "value": "nextJs"
+        },
+        {
+          "label": "NestJS",
+          "value": "nestJs"
+        }
+      ],
       "status": "published",
-      "title": "Couple Pizza"
+      "title": "Metamobi"
     },
     {
       "__outstatic": {
-        "commit": "caeb954ea1579e04b6b74c80ddf718e56c60a67d",
-        "hash": "1076515129",
-        "path": "/outstatic/content/projects/bearbnb.md"
+        "commit": "4bdf26bd2933af43e191ce630a3eb82c6e1a3e2a",
+        "hash": "1358609194",
+        "path": "outstatic/content/projects/pacalendar.md"
       },
       "author": {
-        "name": "Andre Vitorio"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
       "collection": "projects",
-      "coverImage": "/images/bearbnb.png",
-      "description": "Amazing rental locations for your teddy bear.",
-      "publishedAt": "2022-03-17T05:35:07.322Z",
-      "slug": "bearbnb",
+      "coverImage": "",
+      "description": "Consolidated Performing Arts Calendar for all of PSU",
+      "publishedAt": "2024-03-04T03:05:09.691Z",
+      "slug": "pacalendar",
+      "stack": [
+        {
+          "label": "React",
+          "value": "react"
+        },
+        {
+          "label": "React Native",
+          "value": "reactNative"
+        },
+        {
+          "label": "Firebase",
+          "value": "firebase"
+        },
+        {
+          "label": "NodeJS",
+          "value": "nodeJs"
+        },
+        {
+          "label": "Python",
+          "value": "python"
+        },
+        {
+          "label": "Web Scraper",
+          "value": "webScraper"
+        },
+        {
+          "label": "NLP",
+          "value": "nlp"
+        }
+      ],
       "status": "published",
-      "title": " 🧸 Bearbnb"
+      "title": "PACalendar"
     },
     {
       "__outstatic": {
-        "commit": "b22b0f4f3d38a659cbab9b89ac2b7394f2446de4",
-        "hash": "425893791",
-        "path": "/outstatic/content/projects/flycream-travel.md"
+        "commit": "154fb9d068ba6de58261543fb4c0311e2162a6df",
+        "hash": "1186775887",
+        "path": "outstatic/content/resume-sections/about.md"
       },
       "author": {
-        "name": "Andre Vitorio",
-        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
-      "collection": "projects",
-      "coverImage": "/images/flycream-travel.png",
-      "description": "One more day, one more joy. I feel blessed.",
-      "publishedAt": "2022-09-14T17:55:40.452Z",
-      "slug": "flycream-travel",
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:33:43.146Z",
+      "slug": "about",
       "status": "published",
-      "title": "Flycream Travel"
+      "title": "About"
+    },
+    {
+      "__outstatic": {
+        "commit": "e502adb6165f61acc01daae2bbff478f3524a184",
+        "hash": "3020990781",
+        "path": "outstatic/content/resume-sections/skills.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:34:04.357Z",
+      "slug": "skills",
+      "status": "published",
+      "title": "Skills"
+    },
+    {
+      "__outstatic": {
+        "commit": "e736f0b406250051b53980d9a8d8eb56c4964030",
+        "hash": "1176797397",
+        "path": "outstatic/content/resume-sections/frameworks-tools.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:36:04.955Z",
+      "slug": "frameworks-tools",
+      "status": "published",
+      "title": "Frameworks & Tools"
+    },
+    {
+      "__outstatic": {
+        "commit": "5d3974edcffe78a382bccd625eb1f99e3871afc3",
+        "hash": "4103048429",
+        "path": "outstatic/content/resume-sections/hobbies-interests.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:37:09.613Z",
+      "slug": "hobbies-interests",
+      "status": "published",
+      "title": "Hobbies & Interests"
+    },
+    {
+      "__outstatic": {
+        "commit": "d84f72c944434afc379f5a50ed2e7021b6dac110",
+        "hash": "2959050896",
+        "path": "outstatic/content/languages/advanced.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "languages",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:40:49.392Z",
+      "slug": "advanced",
+      "status": "published",
+      "title": "Advanced"
+    },
+    {
+      "__outstatic": {
+        "commit": "ad7b6403d4b4b2a0d5fdcc2280a2a28d5517e6f1",
+        "hash": "3854249704",
+        "path": "outstatic/content/languages/intermediate.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "languages",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:41:08.104Z",
+      "slug": "intermediate",
+      "status": "published",
+      "title": "Intermediate"
+    },
+    {
+      "__outstatic": {
+        "commit": "6e444ccd0821d42e2895a6517fda3b5fa0d0eec0",
+        "hash": "380382061",
+        "path": "outstatic/content/languages/beginner.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "languages",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-03-04T03:42:48.151Z",
+      "slug": "beginner",
+      "status": "published",
+      "title": "Beginner"
     }
   ]
 }

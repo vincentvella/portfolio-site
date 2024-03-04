@@ -1,0 +1,63 @@
+{
+  "title": "projects",
+  "type": "object",
+  "properties": {
+    "stack": {
+      "required": true,
+      "description": "List of tools used to build the project",
+      "fieldType": "Tags",
+      "dataType": "array",
+      "title": "Stack",
+      "values": [
+        {
+          "value": "react",
+          "label": "React"
+        },
+        {
+          "value": "reactNative",
+          "label": "React Native"
+        },
+        {
+          "value": "graphQl",
+          "label": "GraphQL"
+        },
+        {
+          "value": "typescript",
+          "label": "Typescript"
+        },
+        {
+          "value": "nodeJs",
+          "label": "NodeJS"
+        },
+        {
+          "value": "postgres",
+          "label": "Postgres"
+        },
+        {
+          "value": "nextJs",
+          "label": "NextJS"
+        },
+        {
+          "value": "nestJs",
+          "label": "NestJS"
+        },
+        {
+          "value": "firebase",
+          "label": "Firebase"
+        },
+        {
+          "value": "python",
+          "label": "Python"
+        },
+        {
+          "value": "webScraper",
+          "label": "Web Scraper"
+        },
+        {
+          "value": "nlp",
+          "label": "NLP"
+        }
+      ]
+    }
+  }
+}

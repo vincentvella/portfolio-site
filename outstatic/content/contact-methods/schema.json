@@ -1,0 +1,13 @@
+{
+  "title": "contact-methods",
+  "type": "object",
+  "properties": {
+    "type": {
+      "required": true,
+      "description": "Either 'contact' or 'social'",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "type"
+    }
+  }
+}

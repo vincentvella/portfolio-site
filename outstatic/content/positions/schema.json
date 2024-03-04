@@ -1,0 +1,34 @@
+{
+  "title": "positions",
+  "type": "object",
+  "properties": {
+    "company": {
+      "required": true,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Company"
+    },
+    "startDate": {
+      "required": true,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Start Date"
+    },
+    "endDate": {
+      "required": false,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "End Date"
+    },
+    "location": {
+      "required": true,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Location"
+    }
+  }
+}
