@@ -8,6 +8,7 @@ interface PositionFields extends Document {
   location: string;
   startDate: string;
   endDate: string;
+  badges?: { value: string; label: string }[];
 }
 type PositionData = Pick<PositionFields, SelectedFields>;
 export interface Position extends Omit<PositionData, "content"> {
@@ -36,6 +37,7 @@ export class PositionLoader {
     "location",
     "startDate",
     "endDate",
+    "badges",
   ] as const;
   selectedFields = PositionLoader.pickedFields.map((f) => f) as string[];
   positionData: PositionData[] = [];

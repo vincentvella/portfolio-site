@@ -32,8 +32,37 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: [{ url: "/favicon/favicon-32x32.png" }],
+    icon: [
+      { url: "/favicon/favicon-16x16.png" },
+      { url: "/favicon/favicon-32x32.png" },
+    ],
     apple: [{ url: "/favicon/apple-touch-icon.png" }],
+    shortcut: [{ url: "/favicon/favicon.ico" }],
+  },
+  robots: "index, follow",
+  manifest: "/favicon/site.webmanifest",
+  creator: "Vince Vella",
+  applicationName: "Portfolio Site",
+  keywords: ["nextjs", "typescript", "react", "portfolio"],
+  formatDetection: {
+    telephone: true,
+    email: true,
+    url: true,
+  },
+  themeColor: "#000",
+  twitter: {
+    creator: "@vellapps",
+    site: "@vellapps",
+    card: "summary",
+    description,
+    images: [
+      {
+        url: absoluteUrl("/images/avatar-3x.jpeg"),
+        width: 1800,
+        height: 1600,
+      },
+    ],
+    title: "Vince Vella - Portfolio",
   },
 };
 

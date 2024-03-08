@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
 import { load } from "outstatic/server";
-import markdownToHtml from "../lib/markdownToHtml";
 import Image from "next/image";
 
 export default async function Index() {

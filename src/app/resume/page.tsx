@@ -15,6 +15,7 @@ import { Button } from "@/components/Button";
 import { Section } from "@/components/Section";
 import "@/styles/print.css";
 import { unlink } from "@/lib/unlink";
+import { Badge } from "@/components/Badge";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
@@ -129,17 +130,17 @@ export default async function Resume() {
                             {positions[0]?.company}
                           </a>
                           , {positions[0]?.location}
-                          {/* <span className="inline-flex gap-x-1"> */}
-                          {/*   {work.badges.map((badge) => ( */}
-                          {/*     <Badge */}
-                          {/*       variant="secondary" */}
-                          {/*       className="align-middle text-xs" */}
-                          {/*       key={badge} */}
-                          {/*     > */}
-                          {/*       {badge} */}
-                          {/*     </Badge> */}
-                          {/*   ))} */}
-                          {/* </span> */}
+                          <span className="inline-flex gap-x-1">
+                            {positions[0]?.badges?.map((badge) => (
+                              <Badge
+                                variant="secondary"
+                                className="align-middle text-xs ml-2"
+                                key={badge.value}
+                              >
+                                {badge.label}
+                              </Badge>
+                            ))}
+                          </span>
                         </h3>
                       </div>
                     </Card.Header>
@@ -221,12 +222,12 @@ export default async function Resume() {
             </div>
             <div className="col-span-4 pl-2">
               <Section>
-                <h2 className="text-xl font-bold">Skills</h2>
-                <ul>
+                <h2 className="text-xl font-bold underline">Skills</h2>
+                <ul className="pl-2 space-y-1">
                   {typeof resumeSections.skills !== "string" &&
                     resumeSections.skills.map((skill) => {
                       return (
-                        <li key={skill} className="text-xs pb-2">
+                        <li key={skill} className="text-xs">
                           {skill}
                         </li>
                       );
@@ -234,11 +235,11 @@ export default async function Resume() {
                 </ul>
               </Section>
               <Section>
-                <h2 className="text-xl font-bold">Languages</h2>
+                <h2 className="text-xl font-bold underline">Languages</h2>
                 {languages.map((level) => (
                   <>
-                    <h3>{level.title}</h3>
-                    <ul className="grid grid-cols-2">
+                    <h3 className="font-semibold">{level.title}</h3>
+                    <ul className="grid grid-cols-2 space-y-1">
                       {level.content.map((language) => (
                         <li key={language} className="text-xs pl-2 pr-2">
                           {language}
@@ -249,8 +250,10 @@ export default async function Resume() {
                 ))}
               </Section>
               <Section>
-                <h2 className="text-xl font-bold">Frameworks & Tools</h2>
-                <ul className="grid grid-cols-2">
+                <h2 className="text-xl font-bold underline">
+                  Frameworks & Tools
+                </h2>
+                <ul className="grid grid-cols-2 pb-4 space-y-1">
                   {typeof resumeSections.frameworks_and_tools !== "string" &&
                     resumeSections.frameworks_and_tools.map((skill) => {
                       return (
@@ -262,12 +265,14 @@ export default async function Resume() {
                 </ul>
               </Section>
               <Section>
-                <h2 className="text-xl font-bold">Hobbies & Interests</h2>
-                <ul>
+                <h2 className="text-xl font-bold underline">
+                  Hobbies & Interests
+                </h2>
+                <ul className="pl-2 space-y-1">
                   {typeof resumeSections.hobbies_and_interests !== "string" &&
                     resumeSections.hobbies_and_interests.map((hobby) => {
                       return (
-                        <li key={hobby} className="text-xs pb-2">
+                        <li key={hobby} className="text-xs">
                           {hobby}
                         </li>
                       );
