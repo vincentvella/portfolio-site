@@ -10,11 +10,12 @@ coverImage: ''
 company: 'Gopuff'
 startDate: '10/2020'
 endDate: ''
-location: 'Philadelphia, PA (Remote)'
+location: 'Philadelphia, PA'
+badges: [{"label":"Remote","value":"remote"}]
 publishedAt: '2024-03-04T02:53:17.837Z'
 ---
 
-- Pioneered efforts to adopt and scale React Native to rebuild the core e-commerce app across all platforms web, iOS, and Android
+- Pioneered efforts to adopt and scale React Native to rebuild the core e-commerce app across all platforms: Web, iOS, and Android
 
 - Designed and engineered a frontend-based dynamic content renderer responsible for displaying a fault-tolerant shopping experience while enforcing frontend design decisions and allowing for easy UX experimentation
 

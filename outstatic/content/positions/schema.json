@@ -29,6 +29,19 @@
       "fieldType": "String",
       "dataType": "string",
       "title": "Location"
+    },
+    "badges": {
+      "required": false,
+      "description": "Badges to be added next to location",
+      "fieldType": "Tags",
+      "dataType": "array",
+      "title": "Badges",
+      "values": [
+        {
+          "value": "remote",
+          "label": "Remote"
+        }
+      ]
     }
   }
 }
