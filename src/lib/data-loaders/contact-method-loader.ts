@@ -1,5 +1,4 @@
 import { Document } from "outstatic";
-import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof ContactMethodLoader.pickedFields)[number];
@@ -8,7 +7,7 @@ interface ContactMethodFields extends Document {
 }
 type ContactMethodData = Pick<ContactMethodFields, SelectedFields>;
 export interface ContactMethod extends Omit<ContactMethodData, "content"> {
-  content: string[];
+  content: string;
 }
 
 export class ContactMethodLoader {
@@ -31,7 +30,7 @@ export class ContactMethodLoader {
     return data.map((entry) => {
       return {
         ...entry,
-        content: markdownToArray(entry.content),
+        content: entry.content.trim(),
       };
     });
   }

@@ -2,9 +2,13 @@ import { Document } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
+type Tag = {
+  value: string;
+  label: string;
+};
 type SelectedFields = (typeof ProjectLoader.pickedFields)[number];
 interface ProjectFields extends Document {
-  location: string;
+  stack: Tag[];
 }
 type ProjectData = Pick<ProjectFields, SelectedFields>;
 export interface Position extends Omit<ProjectData, "content"> {
@@ -13,12 +17,7 @@ export interface Position extends Omit<ProjectData, "content"> {
 
 export class ProjectLoader {
   db: DB<ProjectFields>;
-  static pickedFields = [
-    "title",
-    "content",
-    "description",
-    "location",
-  ] as const;
+  static pickedFields = ["title", "content", "description", "stack"] as const;
   selectedFields = ProjectLoader.pickedFields.map((f) => f) as string[];
 
   constructor(db: unknown) {

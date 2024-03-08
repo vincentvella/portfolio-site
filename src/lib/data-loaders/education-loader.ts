@@ -7,7 +7,7 @@ interface EducationFields extends Document {
   location: string;
 }
 type EducationData = Pick<EducationFields, SelectedFields>;
-export interface ContactMethod extends Omit<EducationData, "content"> {
+export interface Education extends Omit<EducationData, "content"> {
   content: string[];
 }
 
@@ -26,7 +26,7 @@ export class EducationLoader {
       .toArray();
   }
 
-  async format(): Promise<ContactMethod[]> {
+  async format(): Promise<Education[]> {
     const data = await this.getData();
     return data.map((entry) => ({
       ...entry,
@@ -34,7 +34,7 @@ export class EducationLoader {
     }));
   }
 
-  async load(): Promise<ContactMethod[]> {
+  async load(): Promise<Education[]> {
     return this.format();
   }
 }

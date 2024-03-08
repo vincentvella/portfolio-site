@@ -1,12 +1,28 @@
 import Layout from "@/components/Layout";
 import { load } from "outstatic/server";
-import Image from "next/image";
-import { ContactMethodLoader } from "@/lib/data-loaders/contact-method-loader";
+import {
+  ContactMethod,
+  ContactMethodLoader,
+} from "@/lib/data-loaders/contact-method-loader";
 import { EducationLoader } from "@/lib/data-loaders/education-loader";
 import { LanguageLoader } from "@/lib/data-loaders/language-loader";
 import { PositionLoader } from "@/lib/data-loaders/position-loader";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
 import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
+import { ContactMethodIcon } from "@/components/ContactMethodIcon";
+import Card from "@/components/Card";
+import { Button } from "@/components/Button";
+import { Section } from "@/components/Section";
+import "@/styles/print.css";
+import { unlink } from "@/lib/unlink";
+
+const PERSONAL_INFO = {
+  name: "Vince Vella",
+  title: "Senior Software Engineer",
+  location: "Oxford, PA, USA",
+};
+
+const desiredPrintContactMethods = ["email", "vellapps", "github"];
 
 export default async function Resume() {
   const {
@@ -20,112 +36,260 @@ export default async function Resume() {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 dark:bg-gray-800">
-        <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex dark:invert">
-          <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-            Get started by editing&nbsp;
-            <code className="font-mono font-bold">src/app/page.tsx</code>
-          </p>
-          <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-            <a
-              className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/images/vercel.svg"
-                alt="Vercel Logo"
-                className="dark"
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16">
+        <Section className="mx-auto w-full max-w-3xl bg-white">
+          <div className="flex items-center justify-between">
+            <div className="flex-1 space-y-1.5">
+              <h1 className="text-2xl font-bold">{PERSONAL_INFO.name}</h1>
+              <p className="max-w-md text-prettytext-sm text-muted-foreground">
+                {PERSONAL_INFO.title}
+              </p>
+              <p className="max-w-md items-center text-pretty text-xs text-muted-foreground print:hidden">
+                {PERSONAL_INFO.location}
+              </p>
+              <p className="hidden max-w-md items-center text-pretty text-xs text-muted-foreground print:flex">
+                {PERSONAL_INFO.location} |{" "}
+                {unlink(
+                  contactMethods.find(
+                    (method) => method.title.toLowerCase() === "phone",
+                  )?.content,
+                )}
+              </p>
+              <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
+                {contactMethods.map((method) => (
+                  <Button
+                    key={method.title.toLowerCase()}
+                    className="size-8"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <a href={method.content}>
+                      <ContactMethodIcon method={method.title.toLowerCase()} />
+                    </a>
+                  </Button>
+                ))}
+              </div>
+            </div>
+            <div className="hidden flex-col gap-x-1 text-sm text-muted-foreground print:flex">
+              {contactMethods
+                .reduce((acc, method) => {
+                  const title = method.title.toLowerCase();
+                  if (desiredPrintContactMethods.indexOf(title) >= 0) {
+                    acc.push({ ...method, title });
+                  }
+                  return acc;
+                }, [] as ContactMethod[])
+                .sort(
+                  (a, b) =>
+                    desiredPrintContactMethods.indexOf(a.title) -
+                    desiredPrintContactMethods.indexOf(b.title),
+                )
+                .map((method) => (
+                  <div
+                    key={method.title.toLowerCase()}
+                    className="flex items-center"
+                  >
+                    <Button
+                      key={method.title.toLowerCase()}
+                      className="size-8 dark"
+                      size="icon"
+                      asChild
+                    >
+                      <a href={method.content}>
+                        <ContactMethodIcon
+                          method={method.title.toLowerCase()}
+                        />
+                      </a>
+                    </Button>
+                    <a key={method.content} href={method.content}>
+                      <span className="underline">
+                        {unlink(method.content)}
+                      </span>
+                    </a>
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
+          <div className="grid grid-cols-12 divide-x">
+            <div className="col-span-8 mr-2">
+              <Section>
+                <p className="text-pretty text-sm text-muted-foreground pt-2 pb-2">
+                  {resumeSections.about}
+                </p>
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold underline">Work Experience</h2>
+                {positions.map(([company, positions]) => (
+                  <Card key={company}>
+                    <Card.Header>
+                      <div className="flex">
+                        <h3 className="inline-flex items-center justify-center leading-none">
+                          <a className="hover:underline font-bold">
+                            {positions[0]?.company}
+                          </a>
+                          , {positions[0]?.location}
+                          {/* <span className="inline-flex gap-x-1"> */}
+                          {/*   {work.badges.map((badge) => ( */}
+                          {/*     <Badge */}
+                          {/*       variant="secondary" */}
+                          {/*       className="align-middle text-xs" */}
+                          {/*       key={badge} */}
+                          {/*     > */}
+                          {/*       {badge} */}
+                          {/*     </Badge> */}
+                          {/*   ))} */}
+                          {/* </span> */}
+                        </h3>
+                      </div>
+                    </Card.Header>
+                    <Card.Content className="mt-2 list-disk">
+                      {positions.map((position) => (
+                        <>
+                          <div
+                            key={position.title}
+                            className="flex items-center justify-between gap-x-2 space-between font-semibold"
+                          >
+                            <h4 className="inline-flex text-base leading-none font-semibold">
+                              {position.title}
+                            </h4>
+                            <div className="text-sm tabular-nums">
+                              {position.startDate} -{" "}
+                              {position.endDate || "Present"}
+                            </div>
+                          </div>
+                          <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
+                            {position.content.map((item) => (
+                              <li key={item}>{item.replace("- ", "")}</li>
+                            ))}
+                          </ul>
+                        </>
+                      ))}
+                    </Card.Content>
+                  </Card>
+                ))}
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold underline">Education</h2>
+                {education.map((education) => {
+                  return (
+                    <Card key={education.title}>
+                      <Card.Header>
+                        <div className="flex items-center gap-x-2 text-base">
+                          <h3 className="font-semibold leading-none">
+                            {education.title},
+                          </h3>
+                          <div className="tabular-nums">
+                            {education.location}
+                          </div>
+                        </div>
+                      </Card.Header>
+                      <Card.Content className="text-muted-foreground text-xs">
+                        {education.content}
+                      </Card.Content>
+                    </Card>
+                  );
+                })}
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold underline">Projects</h2>
+                {projects.map((projects) => (
+                  <Card key={projects.title}>
+                    <Card.Header>
+                      <div className="flex items-center gap-x-2 text-base">
+                        <h3 className="font-semibold leading-none">
+                          {projects.title}
+                        </h3>
+                        {"-"}
+                        <div className="text-sm">{projects.description}</div>
+                      </div>
+                    </Card.Header>
+                    <Card.Content className="text-muted-foreground text-xs">
+                      <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
+                        {projects.content.map((item, index) => (
+                          <li key={index}>{item.replace("- ", "")}</li>
+                        ))}
+                      </ul>
+                      <div className="italic">
+                        <span className="underline">Stack</span>:&nbsp;
+                        {projects.stack.map((stack) => stack.label).join(", ")}
+                      </div>
+                    </Card.Content>
+                  </Card>
+                ))}
+              </Section>
+            </div>
+            <div className="col-span-4 pl-2">
+              <Section>
+                <h2 className="text-xl font-bold">Skills</h2>
+                <ul>
+                  {typeof resumeSections.skills !== "string" &&
+                    resumeSections.skills.map((skill) => {
+                      return (
+                        <li key={skill} className="text-xs pb-2">
+                          {skill}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold">Languages</h2>
+                {languages.map((level) => (
+                  <>
+                    <h3>{level.title}</h3>
+                    <ul className="grid grid-cols-2">
+                      {level.content.map((language) => (
+                        <li key={language} className="text-xs pl-2 pr-2">
+                          {language}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ))}
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold">Frameworks & Tools</h2>
+                <ul className="grid grid-cols-2">
+                  {typeof resumeSections.frameworks_and_tools !== "string" &&
+                    resumeSections.frameworks_and_tools.map((skill) => {
+                      return (
+                        <li key={skill} className="text-xs -mr-8 pl-2">
+                          {skill}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </Section>
+              <Section>
+                <h2 className="text-xl font-bold">Hobbies & Interests</h2>
+                <ul>
+                  {typeof resumeSections.hobbies_and_interests !== "string" &&
+                    resumeSections.hobbies_and_interests.map((hobby) => {
+                      return (
+                        <li key={hobby} className="text-xs pb-2">
+                          {hobby}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </Section>
+            </div>
+          </div>
+        </Section>
 
-        {/* <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]"> */}
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/images/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        {/* </div> */}
-
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 dark:invert"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Docs{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 dark:invert"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Learn{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 dark:invert"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Templates{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Explore starter templates for Next.js.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 dark:invert"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Deploy{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p>
-          </a>
-        </div>
+        {/* <CommandMenu */}
+        {/*   links={[ */}
+        {/*     { */}
+        {/*       url: RESUME_DATA.personalWebsiteUrl, */}
+        {/*       title: "Personal Website", */}
+        {/*     }, */}
+        {/*     ...RESUME_DATA.contact.social.map((socialMediaLink) => ({ */}
+        {/*       url: socialMediaLink.url, */}
+        {/*       title: socialMediaLink.name, */}
+        {/*     })), */}
+        {/*   ]} */}
+        {/* /> */}
       </main>
     </Layout>
   );
@@ -134,13 +298,13 @@ export default async function Resume() {
 async function getData() {
   const db = await load();
 
-  const results = await Promise.allSettled([
+  const results = await Promise.all([
     await new ContactMethodLoader(db).load(),
     await new EducationLoader(db).load(),
     await new LanguageLoader(db).load(),
     await new PositionLoader(db).load(),
     await new ProjectLoader(db).load(),
-    await new ResumeSectionLoader(db).load(),
+    await new ResumeSectionLoader(db).stringify("about").load(),
   ]);
 
   const [
@@ -150,13 +314,7 @@ async function getData() {
     positions,
     projects,
     resumeSections,
-  ] = results.map((result) => {
-    if (result.status === "rejected") {
-      console.error("Load Failed: ", result.reason);
-      return null;
-    }
-    return result.value;
-  });
+  ] = results;
 
   return {
     contactMethods,

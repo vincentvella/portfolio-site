@@ -14,6 +14,8 @@ export class ResumeSectionLoader {
   static pickedFields = ["title", "content"] as const;
   selectedFields = ResumeSectionLoader.pickedFields.map((f) => f) as string[];
 
+  stringifiedFields = new Set();
+
   constructor(db: unknown) {
     this.db = db as DB<ResumeSectionFields>;
   }
@@ -29,11 +31,25 @@ export class ResumeSectionLoader {
 
     return data.reduce(
       (acc, entry) => {
-        acc[entry.title] = markdownToArray(entry.content);
+        const { content } = entry;
+        const title = entry.title
+          .toLowerCase()
+          .replace("&", "and")
+          .replaceAll(" ", "_");
+        if (this.stringifiedFields.has(title.toLowerCase())) {
+          acc[title] = content.trim();
+          return acc;
+        }
+        acc[title] = markdownToArray(content);
         return acc;
       },
       {} as Record<string, string | string[]>,
     );
+  }
+
+  stringify(field: string) {
+    this.stringifiedFields.add(field.toLowerCase());
+    return this;
   }
 
   async load(): Promise<Record<string, ResumeSection>> {

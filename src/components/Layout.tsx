@@ -8,7 +8,6 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <div className="min-h-screen">{children}</div>
-      <Footer />
     </>
   );
 };

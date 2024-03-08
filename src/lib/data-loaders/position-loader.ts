@@ -14,6 +14,19 @@ export interface Position extends Omit<PositionData, "content"> {
   content: string[];
 }
 
+function compareDates(positionA: PositionData, positionB: PositionData) {
+  const [monthA, yearA] = positionA.startDate.split("/");
+  const [monthB, yearB] = positionB.startDate.split("/");
+
+  // Compare years first
+  if (yearA !== yearB) {
+    return parseInt(yearB) - parseInt(yearA);
+  } else {
+    // If years are the same, compare months
+    return parseInt(monthB) - parseInt(monthA);
+  }
+}
+
 export class PositionLoader {
   db: DB<PositionFields>;
   static pickedFields = [
@@ -25,6 +38,8 @@ export class PositionLoader {
     "endDate",
   ] as const;
   selectedFields = PositionLoader.pickedFields.map((f) => f) as string[];
+  positionData: PositionData[] = [];
+  formattedData: [string, Position[]][] = [];
 
   constructor(db: unknown) {
     this.db = db as DB<PositionFields>;
@@ -36,15 +51,36 @@ export class PositionLoader {
       .toArray();
   }
 
-  async format(): Promise<Position[]> {
-    const data = await this.getData();
-    return data.map((entry) => ({
-      ...entry,
-      content: markdownToArray(entry.content),
-    }));
+  condenseByConsecutiveCompanyRoles(): [string, Position[]][] {
+    return this.positionData.reduce(
+      (acc, entry) => {
+        const position = {
+          ...entry,
+          content: markdownToArray(entry.content),
+        };
+        if (acc.at(-1)?.[0] === position.company) {
+          acc.at(-1)?.[1].push(position);
+        } else {
+          acc.push([position.company, [position]]);
+        }
+        return acc;
+      },
+      [] as [string, Position[]][],
+    );
   }
 
-  async load(): Promise<Position[]> {
-    return this.format();
+  sortByDate() {
+    //  Sorts dates by mm/yyyy
+    this.positionData.sort(compareDates);
+    return this;
+  }
+
+  get data() {
+    return this.sortByDate().condenseByConsecutiveCompanyRoles();
+  }
+
+  async load(): Promise<[string, Position[]][]> {
+    this.positionData = await this.getData();
+    return this.data;
   }
 }
