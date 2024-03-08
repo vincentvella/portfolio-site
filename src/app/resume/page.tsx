@@ -16,6 +16,7 @@ import { Section } from "@/components/Section";
 import "@/styles/print.css";
 import { unlink } from "@/lib/unlink";
 import { Badge } from "@/components/Badge";
+import { CommandMenu } from "@/components/CommandMenu";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
@@ -41,7 +42,7 @@ export default async function Resume() {
         <Section className="mx-auto w-full max-w-3xl bg-white">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
-              <h1 className="text-2xl font-bold">{PERSONAL_INFO.name}</h1>
+              <h1 className="text-3xl font-bold">{PERSONAL_INFO.name}</h1>
               <p className="max-w-md text-prettytext-sm text-muted-foreground">
                 {PERSONAL_INFO.title}
               </p>
@@ -283,18 +284,20 @@ export default async function Resume() {
           </div>
         </Section>
 
-        {/* <CommandMenu */}
-        {/*   links={[ */}
-        {/*     { */}
-        {/*       url: RESUME_DATA.personalWebsiteUrl, */}
-        {/*       title: "Personal Website", */}
-        {/*     }, */}
-        {/*     ...RESUME_DATA.contact.social.map((socialMediaLink) => ({ */}
-        {/*       url: socialMediaLink.url, */}
-        {/*       title: socialMediaLink.name, */}
-        {/*     })), */}
-        {/*   ]} */}
-        {/* /> */}
+        <CommandMenu
+          links={[
+            {
+              url: "https://vincevella.com",
+              title: "Personal Website",
+            },
+            ...contactMethods
+              .filter((method) => method.type === "social")
+              .map((method) => ({
+                url: method.content,
+                title: method.title,
+              })),
+          ]}
+        />
       </main>
     </Layout>
   );
