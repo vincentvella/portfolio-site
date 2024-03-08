@@ -121,33 +121,9 @@ export default async function Index() {
 
 async function getData() {
   const db = await load();
-
-  const page = await db
-    .find({ collection: "pages", slug: "home" }, ["content"])
-    .first();
-
-  const content = await markdownToHtml(page.content);
-
-  const allPosts = await db
-    .find({ collection: "posts" }, [
-      "title",
-      "publishedAt",
-      "slug",
-      "coverImage",
-      "description",
-      "tags",
-    ])
-    .sort({ publishedAt: -1 })
-    .toArray();
-
-  const allProjects = await db
-    .find({ collection: "projects" }, ["title", "slug", "coverImage"])
-    .sort({ publishedAt: -1 })
-    .toArray();
-
   return {
-    content,
-    allPosts,
-    allProjects,
+    content: {},
+    allPosts: {},
+    allProjects: {},
   };
 }
