@@ -38,7 +38,7 @@ export default async function Resume() {
 
   return (
     <Layout>
-      <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16">
+      <main className="relative mx-auto scroll-my-12 overflow-auto md:pt-6 p-4">
         <Section className="mx-auto w-full max-w-3xl bg-white">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
@@ -113,8 +113,8 @@ export default async function Resume() {
                 ))}
             </div>
           </div>
-          <div className="grid grid-cols-12 divide-x">
-            <div className="col-span-8 mr-2">
+          <div className="grid grid-cols-3 md:divide-x">
+            <div className="col-span-3 md:col-span-2 print:col-span-2 mr-2">
               <Section>
                 <p className="text-pretty text-sm text-muted-foreground pt-2 pb-2">
                   {resumeSections.about}
@@ -155,10 +155,14 @@ export default async function Resume() {
                             <h4 className="inline-flex text-base leading-none font-semibold">
                               {position.title}
                             </h4>
-                            <div className="text-sm tabular-nums">
+                            <div className="text-sm tabular-nums hidden sm:block">
                               {position.startDate} -{" "}
                               {position.endDate || "Present"}
                             </div>
+                          </div>
+                          <div className="text-sm tabular-nums font-semibold sm:hidden">
+                            {position.startDate} -{" "}
+                            {position.endDate || "Present"}
                           </div>
                           <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
                             {position.content.map((item) => (
@@ -177,16 +181,20 @@ export default async function Resume() {
                   return (
                     <Card key={education.title}>
                       <Card.Header>
-                        <div className="flex items-center gap-x-2 text-base">
+                        <div className="flex items-center text-base">
                           <h3 className="font-semibold leading-none">
-                            {education.title},
+                            {education.title}
                           </h3>
-                          <div className="tabular-nums">
+                          <div className="tabular-nums items-center hidden sm:inline-flex">
+                            <div className="hidden sm:block">,&nbsp;</div>
                             {education.location}
                           </div>
                         </div>
                       </Card.Header>
                       <Card.Content className="text-muted-foreground text-xs">
+                        <div className="tabular-nums text-base sm:hidden">
+                          {education.location}
+                        </div>
                         {education.content}
                       </Card.Content>
                     </Card>
@@ -202,11 +210,15 @@ export default async function Resume() {
                         <h3 className="font-semibold leading-none">
                           {projects.title}
                         </h3>
-                        {"-"}
-                        <div className="text-sm">{projects.description}</div>
+                        <div className="text-sm hidden sm:block">
+                          -&nbsp;{projects.description}
+                        </div>
                       </div>
                     </Card.Header>
                     <Card.Content className="text-muted-foreground text-xs">
+                      <div className="text-sm sm:hidden">
+                        {projects.description}
+                      </div>
                       <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
                         {projects.content.map((item, index) => (
                           <li key={index}>{item.replace("- ", "")}</li>
@@ -221,7 +233,7 @@ export default async function Resume() {
                 ))}
               </Section>
             </div>
-            <div className="col-span-4 pl-2">
+            <div className="col-span-3 md:col-span-1 print:col-span-1 md:pl-2">
               <Section>
                 <h2 className="text-xl font-bold underline">Skills</h2>
                 <ul className="pl-2 space-y-1">
