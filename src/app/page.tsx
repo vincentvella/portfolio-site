@@ -1,49 +1,65 @@
 import Layout from "../components/Layout";
 import { load } from "outstatic/server";
 import Image from "next/image";
+import {
+  ContactMethod,
+  ContactMethodLoader,
+} from "@/lib/data-loaders/contact-method-loader";
+import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
+import { Button } from "@/components/Button";
+import { ContactMethodIcon } from "@/components/ContactMethodIcon";
+
+function addEmailLink(description: string, email: ContactMethod | undefined) {
+  const [preface, ending] = description.split("[email]");
+  return (
+    <p className="text-lg font-medium">
+      {preface}
+      <a className="underline underline-offset-2" href={email?.content}>
+        email
+      </a>
+      {ending}
+    </p>
+  );
+}
 
 export default async function Index() {
-  const { content, allPosts, allProjects } = await getData();
+  const { resumeSections, contactMethods } = await getData();
+  const email = contactMethods.find(
+    (contactMethod) => contactMethod.title.toLowerCase() === "email",
+  );
 
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center justify-between p-24 dark:bg-gray-800">
-        <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex dark:invert">
-          <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-            Get started by editing&nbsp;
-            <code className="font-mono font-bold">src/app/page.tsx</code>
-          </p>
-          <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-            <a
-              className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/images/vercel.svg"
-                alt="Vercel Logo"
-                className="dark"
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+        <div className="flex w-full flex-col">
+          <Image
+            className="relative rounded-full mb-4"
+            src="/images/avatar-1x.jpeg"
+            alt="Next.js Logo"
+            width={100}
+            height={100}
+            priority
+          />
+          <h1 className="text-4xl font-bold mb-4">Vincent Vella</h1>
+          <section className="mb-4">
+            {typeof resumeSections.about.description === "string" &&
+              addEmailLink(resumeSections.about.description, email)}
+          </section>
+          <div className="flex gap-x-1 pt-1 text-sm">
+            {contactMethods.map((method) => (
+              <Button
+                key={method.title.toLowerCase()}
+                variant="ghost"
+                size="sm"
+                asChild
+              >
+                <a href={method.content} style={{ color: "#ffffff" }}>
+                  <ContactMethodIcon method={method.title.toLowerCase()} />
+                </a>
+              </Button>
+            ))}
           </div>
         </div>
-
-        {/* <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]"> */}
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/images/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        {/* </div> */}
-
         <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -120,9 +136,16 @@ export default async function Index() {
 
 async function getData() {
   const db = await load();
+
+  const results = await Promise.all([
+    await new ContactMethodLoader(db).load(),
+    await new ResumeSectionLoader(db).stringify("about").load(),
+  ]);
+
+  const [contactMethods, resumeSections] = results;
+
   return {
-    content: {},
-    allPosts: {},
-    allProjects: {},
+    contactMethods,
+    resumeSections,
   };
 }

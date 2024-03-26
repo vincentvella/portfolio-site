@@ -1,9 +1,14 @@
-type Props = {
-  children: React.ReactNode;
-};
+import Header, { HeaderProps } from "./Header";
 
-const Layout = ({ children }: Props) => (
-  <div className="min-h-screen">{children}</div>
+interface Props extends HeaderProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<Props> = ({ children, ...props }) => (
+  <>
+    <Header {...props} />
+    <div className="min-h-screen">{children}</div>
+  </>
 );
 
 export default Layout;

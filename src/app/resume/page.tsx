@@ -17,6 +17,7 @@ import "@/styles/print.css";
 import { unlink } from "@/lib/unlink";
 import { Badge } from "@/components/Badge";
 import { CommandMenu } from "@/components/CommandMenu";
+import React from "react";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
@@ -37,7 +38,7 @@ export default async function Resume() {
   } = await getData();
 
   return (
-    <Layout>
+    <Layout className="print:hidden" hideThemeSwitch>
       <main className="relative mx-auto scroll-my-12 overflow-auto md:pt-6 p-4">
         <Section className="mx-auto w-full max-w-3xl bg-white">
           <div className="flex items-center justify-between">
@@ -94,7 +95,7 @@ export default async function Resume() {
                   >
                     <Button
                       key={method.title.toLowerCase()}
-                      className="size-8 dark"
+                      className="size-8 text-black"
                       size="icon"
                       asChild
                     >
@@ -117,7 +118,7 @@ export default async function Resume() {
             <div className="col-span-3 md:col-span-2 print:col-span-2 mr-2">
               <Section>
                 <p className="text-pretty text-sm text-muted-foreground pt-2 pb-2">
-                  {resumeSections.about}
+                  {resumeSections.about.content}
                 </p>
               </Section>
               <Section>
@@ -147,11 +148,8 @@ export default async function Resume() {
                     </Card.Header>
                     <Card.Content className="mt-2 list-disk">
                       {positions.map((position) => (
-                        <>
-                          <div
-                            key={position.title}
-                            className="flex items-center justify-between gap-x-2 space-between font-semibold"
-                          >
+                        <React.Fragment key={position.title}>
+                          <div className="flex items-center justify-between gap-x-2 space-between font-semibold">
                             <h4 className="inline-flex text-base leading-none font-semibold">
                               {position.title}
                             </h4>
@@ -169,7 +167,7 @@ export default async function Resume() {
                               <li key={item}>{item.replace("- ", "")}</li>
                             ))}
                           </ul>
-                        </>
+                        </React.Fragment>
                       ))}
                     </Card.Content>
                   </Card>
@@ -237,8 +235,8 @@ export default async function Resume() {
               <Section>
                 <h2 className="text-xl font-bold underline">Skills</h2>
                 <ul className="pl-2 space-y-1">
-                  {typeof resumeSections.skills !== "string" &&
-                    resumeSections.skills.map((skill) => {
+                  {typeof resumeSections.skills.content !== "string" &&
+                    resumeSections.skills.content.map((skill) => {
                       return (
                         <li key={skill} className="text-xs">
                           {skill}
@@ -250,7 +248,7 @@ export default async function Resume() {
               <Section>
                 <h2 className="text-xl font-bold underline">Languages</h2>
                 {languages.map((level) => (
-                  <>
+                  <React.Fragment key={level.title}>
                     <h3 className="font-semibold">{level.title}</h3>
                     <ul className="grid grid-cols-2 space-y-1">
                       {level.content.map((language) => (
@@ -259,7 +257,7 @@ export default async function Resume() {
                         </li>
                       ))}
                     </ul>
-                  </>
+                  </React.Fragment>
                 ))}
               </Section>
               <Section>
@@ -267,8 +265,9 @@ export default async function Resume() {
                   Frameworks & Tools
                 </h2>
                 <ul className="grid grid-cols-2 pb-4 space-y-1">
-                  {typeof resumeSections.frameworks_and_tools !== "string" &&
-                    resumeSections.frameworks_and_tools.map((skill) => {
+                  {typeof resumeSections.frameworks_and_tools.content !==
+                    "string" &&
+                    resumeSections.frameworks_and_tools.content.map((skill) => {
                       return (
                         <li key={skill} className="text-xs -mr-8 pl-2">
                           {skill}
@@ -282,20 +281,22 @@ export default async function Resume() {
                   Hobbies & Interests
                 </h2>
                 <ul className="pl-2 space-y-1">
-                  {typeof resumeSections.hobbies_and_interests !== "string" &&
-                    resumeSections.hobbies_and_interests.map((hobby) => {
-                      return (
-                        <li key={hobby} className="text-xs">
-                          {hobby}
-                        </li>
-                      );
-                    })}
+                  {typeof resumeSections.hobbies_and_interests.content !==
+                    "string" &&
+                    resumeSections.hobbies_and_interests.content.map(
+                      (hobby) => {
+                        return (
+                          <li key={hobby} className="text-xs">
+                            {hobby}
+                          </li>
+                        );
+                      },
+                    )}
                 </ul>
               </Section>
             </div>
           </div>
         </Section>
-
         <CommandMenu
           links={[
             {

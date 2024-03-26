@@ -22,7 +22,7 @@ export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
         <Image
           src="/images/vellapps.svg"
           alt="Vellapps Icon"
-          className="dark"
+          className="dark:invert"
           width={20}
           height={20}
           priority
@@ -33,7 +33,7 @@ export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
         <Image
           src="/images/x.svg"
           alt="X (Twitter) Icon"
-          className="dark"
+          className="dark:invert"
           width={14}
           height={14}
           priority
@@ -44,7 +44,7 @@ export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
         <Image
           src="/images/phone.svg"
           alt="Phone Icon"
-          className="dark"
+          className="dark:invert"
           width={14}
           height={14}
           priority

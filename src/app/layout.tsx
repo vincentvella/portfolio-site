@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "../styles/globals.css";
+import Header from "@/components/Header";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,7 +51,10 @@ export const metadata: Metadata = {
     email: true,
     url: true,
   },
-  themeColor: "#000",
+  other: {
+    darkreader: "vellapps",
+    "darkreader-lock": "true",
+  },
   twitter: {
     creator: "@vellapps",
     site: "@vellapps",
@@ -74,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning className={inter.className}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

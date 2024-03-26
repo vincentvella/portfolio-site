@@ -8,10 +8,14 @@ interface ResumeSectionFields extends Document {
 }
 type ResumeSectionData = Pick<ResumeSectionFields, SelectedFields>;
 export type ResumeSection = string | string[];
+type LoadedResumeSections = {
+  content: ResumeSection;
+  description: ResumeSection;
+};
 
 export class ResumeSectionLoader {
   db: DB<ResumeSectionFields>;
-  static pickedFields = ["title", "content"] as const;
+  static pickedFields = ["title", "content", "description"] as const;
   selectedFields = ResumeSectionLoader.pickedFields.map((f) => f) as string[];
 
   stringifiedFields = new Set();
@@ -26,24 +30,30 @@ export class ResumeSectionLoader {
       .toArray();
   }
 
-  async format(): Promise<Record<string, ResumeSection>> {
+  async format(): Promise<Record<string, LoadedResumeSections>> {
     const data = await this.getData();
 
     return data.reduce(
       (acc, entry) => {
-        const { content } = entry;
+        const { content, description } = entry;
         const title = entry.title
           .toLowerCase()
           .replace("&", "and")
           .replaceAll(" ", "_");
         if (this.stringifiedFields.has(title.toLowerCase())) {
-          acc[title] = content.trim();
+          acc[title] = {
+            content: content.trim(),
+            description: (description ?? "").trim(),
+          };
           return acc;
         }
-        acc[title] = markdownToArray(content);
+        acc[title] = {
+          content: markdownToArray(content),
+          description: (description ?? "").trim(),
+        };
         return acc;
       },
-      {} as Record<string, string | string[]>,
+      {} as Record<string, LoadedResumeSections>,
     );
   }
 
@@ -52,7 +62,7 @@ export class ResumeSectionLoader {
     return this;
   }
 
-  async load(): Promise<Record<string, ResumeSection>> {
+  async load(): Promise<Record<string, LoadedResumeSections>> {
     return this.format();
   }
 }
