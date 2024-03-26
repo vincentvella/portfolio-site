@@ -1,6 +1,6 @@
 {
-  "commit": "af0eeeba61c72558ba60119a67a66f90f6a295e9",
-  "generated": "2024-03-08T02:55:40.611Z",
+  "commit": "a6655d12d7401c53a50cabcba76030fd28fbd633",
+  "generated": "2024-03-26T03:23:50.134Z",
   "metadata": [
     {
       "__outstatic": {
@@ -303,24 +303,6 @@
     },
     {
       "__outstatic": {
-        "commit": "154fb9d068ba6de58261543fb4c0311e2162a6df",
-        "hash": "1186775887",
-        "path": "outstatic/content/resume-sections/about.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "resume-sections",
-      "coverImage": "",
-      "description": "",
-      "publishedAt": "2024-03-04T03:33:43.146Z",
-      "slug": "about",
-      "status": "published",
-      "title": "About"
-    },
-    {
-      "__outstatic": {
         "commit": "e502adb6165f61acc01daae2bbff478f3524a184",
         "hash": "3020990781",
         "path": "outstatic/content/resume-sections/skills.md"
@@ -454,6 +436,24 @@
       "startDate": "10/2020",
       "status": "published",
       "title": "Senior Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "a6655d12d7401c53a50cabcba76030fd28fbd633",
+        "hash": "3700925507",
+        "path": "outstatic/content/resume-sections/about.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Drop me a line at [email]. Let's connect and bring ideas to life!",
+      "publishedAt": "2024-03-04T03:33:43.146Z",
+      "slug": "about",
+      "status": "published",
+      "title": "About"
     }
   ]
 }
