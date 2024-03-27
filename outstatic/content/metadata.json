@@ -1,6 +1,6 @@
 {
-  "commit": "fdead36aa163f1b59140ed1bc142b021ab2c1c17",
-  "generated": "2024-03-27T02:41:59.478Z",
+  "commit": "77b9ab8b03c4db47919976e3e3359fadd9ec2fa0",
+  "generated": "2024-03-27T02:43:17.775Z",
   "metadata": [
     {
       "__outstatic": {
@@ -438,8 +438,8 @@
     },
     {
       "__outstatic": {
-        "commit": "fdead36aa163f1b59140ed1bc142b021ab2c1c17",
-        "hash": "36409978",
+        "commit": "77b9ab8b03c4db47919976e3e3359fadd9ec2fa0",
+        "hash": "750634852",
         "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
       },
       "author": {
@@ -453,6 +453,7 @@
           "value": "remote"
         }
       ],
+      "brandColor": "#00A4FF",
       "collection": "positions",
       "company": "Gopuff",
       "coverImage": "",
