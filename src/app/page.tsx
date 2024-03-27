@@ -8,6 +8,8 @@ import {
 import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
 import { Button } from "@/components/Button";
 import { ContactMethodIcon } from "@/components/ContactMethodIcon";
+import { PositionLoader } from "@/lib/data-loaders/position-loader";
+import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
   const [preface, ending] = description.split("[email]");
@@ -23,20 +25,20 @@ function addEmailLink(description: string, email: ContactMethod | undefined) {
 }
 
 export default async function Index() {
-  const { resumeSections, contactMethods } = await getData();
+  const { resumeSections, positions, contactMethods } = await getData();
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center justify-between dark:bg-gray-800">
+      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800">
         <div className="px-4 max-w-screen-md">
           <div className="flex w-full flex-col mt-16">
             <Image
               className="relative rounded-full my-4"
               src="/images/avatar-1x.jpeg"
-              alt="Next.js Logo"
+              alt="Avatar Image"
               width={100}
               height={100}
               priority
@@ -64,6 +66,7 @@ export default async function Index() {
               ))}
             </div>
           </div>
+          <ProfessionalTLDR summaries={positions} />
         </div>
       </main>
     </Layout>
@@ -75,13 +78,15 @@ async function getData() {
 
   const results = await Promise.all([
     await new ContactMethodLoader(db).load(),
+    await new PositionLoader(db).loadPositionSummaries(),
     await new ResumeSectionLoader(db).stringify("about").load(),
   ]);
 
-  const [contactMethods, resumeSections] = results;
+  const [contactMethods, positions, resumeSections] = results;
 
   return {
     contactMethods,
+    positions,
     resumeSections,
   };
 }

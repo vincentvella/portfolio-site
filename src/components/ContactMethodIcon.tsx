@@ -7,7 +7,7 @@ import Image from "next/image";
 
 type ContactMethodProps = {
   method: string;
-  size: number;
+  size?: number;
 };
 
 export const ContactMethodIcon: React.FC<ContactMethodProps> = ({

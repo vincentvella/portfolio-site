@@ -8,12 +8,21 @@ interface PositionFields extends Document {
   location: string;
   startDate: string;
   endDate: string;
+  brandColor?: string;
+  avatar?: string;
   badges?: { value: string; label: string }[];
 }
 type PositionData = Pick<PositionFields, SelectedFields>;
 export interface Position extends Omit<PositionData, "content"> {
   content: string[];
 }
+
+export type PositionSummary = Pick<
+  PositionFields,
+  "startDate" | "endDate" | "avatar" | "brandColor"
+> & {
+  titles: string[];
+};
 
 function compareDates(positionA: PositionData, positionB: PositionData) {
   const [monthA, yearA] = positionA.startDate.split("/");
@@ -38,6 +47,8 @@ export class PositionLoader {
     "startDate",
     "endDate",
     "badges",
+    "avatar",
+    "brandColor",
   ] as const;
   selectedFields = PositionLoader.pickedFields.map((f) => f) as string[];
   positionData: PositionData[] = [];
@@ -84,5 +95,19 @@ export class PositionLoader {
   async load(): Promise<[string, Position[]][]> {
     this.positionData = await this.getData();
     return this.data;
+  }
+
+  async loadPositionSummaries(): Promise<[string, PositionSummary][]> {
+    await this.load();
+    const positionData = this.data;
+    return positionData.map(([company, positions]) => {
+      const reversedPositions = [...positions].reverse();
+      const startDate = reversedPositions[0].startDate;
+      const endDate = reversedPositions.at(-1)?.endDate || "Present";
+      const avatar = reversedPositions[0].avatar;
+      const titles = reversedPositions.map(({ title }) => title);
+      const brandColor = reversedPositions[0].brandColor;
+      return [company, { startDate, endDate, avatar, titles, brandColor }];
+    });
   }
 }
