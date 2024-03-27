@@ -1,6 +1,6 @@
 {
-  "commit": "b31b6cef5e8b16a22af10319ad76a254e52814e6",
-  "generated": "2024-03-27T02:44:04.032Z",
+  "commit": "e112670152d9d42111f2316b43bd8e9cb6791fd3",
+  "generated": "2024-03-27T02:44:12.551Z",
   "metadata": [
     {
       "__outstatic": {
@@ -363,31 +363,6 @@
     },
     {
       "__outstatic": {
-        "commit": "0fccf3f9def27c5ab731f2f1fcbfd6b1b8a00366",
-        "hash": "1026774385",
-        "path": "outstatic/content/positions/software-engineer.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
-      "badges": [
-      ],
-      "collection": "positions",
-      "company": "Holman",
-      "coverImage": "",
-      "description": "",
-      "endDate": "10/2020",
-      "location": "Maple Shade, NJ",
-      "publishedAt": "2024-03-04T02:56:18.752Z",
-      "slug": "software-engineer",
-      "startDate": "05/2018",
-      "status": "published",
-      "title": "Software Engineer"
-    },
-    {
-      "__outstatic": {
         "commit": "77b9ab8b03c4db47919976e3e3359fadd9ec2fa0",
         "hash": "750634852",
         "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
@@ -467,6 +442,32 @@
       "startDate": "05/2015",
       "status": "published",
       "title": "Software Development Intern"
+    },
+    {
+      "__outstatic": {
+        "commit": "e112670152d9d42111f2316b43bd8e9cb6791fd3",
+        "hash": "2746066297",
+        "path": "outstatic/content/positions/software-engineer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
+      "badges": [
+      ],
+      "brandColor": "#FFFFFF",
+      "collection": "positions",
+      "company": "Holman",
+      "coverImage": "",
+      "description": "",
+      "endDate": "10/2020",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:56:18.752Z",
+      "slug": "software-engineer",
+      "startDate": "05/2018",
+      "status": "published",
+      "title": "Software Engineer"
     }
   ]
 }
