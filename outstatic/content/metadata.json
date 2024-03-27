@@ -1,6 +1,6 @@
 {
-  "commit": "98f17aa29cd1adc0137eeb3e6604a632cc96fff9",
-  "generated": "2024-03-26T03:52:16.996Z",
+  "commit": "6cea4b21057005ee869e8ac0e57fea7e7a722ce8",
+  "generated": "2024-03-27T02:37:48.491Z",
   "metadata": [
     {
       "__outstatic": {
@@ -411,14 +411,33 @@
     },
     {
       "__outstatic": {
-        "commit": "af0eeeba61c72558ba60119a67a66f90f6a295e9",
-        "hash": "1138180055",
+        "commit": "98f17aa29cd1adc0137eeb3e6604a632cc96fff9",
+        "hash": "3645210975",
+        "path": "outstatic/content/resume-sections/about.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
+      "publishedAt": "2024-03-04T03:33:43.146Z",
+      "slug": "about",
+      "status": "published",
+      "title": "About"
+    },
+    {
+      "__outstatic": {
+        "commit": "6cea4b21057005ee869e8ac0e57fea7e7a722ce8",
+        "hash": "3529946542",
         "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
       },
       "author": {
         "name": "Vincent Vella",
         "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
+      "avatar": "https://images.ctfassets.net/06126mmge7q6/wo1XKEfAbhyIzgsrqpahi/fbe503e30ceb6c652be0a763e893c12c/Gopuff_Wordmark_-_Blue_background.jpeg",
       "badges": [
         {
           "label": "Remote",
@@ -436,24 +455,6 @@
       "startDate": "10/2020",
       "status": "published",
       "title": "Senior Software Engineer"
-    },
-    {
-      "__outstatic": {
-        "commit": "98f17aa29cd1adc0137eeb3e6604a632cc96fff9",
-        "hash": "3645210975",
-        "path": "outstatic/content/resume-sections/about.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "resume-sections",
-      "coverImage": "",
-      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
-      "publishedAt": "2024-03-04T03:33:43.146Z",
-      "slug": "about",
-      "status": "published",
-      "title": "About"
     }
   ]
 }

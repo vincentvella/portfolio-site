@@ -12,6 +12,7 @@ startDate: '10/2020'
 endDate: ''
 location: 'Philadelphia, PA'
 badges: [{"label":"Remote","value":"remote"}]
+avatar: 'https://images.ctfassets.net/06126mmge7q6/wo1XKEfAbhyIzgsrqpahi/fbe503e30ceb6c652be0a763e893c12c/Gopuff_Wordmark_-_Blue_background.jpeg'
 publishedAt: '2024-03-04T02:53:17.837Z'
 ---
 
