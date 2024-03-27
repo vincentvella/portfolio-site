@@ -1,6 +1,6 @@
 {
-  "commit": "76b304b28e10a7adb5c5ce44745cc0d7a8a19dce",
-  "generated": "2024-03-27T02:43:55.593Z",
+  "commit": "b31b6cef5e8b16a22af10319ad76a254e52814e6",
+  "generated": "2024-03-27T02:44:04.032Z",
   "metadata": [
     {
       "__outstatic": {
@@ -363,31 +363,6 @@
     },
     {
       "__outstatic": {
-        "commit": "cc58fd162e06f258c1e4c5f7a6d61324804aee7d",
-        "hash": "3044616952",
-        "path": "outstatic/content/positions/software-development-intern.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
-      "badges": [
-      ],
-      "collection": "positions",
-      "company": "Holman",
-      "coverImage": "",
-      "description": "",
-      "endDate": "08/2015",
-      "location": "Maple Shade, NJ",
-      "publishedAt": "2024-03-04T02:58:50.816Z",
-      "slug": "software-development-intern",
-      "startDate": "05/2015",
-      "status": "published",
-      "title": "Software Development Intern"
-    },
-    {
-      "__outstatic": {
         "commit": "0fccf3f9def27c5ab731f2f1fcbfd6b1b8a00366",
         "hash": "1026774385",
         "path": "outstatic/content/positions/software-engineer.md"
@@ -466,6 +441,32 @@
       "startDate": "01/2016",
       "status": "published",
       "title": "Software Developer"
+    },
+    {
+      "__outstatic": {
+        "commit": "b31b6cef5e8b16a22af10319ad76a254e52814e6",
+        "hash": "401765251",
+        "path": "outstatic/content/positions/software-development-intern.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
+      "badges": [
+      ],
+      "brandColor": "#FFFFFF",
+      "collection": "positions",
+      "company": "Holman",
+      "coverImage": "",
+      "description": "",
+      "endDate": "08/2015",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:58:50.816Z",
+      "slug": "software-development-intern",
+      "startDate": "05/2015",
+      "status": "published",
+      "title": "Software Development Intern"
     }
   ]
 }

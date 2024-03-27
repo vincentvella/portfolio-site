@@ -11,8 +11,9 @@ company: 'Holman'
 startDate: '05/2015'
 endDate: '08/2015'
 location: 'Maple Shade, NJ'
-badges: ''
+badges: []
 avatar: 'https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png'
+brandColor: '#FFFFFF'
 publishedAt: '2024-03-04T02:58:50.816Z'
 ---
 
