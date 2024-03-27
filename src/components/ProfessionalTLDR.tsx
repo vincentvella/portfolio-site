@@ -10,7 +10,7 @@ export const ProfessionalTLDR: React.FC<ProfessionalTLDRProps> = ({
   summaries,
 }) => {
   return (
-    <Card className="p-4 mt-12">
+    <Card className="p-4 mt-12 dark:bg-zinc-900">
       <Card.Header>
         <h2 className="text-2xl font-semibold leading-none tracking-tight mb-3">
           💼 Professional TLDR;

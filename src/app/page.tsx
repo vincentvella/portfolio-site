@@ -56,7 +56,7 @@ export default async function Index() {
                   size="sm"
                   asChild
                 >
-                  <a href={method.content} style={{ color: "#ffffff" }}>
+                  <a href={method.content}>
                     <ContactMethodIcon
                       size={18}
                       method={method.title.toLowerCase()}
