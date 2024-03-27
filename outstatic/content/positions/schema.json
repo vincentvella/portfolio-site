@@ -49,6 +49,13 @@
       "fieldType": "String",
       "dataType": "string",
       "title": "Avatar"
+    },
+    "brandColor": {
+      "required": false,
+      "description": "Color of brand to be used behind brand icon",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Brand Color"
     }
   }
 }
