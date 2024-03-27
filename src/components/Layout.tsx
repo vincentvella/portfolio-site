@@ -6,8 +6,11 @@ interface Props extends HeaderProps {
 
 const Layout: React.FC<Props> = ({ children, ...props }) => (
   <>
-    <Header {...props} />
-    <div className="min-h-screen">{children}</div>
+    <Header
+      className="absolute left-0 right-0 h-16 w-full dark:bg-black"
+      {...props}
+    />
+    {children}
   </>
 );
 

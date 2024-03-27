@@ -7,24 +7,28 @@ import Image from "next/image";
 
 type ContactMethodProps = {
   method: string;
+  size: number;
 };
 
-export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
+export const ContactMethodIcon: React.FC<ContactMethodProps> = ({
+  method,
+  size = 14,
+}) => {
   switch (method) {
     case "email":
-      return <EnvelopeClosedIcon />;
+      return <EnvelopeClosedIcon width={size + 1} height={size + 1} />;
     case "github":
-      return <GitHubLogoIcon />;
+      return <GitHubLogoIcon width={size + 1} height={size + 1} />;
     case "linkedin":
-      return <LinkedInLogoIcon />;
+      return <LinkedInLogoIcon width={size + 1} height={size + 1} />;
     case "vellapps":
       return (
         <Image
           src="/images/vellapps.svg"
           alt="Vellapps Icon"
           className="dark:invert"
-          width={20}
-          height={20}
+          width={size + 6}
+          height={size + 6}
           priority
         />
       );
@@ -34,8 +38,8 @@ export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
           src="/images/x.svg"
           alt="X (Twitter) Icon"
           className="dark:invert"
-          width={14}
-          height={14}
+          width={size}
+          height={size}
           priority
         />
       );
@@ -45,8 +49,8 @@ export const ContactMethodIcon: React.FC<ContactMethodProps> = ({ method }) => {
           src="/images/phone.svg"
           alt="Phone Icon"
           className="dark:invert"
-          width={14}
-          height={14}
+          width={size}
+          height={size}
           priority
         />
       );
