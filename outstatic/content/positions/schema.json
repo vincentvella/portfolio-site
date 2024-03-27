@@ -42,6 +42,13 @@
           "label": "Remote"
         }
       ]
+    },
+    "avatar": {
+      "required": false,
+      "description": "Location of avatar image",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Avatar"
     }
   }
 }
