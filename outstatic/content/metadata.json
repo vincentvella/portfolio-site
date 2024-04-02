@@ -1,6 +1,6 @@
 {
-  "commit": "a1e6057f61b90a7bcf4e0e6bcec284b94165981c",
-  "generated": "2024-04-02T04:27:52.695Z",
+  "commit": "37d2e9e8dcfae0918495cbbd4c84e2d00ff1e498",
+  "generated": "2024-04-02T05:08:03.267Z",
   "metadata": [
     {
       "__outstatic": {
@@ -471,24 +471,6 @@
     },
     {
       "__outstatic": {
-        "commit": "dfe0cb4a34a3f535b4286be9cf733f854e9753ea",
-        "hash": "2395241796",
-        "path": "outstatic/content/press-coverage/first-public-demo-of-the-ari-driving-simulator.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "press-coverage",
-      "coverImage": "/images/driving-simulator-linkedin-uxnj-A5Nz.png",
-      "description": "Demonstrating the experience of driving with safety devices in the vehicle.",
-      "publishedAt": "2017-11-12T04:35:50.000Z",
-      "slug": "first-public-demo-of-the-ari-driving-simulator",
-      "status": "published",
-      "title": "First Public Demo of the ARI Driving Simulator"
-    },
-    {
-      "__outstatic": {
         "commit": "64761e0465a11d92aa71a8fd3426d1ed29bce70d",
         "hash": "105015768",
         "path": "outstatic/content/press-coverage/giving-back-to-the-arts-community-through-pacalendar.md"
@@ -540,6 +522,24 @@
       "slug": "first-of-its-kind-app-centralizes-campus-arts-event-calendars",
       "status": "published",
       "title": "First-of-its-kind app centralizes campus arts' event calendars"
+    },
+    {
+      "__outstatic": {
+        "commit": "37d2e9e8dcfae0918495cbbd4c84e2d00ff1e498",
+        "hash": "2651521644",
+        "path": "outstatic/content/press-coverage/first-public-demo-of-the-ari-driving-simulator.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/driving-simulator-M3MD.jpeg",
+      "description": "Demonstrating the experience of driving with safety devices in the vehicle.",
+      "publishedAt": "2017-11-12T04:35:50.000Z",
+      "slug": "first-public-demo-of-the-ari-driving-simulator",
+      "status": "published",
+      "title": "First Public Demo of the ARI Driving Simulator"
     }
   ]
 }
