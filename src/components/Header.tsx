@@ -24,7 +24,10 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <nav
-      className={cn("layout flex items-center justify-center p-4", className)}
+      className={cn(
+        "layout flex items-center justify-center p-4 dark:bg-zinc-900",
+        className,
+      )}
     >
       <div className="flex-1" />
       <div className="flex-1">

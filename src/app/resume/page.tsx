@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { load } from "outstatic/server";
 import {
   ContactMethod,
   ContactMethodLoader,
@@ -18,6 +17,7 @@ import { unlink } from "@/lib/unlink";
 import { Badge } from "@/components/Badge";
 import { CommandMenu } from "@/components/CommandMenu";
 import React from "react";
+import { load } from "@/lib/load";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
@@ -40,7 +40,7 @@ export default async function Resume() {
   return (
     <Layout className="print:hidden" hideThemeSwitch>
       <main className="relative mx-auto scroll-my-12 overflow-auto md:pt-6 p-4">
-        <Section className="mx-auto w-full max-w-3xl bg-white">
+        <Section className="mx-auto w-full max-w-3xl bg-white pb-8 print:pb-0">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
               <h1 className="text-3xl font-bold">{PERSONAL_INFO.name}</h1>

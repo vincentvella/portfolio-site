@@ -1,5 +1,4 @@
 import Layout from "../components/Layout";
-import { load } from "outstatic/server";
 import Image from "next/image";
 import {
   ContactMethod,
@@ -8,8 +7,10 @@ import {
 import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
 import { Button } from "@/components/Button";
 import { ContactMethodIcon } from "@/components/ContactMethodIcon";
-import { PositionLoader } from "@/lib/data-loaders/position-loader";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
+import { PressCoverage } from "@/components/PressCoverage";
+import Footer from "@/components/Footer";
+import { load } from "@/lib/load";
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
   const [preface, ending] = description.split("[email]");
@@ -25,14 +26,14 @@ function addEmailLink(description: string, email: ContactMethod | undefined) {
 }
 
 export default async function Index() {
-  const { resumeSections, positions, contactMethods } = await getData();
+  const { resumeSections, contactMethods } = await getData();
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800">
+      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800 pb-4">
         <div className="px-4 max-w-screen-md">
           <div className="flex w-full flex-col mt-16">
             <Image
@@ -66,9 +67,11 @@ export default async function Index() {
               ))}
             </div>
           </div>
-          <ProfessionalTLDR summaries={positions} />
+          <ProfessionalTLDR />
+          <PressCoverage />
         </div>
       </main>
+      <Footer />
     </Layout>
   );
 }
@@ -78,15 +81,13 @@ async function getData() {
 
   const results = await Promise.all([
     await new ContactMethodLoader(db).load(),
-    await new PositionLoader(db).loadPositionSummaries(),
     await new ResumeSectionLoader(db).stringify("about").load(),
   ]);
 
-  const [contactMethods, positions, resumeSections] = results;
+  const [contactMethods, resumeSections] = results;
 
   return {
     contactMethods,
-    positions,
     resumeSections,
   };
 }
