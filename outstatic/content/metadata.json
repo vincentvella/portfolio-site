@@ -1,6 +1,6 @@
 {
-  "commit": "64761e0465a11d92aa71a8fd3426d1ed29bce70d",
-  "generated": "2024-04-02T04:03:17.637Z",
+  "commit": "5df058a1177a1abd4bca05d62a3823c4775e7ba4",
+  "generated": "2024-04-02T04:07:18.220Z",
   "metadata": [
     {
       "__outstatic": {
@@ -522,6 +522,24 @@
       "slug": "giving-back-to-the-arts-community-through-pacalendar",
       "status": "published",
       "title": "Giving back to the arts community through PACalendar"
+    },
+    {
+      "__outstatic": {
+        "commit": "5df058a1177a1abd4bca05d62a3823c4775e7ba4",
+        "hash": "3852582323",
+        "path": "outstatic/content/press-coverage/pac-app-aims-to-connect-arts-community-to-events-and-shows.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/arts-app-e1525650334155-iwnt-E4OD.webp",
+      "description": "The PSU PAC Events app is Vella’s first app, and will certainly provide a nice launching point for his professional career.",
+      "publishedAt": "2018-05-09T03:39:45.000Z",
+      "slug": "pac-app-aims-to-connect-arts-community-to-events-and-shows",
+      "status": "published",
+      "title": "PAC App Aims To Connect Arts Community To Events And Shows"
     }
   ]
 }
