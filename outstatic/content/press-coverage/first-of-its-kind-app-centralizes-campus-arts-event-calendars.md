@@ -5,8 +5,8 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'first-of-its-kind-app-centralizes-campus-arts-event-calendars'
-description: 'IST student partners with Performing Arts Council, uses class project to create first mobile app, revolutionizing school arts calendar.'
-coverImage: '/images/arts-app-e1525650334155-iwnt-E2OT.webp'
+description: 'Vincent Vella, a 2018 graduate from the College of Information Sciences and Technology, develops code for a new app that will help the University community explore upcoming arts events on campus.'
+coverImage: '/images/vince_vella-k3OT.jpg'
 publishedAt: '2018-05-11T03:31:52.000Z'
 ---
 

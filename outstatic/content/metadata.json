@@ -1,6 +1,6 @@
 {
   "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
-  "generated": "2024-04-02T04:09:53.360Z",
+  "generated": "2024-04-02T04:11:37.563Z",
   "metadata": [
     {
       "__outstatic": {
@@ -526,7 +526,7 @@
     {
       "__outstatic": {
         "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
-        "hash": "2907706582",
+        "hash": "2446992036",
         "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
       },
       "author": {
@@ -534,8 +534,8 @@
         "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
       "collection": "press-coverage",
-      "coverImage": "/images/arts-app-e1525650334155-iwnt-E2OT.webp",
-      "description": "IST student partners with Performing Arts Council, uses class project to create first mobile app, revolutionizing school arts calendar.",
+      "coverImage": "/images/vince_vella-k3OT.jpg",
+      "description": "Vincent Vella, a 2018 graduate from the College of Information Sciences and Technology, develops code for a new app that will help the University community explore upcoming arts events on campus.",
       "publishedAt": "2018-05-11T03:31:52.000Z",
       "slug": "first-of-its-kind-app-centralizes-campus-arts-event-calendars",
       "status": "published",
