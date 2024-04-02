@@ -1,6 +1,6 @@
 {
-  "commit": "5df058a1177a1abd4bca05d62a3823c4775e7ba4",
-  "generated": "2024-04-02T04:07:18.220Z",
+  "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
+  "generated": "2024-04-02T04:09:53.360Z",
   "metadata": [
     {
       "__outstatic": {
@@ -471,24 +471,6 @@
     },
     {
       "__outstatic": {
-        "commit": "a340b599b00ee4e133ff4af8529efdf34204959c",
-        "hash": "1146272057",
-        "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "press-coverage",
-      "coverImage": "/images/arts-app-e1525650334155-iwnt-E2OT.webp",
-      "description": "IST student partners with Performing Arts Council, uses class project to create app",
-      "publishedAt": "2018-05-11T03:31:52.000Z",
-      "slug": "first-of-its-kind-app-centralizes-campus-arts-event-calendars",
-      "status": "published",
-      "title": "First-of-its-kind app centralizes campus arts' event calendars"
-    },
-    {
-      "__outstatic": {
         "commit": "dfe0cb4a34a3f535b4286be9cf733f854e9753ea",
         "hash": "2395241796",
         "path": "outstatic/content/press-coverage/first-public-demo-of-the-ari-driving-simulator.md"
@@ -540,6 +522,24 @@
       "slug": "pac-app-aims-to-connect-arts-community-to-events-and-shows",
       "status": "published",
       "title": "PAC App Aims To Connect Arts Community To Events And Shows"
+    },
+    {
+      "__outstatic": {
+        "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
+        "hash": "2907706582",
+        "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/arts-app-e1525650334155-iwnt-E2OT.webp",
+      "description": "IST student partners with Performing Arts Council, uses class project to create first mobile app, revolutionizing school arts calendar.",
+      "publishedAt": "2018-05-11T03:31:52.000Z",
+      "slug": "first-of-its-kind-app-centralizes-campus-arts-event-calendars",
+      "status": "published",
+      "title": "First-of-its-kind app centralizes campus arts' event calendars"
     }
   ]
 }
