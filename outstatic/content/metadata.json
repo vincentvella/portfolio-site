@@ -1,6 +1,6 @@
 {
-  "commit": "37d2e9e8dcfae0918495cbbd4c84e2d00ff1e498",
-  "generated": "2024-04-02T05:08:03.267Z",
+  "commit": "fbf0814079bbdf96c885ad45af8e4f9aab9e0894",
+  "generated": "2024-04-02T05:08:36.870Z",
   "metadata": [
     {
       "__outstatic": {
@@ -471,24 +471,6 @@
     },
     {
       "__outstatic": {
-        "commit": "64761e0465a11d92aa71a8fd3426d1ed29bce70d",
-        "hash": "105015768",
-        "path": "outstatic/content/press-coverage/giving-back-to-the-arts-community-through-pacalendar.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "press-coverage",
-      "coverImage": "/images/pac-izmj-I2MT.jpg",
-      "description": "App makes it easy for users to find arts events on the University Park campus",
-      "publishedAt": "2018-11-02T03:37:37.000Z",
-      "slug": "giving-back-to-the-arts-community-through-pacalendar",
-      "status": "published",
-      "title": "Giving back to the arts community through PACalendar"
-    },
-    {
-      "__outstatic": {
         "commit": "5df058a1177a1abd4bca05d62a3823c4775e7ba4",
         "hash": "3852582323",
         "path": "outstatic/content/press-coverage/pac-app-aims-to-connect-arts-community-to-events-and-shows.md"
@@ -540,6 +522,24 @@
       "slug": "first-public-demo-of-the-ari-driving-simulator",
       "status": "published",
       "title": "First Public Demo of the ARI Driving Simulator"
+    },
+    {
+      "__outstatic": {
+        "commit": "fbf0814079bbdf96c885ad45af8e4f9aab9e0894",
+        "hash": "2665617883",
+        "path": "outstatic/content/press-coverage/giving-back-to-the-arts-community-through-pacalendar.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/pac-izmj-I2MT.jpg",
+      "description": "App makes it easy for users to find arts events on the University Park campus",
+      "publishedAt": "2018-11-02T03:37:37.000Z",
+      "slug": "giving-back-to-the-arts-community-through-pacalendar",
+      "status": "published",
+      "title": "Giving back to the arts community through PACalendar"
     }
   ]
 }

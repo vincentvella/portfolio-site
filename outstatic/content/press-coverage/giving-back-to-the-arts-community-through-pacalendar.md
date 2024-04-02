@@ -10,4 +10,4 @@ coverImage: '/images/pac-izmj-I2MT.jpg'
 publishedAt: '2018-11-02T03:37:37.000Z'
 ---
 
-[https://www.psu.edu/news/arts-and-entertainment/story/giving-back-arts-community-through-pacalendar-app](https://www.psu.edu/news/arts-and-entertainment/story/giving-back-arts-community-through-pacalendar-app)
+https://www.psu.edu/news/arts-and-entertainment/story/giving-back-arts-community-through-pacalendar-app
