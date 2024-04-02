@@ -1,6 +1,6 @@
 {
-  "commit": "dfe0cb4a34a3f535b4286be9cf733f854e9753ea",
-  "generated": "2024-04-02T04:01:17.260Z",
+  "commit": "64761e0465a11d92aa71a8fd3426d1ed29bce70d",
+  "generated": "2024-04-02T04:03:17.637Z",
   "metadata": [
     {
       "__outstatic": {
@@ -504,6 +504,24 @@
       "slug": "first-public-demo-of-the-ari-driving-simulator",
       "status": "published",
       "title": "First Public Demo of the ARI Driving Simulator"
+    },
+    {
+      "__outstatic": {
+        "commit": "64761e0465a11d92aa71a8fd3426d1ed29bce70d",
+        "hash": "105015768",
+        "path": "outstatic/content/press-coverage/giving-back-to-the-arts-community-through-pacalendar.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/pac-izmj-I2MT.jpg",
+      "description": "App makes it easy for users to find arts events on the University Park campus",
+      "publishedAt": "2018-11-02T03:37:37.000Z",
+      "slug": "giving-back-to-the-arts-community-through-pacalendar",
+      "status": "published",
+      "title": "Giving back to the arts community through PACalendar"
     }
   ]
 }
