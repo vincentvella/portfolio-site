@@ -10,4 +10,4 @@ coverImage: '/images/vince_vella-k3OT.jpg'
 publishedAt: '2018-05-11T03:31:52.000Z'
 ---
 
-<https://www.psu.edu/news/arts-and-entertainment/story/first-its-kind-app-centralizes-campus-arts-event-calendars>
+https://www.psu.edu/news/arts-and-entertainment/story/first-its-kind-app-centralizes-campus-arts-event-calendars

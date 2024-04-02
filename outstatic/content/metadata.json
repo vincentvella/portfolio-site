@@ -1,6 +1,6 @@
 {
-  "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
-  "generated": "2024-04-02T04:11:37.563Z",
+  "commit": "a1e6057f61b90a7bcf4e0e6bcec284b94165981c",
+  "generated": "2024-04-02T04:27:52.695Z",
   "metadata": [
     {
       "__outstatic": {
@@ -525,8 +525,8 @@
     },
     {
       "__outstatic": {
-        "commit": "2e10e470c131bd803be0446c08fcd72c61712261",
-        "hash": "2446992036",
+        "commit": "a1e6057f61b90a7bcf4e0e6bcec284b94165981c",
+        "hash": "973162821",
         "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
       },
       "author": {
