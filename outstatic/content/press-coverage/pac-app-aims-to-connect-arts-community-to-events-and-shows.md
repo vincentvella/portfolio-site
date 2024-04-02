@@ -10,4 +10,4 @@ coverImage: '/images/arts-app-e1525650334155-iwnt-E4OD.webp'
 publishedAt: '2018-05-09T03:39:45.000Z'
 ---
 
-[https://onwardstate.com/2018/05/07/pac-app-aims-connect-arts-community-events-shows](https://onwardstate.com/2018/05/07/pac-app-aims-connect-arts-community-events-shows/)
+https://onwardstate.com/2018/05/07/pac-app-aims-connect-arts-community-events-shows
