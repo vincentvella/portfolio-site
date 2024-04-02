@@ -1,6 +1,6 @@
 {
-  "commit": "e112670152d9d42111f2316b43bd8e9cb6791fd3",
-  "generated": "2024-03-27T02:44:12.551Z",
+  "commit": "a340b599b00ee4e133ff4af8529efdf34204959c",
+  "generated": "2024-04-02T03:58:03.589Z",
   "metadata": [
     {
       "__outstatic": {
@@ -468,6 +468,24 @@
       "startDate": "05/2018",
       "status": "published",
       "title": "Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "a340b599b00ee4e133ff4af8529efdf34204959c",
+        "hash": "1146272057",
+        "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "press-coverage",
+      "coverImage": "/images/arts-app-e1525650334155-iwnt-E2OT.webp",
+      "description": "IST student partners with Performing Arts Council, uses class project to create app",
+      "publishedAt": "2018-05-11T03:31:52.000Z",
+      "slug": "first-of-its-kind-app-centralizes-campus-arts-event-calendars",
+      "status": "published",
+      "title": "First-of-its-kind app centralizes campus arts' event calendars"
     }
   ]
 }
