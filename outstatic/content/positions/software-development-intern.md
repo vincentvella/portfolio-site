@@ -14,6 +14,7 @@ location: 'Maple Shade, NJ'
 badges: []
 avatar: 'https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png'
 brandColor: '#FFFFFF'
+companyWebsite: 'https://www.holman.com'
 publishedAt: '2024-03-04T02:58:50.816Z'
 ---
 
