@@ -9,6 +9,7 @@ interface PositionFields extends Document {
   startDate: string;
   endDate: string;
   brandColor?: string;
+  companyWebsite?: string;
   avatar?: string;
   badges?: { value: string; label: string }[];
 }
@@ -49,6 +50,7 @@ export class PositionLoader {
     "badges",
     "avatar",
     "brandColor",
+    "companyWebsite",
   ] as const;
   selectedFields = PositionLoader.pickedFields.map((f) => f) as string[];
   positionData: PositionData[] = [];

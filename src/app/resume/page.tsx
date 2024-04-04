@@ -129,7 +129,10 @@ export default async function Resume() {
                     <Card.Header>
                       <div className="flex">
                         <h3 className="inline-flex items-center justify-center leading-none">
-                          <a className="hover:underline font-bold">
+                          <a
+                            className="hover:underline font-bold"
+                            href={positions?.[0].companyWebsite}
+                          >
                             {positions[0]?.company}
                           </a>
                           , {positions[0]?.location}
