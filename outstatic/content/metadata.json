@@ -1,6 +1,6 @@
 {
-  "commit": "e12301a7b1a2c70bcbeb24e038b2d39491568336",
-  "generated": "2024-04-04T06:28:41.833Z",
+  "commit": "f4bf899200d3646094e5e7ecc685b7d6fa721d38",
+  "generated": "2024-04-04T07:05:36.882Z",
   "metadata": [
     {
       "__outstatic": {
@@ -531,8 +531,8 @@
     },
     {
       "__outstatic": {
-        "commit": "e12301a7b1a2c70bcbeb24e038b2d39491568336",
-        "hash": "2236050314",
+        "commit": "f4bf899200d3646094e5e7ecc685b7d6fa721d38",
+        "hash": "2703488950",
         "path": "outstatic/content/resume-sections/about.md"
       },
       "author": {
@@ -541,7 +541,7 @@
       },
       "collection": "resume-sections",
       "coverImage": "",
-      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking and the finesse of modifying small electronics, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
+      "description": "Balancing the intricacies of cross-platform mobile development, the precision of woodworking, and the finesse of modifying small electronics... I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
       "publishedAt": "2024-03-04T03:33:43.146Z",
       "slug": "about",
       "status": "published",
