@@ -1,6 +1,6 @@
 {
-  "commit": "f4f3e22cfa1641b6b68e838fec8a6110b76e492a",
-  "generated": "2024-04-04T06:18:44.221Z",
+  "commit": "c0fb4e1ef951d15bdfb834c932caf9f048bf448a",
+  "generated": "2024-04-04T06:18:55.832Z",
   "metadata": [
     {
       "__outstatic": {
@@ -263,32 +263,6 @@
     },
     {
       "__outstatic": {
-        "commit": "e112670152d9d42111f2316b43bd8e9cb6791fd3",
-        "hash": "2746066297",
-        "path": "outstatic/content/positions/software-engineer.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
-      "badges": [
-      ],
-      "brandColor": "#FFFFFF",
-      "collection": "positions",
-      "company": "Holman",
-      "coverImage": "",
-      "description": "",
-      "endDate": "10/2020",
-      "location": "Maple Shade, NJ",
-      "publishedAt": "2024-03-04T02:56:18.752Z",
-      "slug": "software-engineer",
-      "startDate": "05/2018",
-      "status": "published",
-      "title": "Software Engineer"
-    },
-    {
-      "__outstatic": {
         "commit": "a1e6057f61b90a7bcf4e0e6bcec284b94165981c",
         "hash": "973162821",
         "path": "outstatic/content/press-coverage/first-of-its-kind-app-centralizes-campus-arts-event-calendars.md"
@@ -545,6 +519,33 @@
       "startDate": "05/2015",
       "status": "published",
       "title": "Software Development Intern"
+    },
+    {
+      "__outstatic": {
+        "commit": "c0fb4e1ef951d15bdfb834c932caf9f048bf448a",
+        "hash": "4253584301",
+        "path": "outstatic/content/positions/software-engineer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idO5iUBn-d/idwaDwMCxB.png",
+      "badges": [
+      ],
+      "brandColor": "#FFFFFF",
+      "collection": "positions",
+      "company": "Holman",
+      "companyWebsite": "https://www.holman.com",
+      "coverImage": "",
+      "description": "",
+      "endDate": "10/2020",
+      "location": "Maple Shade, NJ",
+      "publishedAt": "2024-03-04T02:56:18.752Z",
+      "slug": "software-engineer",
+      "startDate": "05/2018",
+      "status": "published",
+      "title": "Software Engineer"
     }
   ]
 }
