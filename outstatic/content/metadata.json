@@ -1,6 +1,6 @@
 {
-  "commit": "a8af90244cb4924a96aa55103ae0d054144806a0",
-  "generated": "2024-04-04T04:42:58.365Z",
+  "commit": "b37b9be52c9b74edd54d1c625eb1e43ec122f260",
+  "generated": "2024-04-04T05:04:49.612Z",
   "metadata": [
     {
       "__outstatic": {
@@ -443,59 +443,6 @@
     },
     {
       "__outstatic": {
-        "commit": "48a24b41a4be231100fa686de44c38e3d41977f2",
-        "hash": "3285254863",
-        "path": "outstatic/content/projects/metamobi.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "bullets": "Targeted non-technical small businesses to build quick & effective online presences Created easily modified data-hydrated templates to reduce design friction",
-      "collection": "projects",
-      "coverImage": "/images/frame-1--3--a2nz-Q4MD.png",
-      "description": "Self-Service Website & Mobile App Building Platform",
-      "publishedAt": "2024-03-04T03:04:03.425Z",
-      "slug": "metamobi",
-      "stack": [
-        {
-          "label": "React",
-          "value": "react"
-        },
-        {
-          "label": "React Native",
-          "value": "reactNative"
-        },
-        {
-          "label": "GraphQL",
-          "value": "graphQl"
-        },
-        {
-          "label": "Typescript",
-          "value": "typescript"
-        },
-        {
-          "label": "NodeJS",
-          "value": "nodeJs"
-        },
-        {
-          "label": "Postgres",
-          "value": "postgres"
-        },
-        {
-          "label": "NextJS",
-          "value": "nextJs"
-        },
-        {
-          "label": "NestJS",
-          "value": "nestJs"
-        }
-      ],
-      "status": "published",
-      "title": "Metamobi"
-    },
-    {
-      "__outstatic": {
         "commit": "a8af90244cb4924a96aa55103ae0d054144806a0",
         "hash": "1185895505",
         "path": "outstatic/content/projects/pacalendar.md"
@@ -542,6 +489,59 @@
       ],
       "status": "published",
       "title": "PACalendar"
+    },
+    {
+      "__outstatic": {
+        "commit": "b37b9be52c9b74edd54d1c625eb1e43ec122f260",
+        "hash": "3700778898",
+        "path": "outstatic/content/projects/metamobi.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Targeted non-technical small businesses to build quick & effective online presences\\n\\n Created easily modified data-hydrated templates to reduce design friction",
+      "collection": "projects",
+      "coverImage": "/images/frame-1--3--a2nz-Q4MD.png",
+      "description": "Self-Service Website & Mobile App Building Platform",
+      "publishedAt": "2024-03-04T03:04:03.425Z",
+      "slug": "metamobi",
+      "stack": [
+        {
+          "label": "React",
+          "value": "react"
+        },
+        {
+          "label": "React Native",
+          "value": "reactNative"
+        },
+        {
+          "label": "GraphQL",
+          "value": "graphQl"
+        },
+        {
+          "label": "Typescript",
+          "value": "typescript"
+        },
+        {
+          "label": "NodeJS",
+          "value": "nodeJs"
+        },
+        {
+          "label": "Postgres",
+          "value": "postgres"
+        },
+        {
+          "label": "NextJS",
+          "value": "nextJs"
+        },
+        {
+          "label": "NestJS",
+          "value": "nestJs"
+        }
+      ],
+      "status": "published",
+      "title": "Metamobi"
     }
   ]
 }
