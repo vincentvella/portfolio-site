@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
 import { load } from "@/lib/load";
 import Image from "next/image";
+import { getDocumentSlugs } from "outstatic/server";
 
 type ProjectParams = {
   slug: string;
@@ -49,4 +50,9 @@ export default async function Project(props: ProjectProps) {
       </main>
     </Layout>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = getDocumentSlugs("projects");
+  return posts.map((slug) => ({ slug }));
 }
