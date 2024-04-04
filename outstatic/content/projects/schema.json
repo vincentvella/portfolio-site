@@ -58,6 +58,13 @@
           "label": "NLP"
         }
       ]
+    },
+    "bullets": {
+      "required": false,
+      "description": "",
+      "fieldType": "Text",
+      "dataType": "string",
+      "title": "bullets"
     }
   }
 }
