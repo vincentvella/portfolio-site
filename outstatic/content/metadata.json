@@ -1,6 +1,6 @@
 {
-  "commit": "c0fb4e1ef951d15bdfb834c932caf9f048bf448a",
-  "generated": "2024-04-04T06:18:55.832Z",
+  "commit": "e12301a7b1a2c70bcbeb24e038b2d39491568336",
+  "generated": "2024-04-04T06:28:41.833Z",
   "metadata": [
     {
       "__outstatic": {
@@ -242,24 +242,6 @@
       "slug": "beginner",
       "status": "published",
       "title": "Beginner"
-    },
-    {
-      "__outstatic": {
-        "commit": "98f17aa29cd1adc0137eeb3e6604a632cc96fff9",
-        "hash": "3645210975",
-        "path": "outstatic/content/resume-sections/about.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "resume-sections",
-      "coverImage": "",
-      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
-      "publishedAt": "2024-03-04T03:33:43.146Z",
-      "slug": "about",
-      "status": "published",
-      "title": "About"
     },
     {
       "__outstatic": {
@@ -546,6 +528,24 @@
       "startDate": "05/2018",
       "status": "published",
       "title": "Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "e12301a7b1a2c70bcbeb24e038b2d39491568336",
+        "hash": "2236050314",
+        "path": "outstatic/content/resume-sections/about.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "Balancing the intricacies of cross-platform mobile development with the precision of woodworking and the finesse of modifying small electronics, I thrive on crafting both digital solutions and tangible creations. Curious about collaborating or just want to chat? Shoot me an [email]. Let's connect and bring ideas to life!",
+      "publishedAt": "2024-03-04T03:33:43.146Z",
+      "slug": "about",
+      "status": "published",
+      "title": "About"
     }
   ]
 }
