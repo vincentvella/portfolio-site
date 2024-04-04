@@ -18,6 +18,7 @@ import { Badge } from "@/components/Badge";
 import { CommandMenu } from "@/components/CommandMenu";
 import React from "react";
 import { load } from "@/lib/load";
+import Link from "next/link";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
@@ -206,7 +207,9 @@ export default async function Resume() {
                     <Card.Header>
                       <div className="flex items-center gap-x-2 text-base">
                         <h3 className="font-semibold leading-none">
-                          {projects.title}
+                          <Link href={`projects/${projects.slug}`}>
+                            {projects.title}
+                          </Link>
                         </h3>
                         <div className="text-sm hidden sm:block">
                           -&nbsp;{projects.description}

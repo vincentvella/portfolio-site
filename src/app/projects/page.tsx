@@ -2,6 +2,7 @@ import Card from "@/components/Card";
 import Layout from "@/components/Layout";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
 import { load } from "@/lib/load";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Projects() {
@@ -13,11 +14,20 @@ export default async function Projects() {
         <div className="px-4 max-w-screen-md">
           {projects.map((project) => (
             <Link key={project.slug} href={`projects/${project.slug}`}>
-              <Card className="max-w-128 mt-12 dark:bg-zinc-900 dark:text-zinc-200">
+              <Card className="max-w-128 mt-12 dark:bg-zinc-900 dark:text-zinc-200 p-8 overflow-hidden shadow-lg bg-white hover:shadow-xl transform hover:scale-105 transition duration-300">
                 <Card.Header>
                   <Card.Title>{project.title}</Card.Title>
                 </Card.Header>
                 <Card.Content>
+                  <Image
+                    className="mx-auto py-2"
+                    src={project.coverImage ?? ""}
+                    alt={`${project.title} Image`}
+                    width={200}
+                    height={50}
+                    style={{ width: "auto" }}
+                    priority
+                  />
                   <p className="text-sm italic font-light">
                     {project.description}
                   </p>

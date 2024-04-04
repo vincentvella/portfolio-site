@@ -37,7 +37,7 @@ export default async function Project(props: ProjectProps) {
             <ul className="flex flex-row flex-wrap">
               {project.stack.map((item) => (
                 <li
-                  className="bg-zinc-900 text-zinc-200 p-1 px-2 mr-1 rounded"
+                  className="dark:bg-zinc-900 bg-zinc-600 text-zinc-200 p-1 px-2 mr-1 rounded"
                   key={item.value}
                 >
                   {item.label}
