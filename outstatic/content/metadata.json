@@ -1,6 +1,6 @@
 {
-  "commit": "2b4f24cf89fa99a3f7889583476a614ae0741089",
-  "generated": "2024-04-02T05:08:59.673Z",
+  "commit": "f043a15e63764ad37e23553947fea872a8cd63b0",
+  "generated": "2024-04-04T04:07:24.970Z",
   "metadata": [
     {
       "__outstatic": {
@@ -186,54 +186,6 @@
       ],
       "status": "published",
       "title": "Metamobi"
-    },
-    {
-      "__outstatic": {
-        "commit": "4bdf26bd2933af43e191ce630a3eb82c6e1a3e2a",
-        "hash": "1358609194",
-        "path": "outstatic/content/projects/pacalendar.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "collection": "projects",
-      "coverImage": "",
-      "description": "Consolidated Performing Arts Calendar for all of PSU",
-      "publishedAt": "2024-03-04T03:05:09.691Z",
-      "slug": "pacalendar",
-      "stack": [
-        {
-          "label": "React",
-          "value": "react"
-        },
-        {
-          "label": "React Native",
-          "value": "reactNative"
-        },
-        {
-          "label": "Firebase",
-          "value": "firebase"
-        },
-        {
-          "label": "NodeJS",
-          "value": "nodeJs"
-        },
-        {
-          "label": "Python",
-          "value": "python"
-        },
-        {
-          "label": "Web Scraper",
-          "value": "webScraper"
-        },
-        {
-          "label": "NLP",
-          "value": "nlp"
-        }
-      ],
-      "status": "published",
-      "title": "PACalendar"
     },
     {
       "__outstatic": {
@@ -540,6 +492,54 @@
       "slug": "pac-app-aims-to-connect-arts-community-to-events-and-shows",
       "status": "published",
       "title": "PAC App Aims To Connect Arts Community To Events And Shows"
+    },
+    {
+      "__outstatic": {
+        "commit": "f043a15e63764ad37e23553947fea872a8cd63b0",
+        "hash": "4016017273",
+        "path": "outstatic/content/projects/pacalendar.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "projects",
+      "coverImage": "/images/frame-2-g0nj-IzND.png",
+      "description": "Consolidated Performing Arts Calendar for all of PSU",
+      "publishedAt": "2024-03-04T03:05:09.691Z",
+      "slug": "pacalendar",
+      "stack": [
+        {
+          "label": "React",
+          "value": "react"
+        },
+        {
+          "label": "React Native",
+          "value": "reactNative"
+        },
+        {
+          "label": "Firebase",
+          "value": "firebase"
+        },
+        {
+          "label": "NodeJS",
+          "value": "nodeJs"
+        },
+        {
+          "label": "Python",
+          "value": "python"
+        },
+        {
+          "label": "Web Scraper",
+          "value": "webScraper"
+        },
+        {
+          "label": "NLP",
+          "value": "nlp"
+        }
+      ],
+      "status": "published",
+      "title": "PACalendar"
     }
   ]
 }
