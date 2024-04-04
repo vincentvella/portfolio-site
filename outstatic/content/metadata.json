@@ -1,6 +1,6 @@
 {
-  "commit": "7222e91b5ea712f5c225479bfddf499e936c6c62",
-  "generated": "2024-04-04T04:19:46.540Z",
+  "commit": "285d99228520e5db074869fd7b5ad3de36febb37",
+  "generated": "2024-04-04T04:38:49.146Z",
   "metadata": [
     {
       "__outstatic": {
@@ -491,14 +491,15 @@
     },
     {
       "__outstatic": {
-        "commit": "7222e91b5ea712f5c225479bfddf499e936c6c62",
-        "hash": "2898572329",
+        "commit": "285d99228520e5db074869fd7b5ad3de36febb37",
+        "hash": "2764198490",
         "path": "outstatic/content/projects/metamobi.md"
       },
       "author": {
         "name": "Vincent Vella",
         "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
       },
+      "bullets": "Targeted non-technical small businesses to build quick & effective online presences\nCreated easily modified data-hydrated templates to reduce design friction",
       "collection": "projects",
       "coverImage": "/images/frame-1--3--a2nz-Q4MD.png",
       "description": "Self-Service Website & Mobile App Building Platform",
