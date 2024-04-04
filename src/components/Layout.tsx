@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header, { HeaderProps } from "./Header";
 
 interface Props extends HeaderProps {
@@ -6,8 +7,9 @@ interface Props extends HeaderProps {
 
 const Layout: React.FC<Props> = ({ children, ...props }) => (
   <>
-    <Header className="absolute left-0 right-0 h-16 w-full" {...props} />
+    <Header {...props} />
     {children}
+    <Footer {...props} />
   </>
 );
 

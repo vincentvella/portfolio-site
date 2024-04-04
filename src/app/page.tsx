@@ -9,7 +9,6 @@ import { Button } from "@/components/Button";
 import { ContactMethodIcon } from "@/components/ContactMethodIcon";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 import { PressCoverage } from "@/components/PressCoverage";
-import Footer from "@/components/Footer";
 import { load } from "@/lib/load";
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
@@ -71,7 +70,6 @@ export default async function Index() {
           <PressCoverage />
         </div>
       </main>
-      <Footer />
     </Layout>
   );
 }

@@ -29,7 +29,7 @@ export const PressCoverage = async () => {
                   <p className="text-sm min-h-6 italic font-light">
                     <FormattedDateString date={publishedAt} />
                   </p>
-                  <div className="flex flex-row my-4">
+                  <div className="flex flex-row my-4 pb-4">
                     {!!coverImage && (
                       <Image
                         className="relative pr-2"
@@ -40,7 +40,7 @@ export const PressCoverage = async () => {
                         priority
                       />
                     )}
-                    <p className="text-sm">{description}</p>
+                    <p className="text-sm pl-2">{description}</p>
                   </div>
                   <div className="relative">
                     <div className="absolute bottom-2 right-2">

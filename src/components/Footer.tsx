@@ -2,15 +2,20 @@ import { ContactMethodLoader } from "@/lib/data-loaders/contact-method-loader";
 import { Button } from "./Button";
 import { ContactMethodIcon } from "./ContactMethodIcon";
 import { load } from "@/lib/load";
+import { cn } from "@/lib/classname";
 
-const Footer = async () => {
+export type FooterProps = {
+  className?: string;
+};
+
+const Footer: React.FC<FooterProps> = async ({ className }) => {
   const db = await load();
   const contactMethods = await new ContactMethodLoader(db).load();
   return (
-    <footer>
-      <div className="dark:bg-black dark:text-zinc-200 mx-auto p-2 text-end md:flex md:flex-row">
+    <footer className={cn(className)}>
+      <div className="dark:bg-black dark:text-zinc-200 mx-auto p-4 text-end md:flex md:flex-row">
         <div className="flex flex-1" />
-        <div className="flex flex-1 gap-x-1 pt-1 text-sm justify-center">
+        <div className="flex flex-1 gap-x-1 pt-1 text-sm justify-center min-w-80">
           {contactMethods.map((method) => (
             <Button
               key={method.title.toLowerCase()}
