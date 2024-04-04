@@ -19,6 +19,9 @@ export default async function Projects() {
                   <Card.Title>{project.title}</Card.Title>
                 </Card.Header>
                 <Card.Content>
+                  <p className="text-sm italic font-light">
+                    {project.description}
+                  </p>
                   <Image
                     className="mx-auto py-2"
                     src={project.coverImage ?? ""}
@@ -28,9 +31,14 @@ export default async function Projects() {
                     style={{ width: "auto" }}
                     priority
                   />
-                  <p className="text-sm italic font-light">
-                    {project.description}
-                  </p>
+                  <div className="flex flex-row justify-end">
+                    <Link
+                      href={`projects/${project.slug}`}
+                      className="text-sm hover:underline"
+                    >
+                      {"Read more ->"}
+                    </Link>
+                  </div>
                 </Card.Content>
               </Card>
             </Link>
