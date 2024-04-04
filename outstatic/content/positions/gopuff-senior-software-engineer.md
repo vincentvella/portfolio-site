@@ -14,6 +14,7 @@ location: 'Philadelphia, PA'
 badges: [{"label":"Remote","value":"remote"}]
 avatar: 'https://asset.brandfetch.io/idDIzM0w-Q/idAmUolWLN.svg'
 brandColor: '#00A4FF'
+companyWebsite: 'https://www.gopuff.com'
 publishedAt: '2024-03-04T02:53:17.837Z'
 ---
 
