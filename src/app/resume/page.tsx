@@ -218,7 +218,7 @@ export default async function Resume() {
                         {projects.description}
                       </div>
                       <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
-                        {projects.content.map((item, index) => (
+                        {projects.bullets.map((item, index) => (
                           <li key={index}>{item.replace("- ", "")}</li>
                         ))}
                       </ul>

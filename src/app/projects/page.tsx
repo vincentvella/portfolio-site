@@ -1,9 +1,32 @@
+import Card from "@/components/Card";
 import Layout from "@/components/Layout";
+import { ProjectLoader } from "@/lib/data-loaders/project-loader";
+import { load } from "@/lib/load";
+import Link from "next/link";
 
 export default async function Projects() {
+  const db = await load();
+  const projects = await new ProjectLoader(db).load();
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800 pb-4"></main>
+      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800 pb-4">
+        <div className="px-4 max-w-screen-md">
+          {projects.map((project) => (
+            <Link key={project.slug} href={`projects/${project.slug}`}>
+              <Card className="max-w-128 mt-12 dark:bg-zinc-900 dark:text-zinc-200">
+                <Card.Header>
+                  <Card.Title>{project.title}</Card.Title>
+                </Card.Header>
+                <Card.Content>
+                  <p className="text-sm italic font-light">
+                    {project.description}
+                  </p>
+                </Card.Content>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </main>
     </Layout>
   );
 }
