@@ -27,7 +27,8 @@ module.exports = {
 						value: "resume.vincevella.com"
 					}
 				],
-				destination: "/resume/:path*"
+				destination: "/resume/:path*",
+				permanent: true,
 			},
 			{
 				source: "/:path*",
@@ -37,7 +38,8 @@ module.exports = {
 						value: "resume.vincentvella.me"
 					}
 				],
-				destination: "/resume/:path*"
+				destination: "/resume/:path*",
+				permanent: true,
 			}
 		]
 	}
