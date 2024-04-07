@@ -1,0 +1,24 @@
+{
+	"rewrites": [
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "resume.vincevella.com"
+				}
+			],
+			"destination": "/resume/:path*"
+		},
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "resume.vincentvella.me"
+				}
+			],
+			"destination": "/resume/:path*"
+		}
+	]
+}
