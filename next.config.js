@@ -20,25 +20,25 @@ module.exports = {
 	async redirects() {
 		return [
 			{
-				source: "/:path*",
+				source: "/",
 				has: [
 					{
 						type: "host",
 						value: "resume.vincevella.com"
 					}
 				],
-				destination: "/resume/:path*",
+				destination: "https://vincevella.com/resume",
 				permanent: true,
 			},
 			{
-				source: "/:path*",
+				source: "/",
 				has: [
 					{
 						type: "host",
 						value: "resume.vincentvella.me"
 					}
 				],
-				destination: "/resume/:path*",
+				destination: "https://vincentvella.me/resume",
 				permanent: true,
 			}
 		]
