@@ -1,4 +1,4 @@
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl } from "@/lib/absoluteUrl";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
