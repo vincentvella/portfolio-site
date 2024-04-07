@@ -3,6 +3,7 @@ import Card from "./Card";
 import { FormattedDateString } from "./FormattedDateString";
 import Image from "next/image";
 import { load } from "@/lib/load";
+import { Fragment } from "react";
 
 export const PressCoverage = async () => {
   const db = await load();
@@ -19,9 +20,9 @@ export const PressCoverage = async () => {
           const { publishedAt, title, content, description, slug, coverImage } =
             item;
           return (
-            <>
+            <Fragment key={slug}>
               {index !== 0 && <hr className="my-3" />}
-              <div key={slug}>
+              <div>
                 <section>
                   <h3 className="text-xl font-semibold leading-none tracking-tight hover:underline">
                     <a href={content}>{title}</a>
@@ -54,7 +55,7 @@ export const PressCoverage = async () => {
                   </div>
                 </section>
               </div>
-            </>
+            </Fragment>
           );
         })}
       </Card.Content>

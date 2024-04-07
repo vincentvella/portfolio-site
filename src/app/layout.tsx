@@ -4,16 +4,20 @@ import { Inter } from "next/font/google";
 
 import "../styles/globals.css";
 import { Providers } from "./providers";
+import { load } from "outstatic/server";
+import { LanguageLoader } from "@/lib/data-loaders/language-loader";
+import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const description =
-  "I'm Vince, a senior full-stack engineer with a passion for building functional, performant, and accessible web and mobile apps.";
+  "Senior Software Engineer skilled in TypeScript, React, React Native, Java, and Golang, passionate about crafting high-quality web and mobile applications.";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   metadataBase: new URL("https://vincevella.com"),
   title: {
-    default: "Vince Vella",
+    default:
+      "Senior Software Engineer & Web/Mobile App Developer - Vince Vella",
     template: "%s | Vince Vella",
   },
   description,
@@ -69,6 +73,26 @@ export const metadata: Metadata = {
     title: "Vince Vella - Portfolio",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const db = await load();
+
+  const languages = await new LanguageLoader(db).load();
+  const { frameworks_and_tools } = await new ResumeSectionLoader(db).load();
+  const keywords: string[] = [];
+  keywords.push(...languages.flatMap((language) => language.content));
+  if (Array.isArray(frameworks_and_tools.content)) {
+    frameworks_and_tools.content.forEach((tool) => {
+      if (!keywords.includes(tool)) {
+        keywords.push(tool);
+      }
+    });
+  }
+
+  metadata.keywords = keywords;
+
+  return metadata;
+}
 
 export default function RootLayout({
   children,

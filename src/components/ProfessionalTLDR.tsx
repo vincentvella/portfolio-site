@@ -2,10 +2,10 @@ import Image from "next/image";
 import Card from "./Card";
 import { PositionLoader } from "@/lib/data-loaders/position-loader";
 import { load } from "@/lib/load";
+import { Fragment } from "react";
 
 export const ProfessionalTLDR: React.FC = async ({}) => {
   const db = await load();
-  console.log(db);
   const summaries = await new PositionLoader(db).loadPositionSummaries();
   return (
     <Card className="p-4 mt-12 dark:bg-zinc-900 dark:text-zinc-200">
@@ -18,9 +18,9 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
         {summaries.map(([name, position], i) => {
           const { titles, endDate, startDate, avatar, brandColor } = position;
           return (
-            <>
+            <Fragment key={name}>
               {i !== 0 && <hr className="my-3" />}
-              <div key={name} className="flex justify-between pt-2">
+              <div className="flex justify-between pt-2">
                 <div className="flex flex-row">
                   <div
                     className={`rounded-full content-center p-2 max-h-16 min-h-16 max-w-16 min-w-16 mr-2 bg-[${brandColor}]`}
@@ -48,7 +48,7 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
                   {startDate} - {endDate}
                 </div>
               </div>
-            </>
+            </Fragment>
           );
         })}
       </Card.Content>
