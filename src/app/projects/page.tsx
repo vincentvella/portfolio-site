@@ -32,12 +32,9 @@ export default async function Projects() {
                     priority
                   />
                   <div className="flex flex-row justify-end">
-                    <Link
-                      href={`projects/${project.slug}`}
-                      className="text-sm hover:underline"
-                    >
+                    <div className="text-sm hover:underline">
                       {"Read more ->"}
-                    </Link>
+                    </div>
                   </div>
                 </Card.Content>
               </Card>

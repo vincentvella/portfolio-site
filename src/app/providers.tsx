@@ -9,7 +9,7 @@ const useForcedTheme = () => {
   return pathname.startsWith("/resume") ? "light" : undefined;
 };
 
-export const Providers: React.FC<PropsWithChildren> = async ({ children }) => {
+export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
   const forcedTheme = useForcedTheme();
   return (
     <ThemeProvider attribute="class" forcedTheme={forcedTheme}>
