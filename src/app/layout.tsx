@@ -6,9 +6,11 @@ import { Providers } from "./providers";
 import { load } from "outstatic/server";
 import { LanguageLoader } from "@/lib/data-loaders/language-loader";
 import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
-import { headers } from "next/headers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const description =
   "Senior Software Engineer skilled in TypeScript, React, React Native, Java, and Golang, passionate about crafting high-quality web and mobile applications.";
@@ -105,7 +107,10 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning={true} lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body
+        suppressHydrationWarning={true}
+        className={`${inter.variable} font-sans`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
