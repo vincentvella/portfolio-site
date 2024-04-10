@@ -23,14 +23,16 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
               <div className="flex justify-between pt-2">
                 <div className="flex flex-row">
                   <div
-                    className={`mr-2 max-h-16 min-h-16 min-w-16 max-w-16 content-center rounded-full p-2 bg-[${brandColor}]`}
+                    className="relative mr-2 h-16 w-16 min-w-16 rounded-full"
                     style={{ backgroundColor: brandColor }}
                   >
                     <Image
+                      className="p-1"
                       src={avatar ?? ""}
                       alt={`${name} Logo`}
-                      width={64}
-                      height={64}
+                      style={{ objectFit: "contain" }}
+                      sizes="3.3vw"
+                      fill
                       priority
                     />
                   </div>

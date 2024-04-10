@@ -31,16 +31,19 @@ export const PressCoverage = async () => {
                     <FormattedDateString date={publishedAt} />
                   </p>
                   <div className="my-4 flex flex-row pb-4">
-                    {!!coverImage && (
-                      <Image
-                        className="relative pr-2"
-                        src={coverImage}
-                        alt="Avatar Image"
-                        width={100}
-                        height={100}
-                        priority
-                      />
-                    )}
+                    <div className="relative h-24 min-w-32">
+                      {!!coverImage && (
+                        <Image
+                          className="relative pr-2"
+                          src={coverImage}
+                          alt="Avatar Image"
+                          sizes="6.667vw"
+                          fill
+                          style={{ objectFit: "cover" }}
+                          priority
+                        />
+                      )}
+                    </div>
                     <p className="pl-2 text-sm">{description}</p>
                   </div>
                   <div className="relative">

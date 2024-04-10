@@ -22,15 +22,17 @@ export default async function Projects() {
                   <p className="text-sm font-light italic">
                     {project.description}
                   </p>
-                  <Image
-                    className="mx-auto py-2"
-                    src={project.coverImage ?? ""}
-                    alt={`${project.title} Image`}
-                    width={200}
-                    height={50}
-                    style={{ width: "auto" }}
-                    priority
-                  />
+                  <div className="relative h-64 w-full">
+                    <Image
+                      className="mx-auto min-h-64 py-2"
+                      src={project.coverImage ?? ""}
+                      alt={`${project.title} Image`}
+                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      fill
+                      priority
+                    />
+                  </div>
                   <div className="flex flex-row justify-end">
                     <div className="text-sm hover:underline">
                       {"Read more ->"}
