@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
 
-const domains = ["vincevella.com", "vincentvella.me"];
+type Domain = "vincevella.com" | "vincentvella.me";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return domains.flatMap((domain: string) => [
+export default function generateSitemap(domain: Domain): MetadataRoute.Sitemap {
+  return [
     {
       url: `https://${domain}`,
       lastModified: new Date(),
@@ -22,5 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.5,
     },
-  ]);
+  ];
 }
