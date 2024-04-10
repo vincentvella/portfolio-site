@@ -62,8 +62,10 @@ export default async function Resume() {
               <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
                 {contactMethods.map((method) => (
                   <Button
+                    name={method.title.toLowerCase()}
                     key={method.title.toLowerCase()}
                     className="size-8"
+                    aria-label={method.title}
                     variant="outline"
                     size="icon"
                     asChild

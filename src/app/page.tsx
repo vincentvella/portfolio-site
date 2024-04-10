@@ -51,6 +51,7 @@ export default async function Index() {
             <div className="flex gap-x-1 pt-1 text-sm">
               {contactMethods.map((method) => (
                 <Button
+                  aria-label={method.title.toLowerCase()}
                   key={method.title.toLowerCase()}
                   variant="ghost"
                   size="sm"

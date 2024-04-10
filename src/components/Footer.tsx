@@ -18,7 +18,9 @@ const Footer: React.FC<FooterProps> = async ({ className }) => {
         <div className="flex flex-1 gap-x-1 pt-1 text-sm justify-center min-w-80">
           {contactMethods.map((method) => (
             <Button
+              name={method.title.toLowerCase()}
               key={method.title.toLowerCase()}
+              aria-label={method.title.toLowerCase()}
               variant="ghost"
               size="sm"
               asChild

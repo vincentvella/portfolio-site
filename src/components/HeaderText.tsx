@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
@@ -20,8 +21,14 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
   }, [pathname, link]);
 
   return (
-    <div aria-selected={isSelected} className="aria-selected:text-blue-400">
+    <Link
+      aria-label={text}
+      href={link}
+      role="option"
+      aria-selected={isSelected}
+      className="aria-selected:text-blue-400"
+    >
       {text}
-    </div>
+    </Link>
   );
 };
