@@ -17,9 +17,9 @@ export default async function Project(props: ProjectProps) {
   const project = await new ProjectLoader(db).loadProject(props.params.slug);
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800 pb-4">
-        <div className="px-4 max-w-screen-md">
-          <h1 className="text-center text-2xl p-4">{project.title}</h1>
+      <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
+        <div className="max-w-screen-md px-4">
+          <h1 className="p-4 text-center text-2xl">{project.title}</h1>
           <h2 className="text-center text-lg">{project.description}</h2>
           <Image
             className="mx-auto py-2"
@@ -30,7 +30,7 @@ export default async function Project(props: ProjectProps) {
             style={{ width: "auto" }}
             priority
           />
-          <section className="py-6 flex-grow">
+          <section className="flex-grow py-6">
             <p>{project.content}</p>
           </section>
           <section>
@@ -38,7 +38,7 @@ export default async function Project(props: ProjectProps) {
             <ul className="flex flex-row flex-wrap">
               {project.stack.map((item) => (
                 <li
-                  className="dark:bg-zinc-900 bg-zinc-600 text-zinc-200 p-1 px-2 mr-1 rounded"
+                  className="mr-1 rounded bg-zinc-600 p-1 px-2 text-zinc-200 dark:bg-zinc-900"
                   key={item.value}
                 >
                   {item.label}

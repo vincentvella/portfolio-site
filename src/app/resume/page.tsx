@@ -40,12 +40,12 @@ export default async function Resume() {
 
   return (
     <Layout className="print:hidden" hideThemeSwitch>
-      <main className="relative mx-auto scroll-my-12 overflow-auto md:pt-6 p-4">
+      <main className="relative mx-auto scroll-my-12 overflow-auto p-4 md:pt-6">
         <Section className="mx-auto w-full max-w-3xl bg-white pb-8 print:pb-0">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
               <h1 className="text-3xl font-bold">{PERSONAL_INFO.name}</h1>
-              <p className="max-w-md text-prettytext-sm text-muted-foreground">
+              <p className="text-prettytext-sm max-w-md text-muted-foreground">
                 {PERSONAL_INFO.title}
               </p>
               <p className="max-w-md items-center text-pretty text-xs text-muted-foreground print:hidden">
@@ -118,9 +118,9 @@ export default async function Resume() {
             </div>
           </div>
           <div className="grid grid-cols-3 md:divide-x">
-            <div className="col-span-3 md:col-span-2 print:col-span-2 mr-2">
+            <div className="col-span-3 mr-2 md:col-span-2 print:col-span-2">
               <Section>
-                <p className="text-pretty text-sm text-muted-foreground pt-2 pb-2">
+                <p className="text-pretty pb-2 pt-2 text-sm text-muted-foreground">
                   {resumeSections.about.content}
                 </p>
               </Section>
@@ -132,7 +132,7 @@ export default async function Resume() {
                       <div className="flex">
                         <h3 className="inline-flex items-center justify-center leading-none">
                           <a
-                            className="hover:underline font-bold"
+                            className="font-bold hover:underline"
                             href={positions?.[0].companyWebsite}
                           >
                             {positions[0]?.company}
@@ -142,7 +142,7 @@ export default async function Resume() {
                             {positions[0]?.badges?.map((badge) => (
                               <Badge
                                 variant="secondary"
-                                className="align-middle text-xs ml-2"
+                                className="ml-2 align-middle text-xs"
                                 key={badge.value}
                               >
                                 {badge.label}
@@ -152,23 +152,23 @@ export default async function Resume() {
                         </h3>
                       </div>
                     </Card.Header>
-                    <Card.Content className="mt-2 list-disk">
+                    <Card.Content className="list-disk mt-2">
                       {positions.map((position) => (
                         <React.Fragment key={position.title}>
-                          <div className="flex items-center justify-between gap-x-2 space-between font-semibold">
-                            <h4 className="inline-flex text-base leading-none font-semibold">
+                          <div className="space-between flex items-center justify-between gap-x-2 font-semibold">
+                            <h4 className="inline-flex text-base font-semibold leading-none">
                               {position.title}
                             </h4>
-                            <div className="text-sm tabular-nums hidden sm:block">
+                            <div className="hidden text-sm tabular-nums sm:block">
                               {position.startDate} -{" "}
                               {position.endDate || "Present"}
                             </div>
                           </div>
-                          <div className="text-sm tabular-nums font-semibold sm:hidden">
+                          <div className="text-sm font-semibold tabular-nums sm:hidden">
                             {position.startDate} -{" "}
                             {position.endDate || "Present"}
                           </div>
-                          <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
+                          <ul className="list-outside list-disc pl-4 text-xs text-muted-foreground">
                             {position.content.map((item) => (
                               <li key={item}>{item.replace("- ", "")}</li>
                             ))}
@@ -189,14 +189,14 @@ export default async function Resume() {
                           <h3 className="font-semibold leading-none">
                             {education.title}
                           </h3>
-                          <div className="tabular-nums items-center hidden sm:inline-flex">
+                          <div className="hidden items-center tabular-nums sm:inline-flex">
                             <div className="hidden sm:block">,&nbsp;</div>
                             {education.location}
                           </div>
                         </div>
                       </Card.Header>
-                      <Card.Content className="text-muted-foreground text-xs">
-                        <div className="tabular-nums text-base sm:hidden">
+                      <Card.Content className="text-xs text-muted-foreground">
+                        <div className="text-base tabular-nums sm:hidden">
                           {education.location}
                         </div>
                         {education.content}
@@ -216,16 +216,16 @@ export default async function Resume() {
                             {projects.title}
                           </Link>
                         </h3>
-                        <div className="text-sm hidden sm:block">
+                        <div className="hidden text-sm sm:block">
                           -&nbsp;{projects.description}
                         </div>
                       </div>
                     </Card.Header>
-                    <Card.Content className="text-muted-foreground text-xs">
+                    <Card.Content className="text-xs text-muted-foreground">
                       <div className="text-sm sm:hidden">
                         {projects.description}
                       </div>
-                      <ul className="text-muted-foreground text-xs list-disc list-outside pl-4">
+                      <ul className="list-outside list-disc pl-4 text-xs text-muted-foreground">
                         {projects.bullets.map((item, index) => (
                           <li key={index}>{item.replace("- ", "")}</li>
                         ))}
@@ -239,10 +239,10 @@ export default async function Resume() {
                 ))}
               </Section>
             </div>
-            <div className="col-span-3 md:col-span-1 print:col-span-1 md:pl-2">
+            <div className="col-span-3 md:col-span-1 md:pl-2 print:col-span-1">
               <Section>
                 <h2 className="text-xl font-bold underline">Skills</h2>
-                <ul className="pl-2 space-y-1">
+                <ul className="space-y-1 pl-2">
                   {typeof resumeSections.skills.content !== "string" &&
                     resumeSections.skills.content.map((skill) => {
                       return (
@@ -260,7 +260,7 @@ export default async function Resume() {
                     <h3 className="font-semibold">{level.title}</h3>
                     <ul className="grid grid-cols-2 space-y-1">
                       {level.content.map((language) => (
-                        <li key={language} className="text-xs pl-2 pr-2">
+                        <li key={language} className="pl-2 pr-2 text-xs">
                           {language}
                         </li>
                       ))}
@@ -272,12 +272,12 @@ export default async function Resume() {
                 <h2 className="text-xl font-bold underline">
                   Frameworks & Tools
                 </h2>
-                <ul className="grid grid-cols-2 pb-4 space-y-1">
+                <ul className="grid grid-cols-2 space-y-1 pb-4">
                   {typeof resumeSections.frameworks_and_tools.content !==
                     "string" &&
                     resumeSections.frameworks_and_tools.content.map((skill) => {
                       return (
-                        <li key={skill} className="text-xs -mr-8 pl-2">
+                        <li key={skill} className="-mr-8 pl-2 text-xs">
                           {skill}
                         </li>
                       );
@@ -288,7 +288,7 @@ export default async function Resume() {
                 <h2 className="text-xl font-bold underline">
                   Hobbies & Interests
                 </h2>
-                <ul className="pl-2 space-y-1">
+                <ul className="space-y-1 pl-2">
                   {typeof resumeSections.hobbies_and_interests.content !==
                     "string" &&
                     resumeSections.hobbies_and_interests.content.map(

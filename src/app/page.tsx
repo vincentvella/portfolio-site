@@ -32,18 +32,18 @@ export default async function Index() {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center dark:bg-gray-800 pb-4">
-        <div className="px-4 max-w-screen-md">
-          <div className="flex w-full flex-col mt-16">
+      <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
+        <div className="max-w-screen-md px-4">
+          <div className="mt-16 flex w-full flex-col">
             <Image
-              className="relative rounded-full my-4"
+              className="relative my-4 rounded-full"
               src="/images/avatar-1x.jpeg"
               alt="Avatar Image"
               width={100}
               height={100}
               priority
             />
-            <h1 className="text-4xl font-bold mb-4">Vincent Vella</h1>
+            <h1 className="mb-4 text-4xl font-bold">Vincent Vella</h1>
             <section className="mb-4">
               {typeof resumeSections.about.description === "string" &&
                 addEmailLink(resumeSections.about.description, email)}

@@ -9,9 +9,9 @@ export const PressCoverage = async () => {
   const db = await load();
   const coverage = await new PressCoverageLoader(db).load();
   return (
-    <Card className="p-4 mt-12 dark:bg-zinc-900 dark:text-zinc-200">
+    <Card className="mt-12 p-4 dark:bg-zinc-900 dark:text-zinc-200">
       <Card.Header>
-        <h2 className="text-2xl font-semibold leading-none tracking-tight mb-3">
+        <h2 className="mb-3 text-2xl font-semibold leading-none tracking-tight">
           📰 Press Coverage
         </h2>
       </Card.Header>
@@ -27,10 +27,10 @@ export const PressCoverage = async () => {
                   <h3 className="text-xl font-semibold leading-none tracking-tight hover:underline">
                     <a href={content}>{title}</a>
                   </h3>
-                  <p className="text-sm min-h-6 italic font-light">
+                  <p className="min-h-6 text-sm font-light italic">
                     <FormattedDateString date={publishedAt} />
                   </p>
-                  <div className="flex flex-row my-4 pb-4">
+                  <div className="my-4 flex flex-row pb-4">
                     {!!coverImage && (
                       <Image
                         className="relative pr-2"
@@ -41,7 +41,7 @@ export const PressCoverage = async () => {
                         priority
                       />
                     )}
-                    <p className="text-sm pl-2">{description}</p>
+                    <p className="pl-2 text-sm">{description}</p>
                   </div>
                   <div className="relative">
                     <div className="absolute bottom-2 right-2">
