@@ -76,6 +76,7 @@ export const CommandMenu = ({ links }: Props) => {
         to open the command menu
       </p>
       <Button
+        aria-label="Open command menu"
         id="command-menu-button"
         onClick={() => setOpen((open) => !open)}
         variant="outline"
