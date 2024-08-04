@@ -12,7 +12,7 @@ startDate: '07/2024'
 endDate: ''
 location: 'Wilmington, DE'
 badges: [{"value":"remote","label":"Remote"}]
-avatar: 'https://asset.brandfetch.io/idYFfMZte4/idrPKYDBbf.svg?updated=1684919441942'
+avatar: 'https://asset.brandfetch.io/idYFfMZte4/idrPKYDBbf.svg'
 brandColor: '#FFFFFF'
 companyWebsite: 'https://www.capitalone.com'
 publishedAt: '2024-08-04T07:01:56.281Z'

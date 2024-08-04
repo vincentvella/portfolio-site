@@ -13,7 +13,7 @@ module.exports = {
         protocol: "https",
         hostname: "asset.brandfetch.io",
         port: "",
-        pathname: "/idO5iUBn-d/**",
+        pathname: "/**/**",
       },
     ],
   },
