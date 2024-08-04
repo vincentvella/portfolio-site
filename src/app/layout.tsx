@@ -110,7 +110,7 @@ export default function RootLayout({
       <head>
         <script
           defer
-          src="http://umami-sok484g.95.217.191.60.sslip.io/script.js"
+          src="https://umami.vellapps.dev/script.js"
           data-website-id="fb59fde0-63ce-42e0-82ea-07f051ae28b1"
         ></script>
       </head>
