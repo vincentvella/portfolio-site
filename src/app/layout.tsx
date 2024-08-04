@@ -107,6 +107,13 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning={true} lang="en">
+      <head>
+        <script
+          defer
+          src="http://umami-sok484g.95.217.191.60.sslip.io/script.js"
+          data-website-id="fb59fde0-63ce-42e0-82ea-07f051ae28b1"
+        ></script>
+      </head>
       <body
         suppressHydrationWarning={true}
         className={`${inter.variable} font-sans`}
