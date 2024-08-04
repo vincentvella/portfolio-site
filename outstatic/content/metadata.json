@@ -1,6 +1,6 @@
 {
-  "commit": "2c1881c3836d50f31ba412e628cadff555e5c608",
-  "generated": "2024-04-07T00:17:13.949Z",
+  "commit": "4990f8c4c86fc03e588977229ffa19e8331035d0",
+  "generated": "2024-08-04T07:30:33.381Z",
   "metadata": [
     {
       "__outstatic": {
@@ -419,37 +419,6 @@
     },
     {
       "__outstatic": {
-        "commit": "df56305e803b2dc02a6af10e1b17f64741b35b07",
-        "hash": "422144000",
-        "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
-      },
-      "author": {
-        "name": "Vincent Vella",
-        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
-      },
-      "avatar": "https://asset.brandfetch.io/idDIzM0w-Q/idAmUolWLN.svg",
-      "badges": [
-        {
-          "label": "Remote",
-          "value": "remote"
-        }
-      ],
-      "brandColor": "#00A4FF",
-      "collection": "positions",
-      "company": "Gopuff",
-      "companyWebsite": "https://www.gopuff.com",
-      "coverImage": "",
-      "description": "",
-      "endDate": "",
-      "location": "Philadelphia, PA",
-      "publishedAt": "2024-03-04T02:53:17.837Z",
-      "slug": "gopuff-senior-software-engineer",
-      "startDate": "10/2020",
-      "status": "published",
-      "title": "Senior Software Engineer"
-    },
-    {
-      "__outstatic": {
         "commit": "fc6ae9be096c9db57a4c64d0b79fd12a2b493d89",
         "hash": "4180299601",
         "path": "outstatic/content/positions/software-developer.md"
@@ -546,6 +515,68 @@
       "slug": "about",
       "status": "published",
       "title": "About"
+    },
+    {
+      "__outstatic": {
+        "commit": "24c036cfe0350653be562e017d2b7dd3ab3ba4e0",
+        "hash": "3665701064",
+        "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idDIzM0w-Q/idAmUolWLN.svg",
+      "badges": [
+        {
+          "label": "Remote",
+          "value": "remote"
+        }
+      ],
+      "brandColor": "#00A4FF",
+      "collection": "positions",
+      "company": "Gopuff",
+      "companyWebsite": "https://www.gopuff.com",
+      "coverImage": "",
+      "description": "",
+      "endDate": "6/2024",
+      "location": "Philadelphia, PA",
+      "publishedAt": "2024-03-04T02:53:17.837Z",
+      "slug": "gopuff-senior-software-engineer",
+      "startDate": "10/2020",
+      "status": "published",
+      "title": "Senior Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "4990f8c4c86fc03e588977229ffa19e8331035d0",
+        "hash": "1356531701",
+        "path": "outstatic/content/positions/lead-software-engineer-capital-one.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idYFfMZte4/idrPKYDBbf.svg?updated=1684919441942",
+      "badges": [
+        {
+          "label": "Remote",
+          "value": "remote"
+        }
+      ],
+      "brandColor": "#FFFFFF",
+      "collection": "positions",
+      "company": "Capital One",
+      "companyWebsite": "https://www.capitalone.com",
+      "coverImage": "",
+      "description": "",
+      "endDate": "",
+      "location": "Wilmington, DE",
+      "publishedAt": "2024-08-04T07:01:56.281Z",
+      "slug": "lead-software-engineer-capital-one",
+      "startDate": "07/2024",
+      "status": "published",
+      "title": "Lead Software Engineer"
     }
   ]
 }
