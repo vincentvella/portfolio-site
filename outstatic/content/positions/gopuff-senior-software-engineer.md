@@ -9,7 +9,7 @@ description: ''
 coverImage: ''
 company: 'Gopuff'
 startDate: '10/2020'
-endDate: ''
+endDate: '6/2024'
 location: 'Philadelphia, PA'
 badges: [{"label":"Remote","value":"remote"}]
 avatar: 'https://asset.brandfetch.io/idDIzM0w-Q/idAmUolWLN.svg'
