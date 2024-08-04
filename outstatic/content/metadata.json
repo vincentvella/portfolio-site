@@ -1,6 +1,6 @@
 {
-  "commit": "24c036cfe0350653be562e017d2b7dd3ab3ba4e0",
-  "generated": "2024-08-04T07:25:47.770Z",
+  "commit": "4990f8c4c86fc03e588977229ffa19e8331035d0",
+  "generated": "2024-08-04T07:30:33.381Z",
   "metadata": [
     {
       "__outstatic": {
@@ -546,6 +546,37 @@
       "startDate": "10/2020",
       "status": "published",
       "title": "Senior Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "4990f8c4c86fc03e588977229ffa19e8331035d0",
+        "hash": "1356531701",
+        "path": "outstatic/content/positions/lead-software-engineer-capital-one.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "avatar": "https://asset.brandfetch.io/idYFfMZte4/idrPKYDBbf.svg?updated=1684919441942",
+      "badges": [
+        {
+          "label": "Remote",
+          "value": "remote"
+        }
+      ],
+      "brandColor": "#FFFFFF",
+      "collection": "positions",
+      "company": "Capital One",
+      "companyWebsite": "https://www.capitalone.com",
+      "coverImage": "",
+      "description": "",
+      "endDate": "",
+      "location": "Wilmington, DE",
+      "publishedAt": "2024-08-04T07:01:56.281Z",
+      "slug": "lead-software-engineer-capital-one",
+      "startDate": "07/2024",
+      "status": "published",
+      "title": "Lead Software Engineer"
     }
   ]
 }
