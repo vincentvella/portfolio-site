@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Card from "./Card";
 import { PositionLoader } from "@/lib/data-loaders/position-loader";
-import { load } from "@/lib/load";
 import { Fragment } from "react";
+import { load } from "outstatic/server";
 
 export const ProfessionalTLDR: React.FC = async ({}) => {
   const db = await load();

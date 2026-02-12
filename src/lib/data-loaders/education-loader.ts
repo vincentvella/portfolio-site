@@ -1,11 +1,11 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof EducationLoader.pickedFields)[number];
-interface EducationFields extends Document {
+type EducationFields = OstDocument<{
   location: string;
-}
+}>;
 type EducationData = Pick<EducationFields, SelectedFields>;
 export interface Education extends Omit<EducationData, "content"> {
   content: string[];

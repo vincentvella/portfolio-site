@@ -2,8 +2,8 @@ import { PressCoverageLoader } from "@/lib/data-loaders/press-coverage-loader";
 import Card from "./Card";
 import { FormattedDateString } from "./FormattedDateString";
 import Image from "next/image";
-import { load } from "@/lib/load";
 import { Fragment } from "react";
+import { load } from "outstatic/server";
 
 export const PressCoverage = async () => {
   const db = await load();

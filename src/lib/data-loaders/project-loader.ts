@@ -1,4 +1,4 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
@@ -7,10 +7,11 @@ type Tag = {
   label: string;
 };
 type SelectedFields = (typeof ProjectLoader.pickedFields)[number];
-interface ProjectFields extends Document {
+type ProjectFields = OstDocument<{
+  description?: string;
   stack: Tag[];
   bullets: string;
-}
+}>;
 type ProjectData = Pick<ProjectFields, SelectedFields>;
 export interface Position extends Omit<ProjectData, "bullets"> {
   bullets: string[];

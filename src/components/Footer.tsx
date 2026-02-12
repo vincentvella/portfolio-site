@@ -1,8 +1,8 @@
 import { ContactMethodLoader } from "@/lib/data-loaders/contact-method-loader";
 import { Button } from "./Button";
 import { ContactMethodIcon } from "./ContactMethodIcon";
-import { load } from "@/lib/load";
 import { cn } from "@/lib/classname";
+import { load } from "outstatic/server";
 
 export type FooterProps = {
   className?: string;

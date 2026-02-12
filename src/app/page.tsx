@@ -9,7 +9,7 @@ import { Button } from "@/components/Button";
 import { ContactMethodIcon } from "@/components/ContactMethodIcon";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 import { PressCoverage } from "@/components/PressCoverage";
-import { load } from "@/lib/load";
+import { load } from "outstatic/server";
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
   const [preface, ending] = description.split("[email]");

@@ -1,9 +1,9 @@
-import { Document } from "outstatic";
+import { Document, OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof LanguageLoader.pickedFields)[number];
-interface LanguageFields extends Document {}
+type LanguageFields = OstDocument<{}>;
 type LanguageData = Pick<LanguageFields, SelectedFields>;
 export interface Language extends Omit<LanguageData, "content"> {
   content: string[];

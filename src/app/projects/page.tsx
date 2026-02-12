@@ -1,9 +1,9 @@
 import Card from "@/components/Card";
 import Layout from "@/components/Layout";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
-import { load } from "@/lib/load";
 import Image from "next/image";
 import Link from "next/link";
+import { load } from "outstatic/server";
 
 export default async function Projects() {
   const db = await load();

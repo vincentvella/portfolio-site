@@ -1,10 +1,10 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof ContactMethodLoader.pickedFields)[number];
-interface ContactMethodFields extends Document {
+type ContactMethodFields = OstDocument<{
   type: string;
-}
+}>;
 type ContactMethodData = Pick<ContactMethodFields, SelectedFields>;
 export interface ContactMethod extends Omit<ContactMethodData, "content"> {
   content: string;

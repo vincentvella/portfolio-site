@@ -1,8 +1,8 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof PressCoverageLoader.pickedFields)[number];
-interface PressCoverageFields extends Document {}
+interface PressCoverageFields extends OstDocument {}
 type PressCoverageData = Pick<PressCoverageFields, SelectedFields>;
 
 export class PressCoverageLoader {

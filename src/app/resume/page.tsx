@@ -17,8 +17,8 @@ import { unlink } from "@/lib/unlink";
 import { Badge } from "@/components/Badge";
 import { CommandMenu } from "@/components/CommandMenu";
 import React from "react";
-import { load } from "@/lib/load";
 import Link from "next/link";
+import { load } from "outstatic/server";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",

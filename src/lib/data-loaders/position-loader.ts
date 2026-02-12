@@ -1,9 +1,9 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof PositionLoader.pickedFields)[number];
-interface PositionFields extends Document {
+type PositionFields = OstDocument<{
   company: string;
   location: string;
   startDate: string;
@@ -12,7 +12,7 @@ interface PositionFields extends Document {
   companyWebsite?: string;
   avatar?: string;
   badges?: { value: string; label: string }[];
-}
+}>;
 type PositionData = Pick<PositionFields, SelectedFields>;
 export interface Position extends Omit<PositionData, "content"> {
   content: string[];

@@ -1,20 +1,20 @@
 import Layout from "@/components/Layout";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
-import { load } from "@/lib/load";
 import Image from "next/image";
-import { getDocumentSlugs } from "outstatic/server";
+import { getDocumentSlugs, load } from "outstatic/server";
 
 type ProjectParams = {
   slug: string;
 };
 
 type ProjectProps = {
-  params: ProjectParams;
+  params: Promise<ProjectParams>;
 };
 
 export default async function Project(props: ProjectProps) {
   const db = await load();
-  const project = await new ProjectLoader(db).loadProject(props.params.slug);
+  const { slug } = await props.params;
+  const project = await new ProjectLoader(db).loadProject(slug);
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
@@ -54,5 +54,6 @@ export default async function Project(props: ProjectProps) {
 
 export async function generateStaticParams() {
   const posts = getDocumentSlugs("projects");
+  console.log(posts);
   return posts.map((slug) => ({ slug }));
 }

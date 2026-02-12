@@ -1,11 +1,11 @@
-import { Document } from "outstatic";
+import { OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
 import { DB } from "./loader";
 
 type SelectedFields = (typeof ResumeSectionLoader.pickedFields)[number];
-interface ResumeSectionFields extends Document {
+type ResumeSectionFields = OstDocument<{
   location: string;
-}
+}>;
 type ResumeSectionData = Pick<ResumeSectionFields, SelectedFields>;
 export type ResumeSection = string | string[];
 type LoadedResumeSections = {
