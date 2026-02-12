@@ -11,7 +11,7 @@ export const PressCoverage = async () => {
   return (
     <Card className="mt-12 p-4 dark:bg-zinc-900 dark:text-zinc-200">
       <Card.Header>
-        <h2 className="mb-3 text-2xl font-semibold leading-none tracking-tight">
+        <h2 className="mb-3 text-2xl leading-none font-semibold tracking-tight">
           📰 Press Coverage
         </h2>
       </Card.Header>
@@ -24,7 +24,7 @@ export const PressCoverage = async () => {
               {index !== 0 && <hr className="my-3" />}
               <div>
                 <section>
-                  <h3 className="text-xl font-semibold leading-none tracking-tight hover:underline">
+                  <h3 className="text-xl leading-none font-semibold tracking-tight hover:underline">
                     <a href={content}>{title}</a>
                   </h3>
                   <p className="min-h-6 text-sm font-light italic">
@@ -47,7 +47,7 @@ export const PressCoverage = async () => {
                     <p className="pl-2 text-sm">{description}</p>
                   </div>
                   <div className="relative">
-                    <div className="absolute bottom-2 right-2">
+                    <div className="absolute right-2 bottom-2">
                       <a
                         className="font-semibold hover:underline"
                         href={content}

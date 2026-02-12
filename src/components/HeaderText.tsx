@@ -26,7 +26,7 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
       href={link}
       role="option"
       aria-selected={isSelected}
-      className="aria-selected:text-blue-600 aria-selected:dark:text-blue-400"
+      className="aria-selected:text-blue-600 dark:aria-selected:text-blue-400"
     >
       {text}
     </Link>

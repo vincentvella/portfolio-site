@@ -10,7 +10,7 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
   return (
     <Card className="mt-12 p-4 dark:bg-zinc-900 dark:text-zinc-200">
       <Card.Header>
-        <h2 className="mb-3 text-2xl font-semibold leading-none tracking-tight">
+        <h2 className="mb-3 text-2xl leading-none font-semibold tracking-tight">
           💼 Professional TLDR;
         </h2>
       </Card.Header>
