@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Contact - methods",
+    "slug": "contact-methods",
+    "path": "outstatic/content/contact-methods",
+    "children": []
+  },
+  {
+    "title": "Education",
+    "slug": "education",
+    "path": "outstatic/content/education",
+    "children": []
+  },
+  {
+    "title": "Languages",
+    "slug": "languages",
+    "path": "outstatic/content/languages",
+    "children": []
+  },
+  {
+    "title": "Positions",
+    "slug": "positions",
+    "path": "outstatic/content/positions",
+    "children": []
+  },
+  {
+    "title": "Press - coverage",
+    "slug": "press-coverage",
+    "path": "outstatic/content/press-coverage",
+    "children": []
+  },
+  {
+    "title": "Projects",
+    "slug": "projects",
+    "path": "outstatic/content/projects",
+    "children": []
+  },
+  {
+    "title": "Resume - sections",
+    "slug": "resume-sections",
+    "path": "outstatic/content/resume-sections",
+    "children": []
+  }
+]
