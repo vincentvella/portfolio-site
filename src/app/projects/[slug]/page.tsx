@@ -18,7 +18,7 @@ export default async function Project(props: ProjectProps) {
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
-        <div className="max-w-screen-md px-4">
+        <div className="max-w-(--breakpoint-md) px-4">
           <h1 className="p-4 text-center text-2xl">{project.title}</h1>
           <h2 className="text-center text-lg">{project.description}</h2>
           <Image
@@ -30,7 +30,7 @@ export default async function Project(props: ProjectProps) {
             style={{ width: "auto" }}
             priority
           />
-          <section className="flex-grow py-6">
+          <section className="grow py-6">
             <p>{project.content}</p>
           </section>
           <section>

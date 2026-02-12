@@ -33,7 +33,7 @@ export default async function Index() {
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
-        <div className="max-w-screen-md px-4">
+        <div className="max-w-(--breakpoint-md) px-4">
           <div className="mt-16 flex w-full flex-col">
             <Image
               className="relative my-4 rounded-full"

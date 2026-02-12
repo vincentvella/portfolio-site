@@ -11,10 +11,10 @@ export default async function Projects() {
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
-        <div className="max-w-screen-md px-4">
+        <div className="max-w-(--breakpoint-md) px-4">
           {projects.map((project) => (
             <Link key={project.slug} href={`projects/${project.slug}`}>
-              <Card className="max-w-128 mt-12 transform overflow-hidden bg-white p-8 shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl dark:bg-zinc-900 dark:text-zinc-200">
+              <Card className="mt-12 max-w-lg transform overflow-hidden bg-white p-8 shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl dark:bg-zinc-900 dark:text-zinc-200">
                 <Card.Header>
                   <Card.Title>{project.title}</Card.Title>
                 </Card.Header>

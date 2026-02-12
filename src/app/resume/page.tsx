@@ -45,13 +45,13 @@ export default async function Resume() {
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
               <h1 className="text-3xl font-bold">{PERSONAL_INFO.name}</h1>
-              <p className="text-prettytext-sm max-w-md text-muted-foreground">
+              <p className="text-prettytext-sm text-muted-foreground max-w-md">
                 {PERSONAL_INFO.title}
               </p>
-              <p className="max-w-md items-center text-pretty text-xs text-muted-foreground print:hidden">
+              <p className="text-muted-foreground max-w-md items-center text-xs text-pretty print:hidden">
                 {PERSONAL_INFO.location}
               </p>
-              <p className="hidden max-w-md items-center text-pretty text-xs text-muted-foreground print:flex">
+              <p className="text-muted-foreground hidden max-w-md items-center text-xs text-pretty print:flex">
                 {PERSONAL_INFO.location} |{" "}
                 {unlink(
                   contactMethods.find(
@@ -59,7 +59,7 @@ export default async function Resume() {
                   )?.content,
                 )}
               </p>
-              <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
+              <div className="text-muted-foreground flex gap-x-1 pt-1 text-sm print:hidden">
                 {contactMethods.map((method) => (
                   <Button
                     name={method.title.toLowerCase()}
@@ -77,7 +77,7 @@ export default async function Resume() {
                 ))}
               </div>
             </div>
-            <div className="hidden flex-col gap-x-1 text-sm text-muted-foreground print:flex">
+            <div className="text-muted-foreground hidden flex-col gap-x-1 text-sm print:flex">
               {contactMethods
                 .reduce((acc, method) => {
                   const title = method.title.toLowerCase();
@@ -120,7 +120,7 @@ export default async function Resume() {
           <div className="grid grid-cols-3 md:divide-x">
             <div className="col-span-3 mr-2 md:col-span-2 print:col-span-2">
               <Section>
-                <p className="text-pretty pb-2 pt-2 text-sm text-muted-foreground">
+                <p className="text-muted-foreground pt-2 pb-2 text-sm text-pretty">
                   {resumeSections.about.content}
                 </p>
               </Section>
@@ -156,7 +156,7 @@ export default async function Resume() {
                       {positions.map((position) => (
                         <React.Fragment key={position.title}>
                           <div className="space-between flex items-center justify-between gap-x-2 font-semibold">
-                            <h4 className="inline-flex text-base font-semibold leading-none">
+                            <h4 className="inline-flex text-base leading-none font-semibold">
                               {position.title}
                             </h4>
                             <div className="hidden text-sm tabular-nums sm:block">
@@ -168,7 +168,7 @@ export default async function Resume() {
                             {position.startDate} -{" "}
                             {position.endDate || "Present"}
                           </div>
-                          <ul className="list-outside list-disc pl-4 text-xs text-muted-foreground">
+                          <ul className="text-muted-foreground list-outside list-disc pl-4 text-xs">
                             {position.content.map((item) => (
                               <li key={item}>{item.replace("- ", "")}</li>
                             ))}
@@ -186,7 +186,7 @@ export default async function Resume() {
                     <Card key={education.title}>
                       <Card.Header>
                         <div className="flex items-center text-base">
-                          <h3 className="font-semibold leading-none">
+                          <h3 className="leading-none font-semibold">
                             {education.title}
                           </h3>
                           <div className="hidden items-center tabular-nums sm:inline-flex">
@@ -195,7 +195,7 @@ export default async function Resume() {
                           </div>
                         </div>
                       </Card.Header>
-                      <Card.Content className="text-xs text-muted-foreground">
+                      <Card.Content className="text-muted-foreground text-xs">
                         <div className="text-base tabular-nums sm:hidden">
                           {education.location}
                         </div>
@@ -211,7 +211,7 @@ export default async function Resume() {
                   <Card key={projects.title}>
                     <Card.Header>
                       <div className="flex items-center gap-x-2 text-base">
-                        <h3 className="font-semibold leading-none">
+                        <h3 className="leading-none font-semibold">
                           <Link href={`projects/${projects.slug}`}>
                             {projects.title}
                           </Link>
@@ -221,11 +221,11 @@ export default async function Resume() {
                         </div>
                       </div>
                     </Card.Header>
-                    <Card.Content className="text-xs text-muted-foreground">
+                    <Card.Content className="text-muted-foreground text-xs">
                       <div className="text-sm sm:hidden">
                         {projects.description}
                       </div>
-                      <ul className="list-outside list-disc pl-4 text-xs text-muted-foreground">
+                      <ul className="text-muted-foreground list-outside list-disc pl-4 text-xs">
                         {projects.bullets.map((item, index) => (
                           <li key={index}>{item.replace("- ", "")}</li>
                         ))}
@@ -260,7 +260,7 @@ export default async function Resume() {
                     <h3 className="font-semibold">{level.title}</h3>
                     <ul className="grid grid-cols-2 space-y-1">
                       {level.content.map((language) => (
-                        <li key={language} className="pl-2 pr-2 text-xs">
+                        <li key={language} className="pr-2 pl-2 text-xs">
                           {language}
                         </li>
                       ))}
