@@ -27,7 +27,7 @@ module.exports = {
             value: "resume.vincevella.com",
           },
         ],
-        destination: "https://vincevella.com/resume",
+        destination: "https://www.vincevella.com/resume",
         permanent: true,
       },
       {
@@ -38,7 +38,7 @@ module.exports = {
             value: "resume.vincentvella.me",
           },
         ],
-        destination: "https://vincentvella.me/resume",
+        destination: "https://www.vincentvella.me/resume",
         permanent: true,
       },
     ];
