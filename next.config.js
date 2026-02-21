@@ -17,30 +17,30 @@ module.exports = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "resume.vincevella.com",
-          },
-        ],
-        destination: "https://vincevella.com/resume",
-        permanent: true,
-      },
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "resume.vincentvella.me",
-          },
-        ],
-        destination: "https://vincentvella.me/resume",
-        permanent: true,
-      },
-    ];
+  rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "resume.vincevella.com",
+            },
+          ],
+          destination: "/resume/:path*",
+        },
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "resume.vincentvella.me",
+            },
+          ],
+          destination: "/resume/:path*",
+        },
+      ],
+    };
   },
 };
