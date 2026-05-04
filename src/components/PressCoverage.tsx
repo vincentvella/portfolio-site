@@ -9,11 +9,16 @@ export const PressCoverage = async () => {
   const db = await load();
   const coverage = await new PressCoverageLoader(db).load();
   return (
-    <Card className="mt-12 p-4 dark:bg-zinc-900 dark:text-zinc-200">
+    <Card variant="neo" className="mt-12 p-6">
       <Card.Header>
-        <h2 className="mb-3 text-2xl leading-none font-semibold tracking-tight">
-          📰 Press Coverage
-        </h2>
+        <div className="mb-4 flex items-center gap-2">
+          <span className="bg-secondary neo-border inline-flex h-9 w-9 items-center justify-center rounded-md text-lg">
+            📰
+          </span>
+          <h2 className="font-display text-2xl leading-none font-bold tracking-tight">
+            Press Coverage
+          </h2>
+        </div>
       </Card.Header>
       <Card.Content>
         {coverage.map((item, index) => {
@@ -21,20 +26,22 @@ export const PressCoverage = async () => {
             item;
           return (
             <Fragment key={slug}>
-              {index !== 0 && <hr className="my-3" />}
+              {index !== 0 && (
+                <hr className="border-foreground my-4 border-t-2 border-dashed" />
+              )}
               <div>
                 <section>
-                  <h3 className="text-xl leading-none font-semibold tracking-tight hover:underline">
+                  <h3 className="font-display text-xl leading-tight font-bold tracking-tight hover:underline">
                     <a href={content}>{title}</a>
                   </h3>
-                  <p className="min-h-6 text-sm font-light italic">
+                  <p className="text-muted-foreground min-h-6 font-mono text-xs">
                     <FormattedDateString date={publishedAt} />
                   </p>
-                  <div className="my-4 flex flex-row pb-4">
+                  <div className="my-4 flex flex-row gap-3 pb-4">
                     <div className="relative h-24 min-w-32">
                       {!!coverImage && (
                         <Image
-                          className="relative pr-2"
+                          className="neo-border rounded-sm"
                           src={coverImage}
                           alt="Avatar Image"
                           sizes="6.667vw"
@@ -44,15 +51,15 @@ export const PressCoverage = async () => {
                         />
                       )}
                     </div>
-                    <p className="pl-2 text-sm">{description}</p>
+                    <p className="text-sm">{description}</p>
                   </div>
                   <div className="relative">
                     <div className="absolute right-2 bottom-2">
                       <a
-                        className="font-semibold hover:underline"
+                        className="font-semibold underline decoration-2 underline-offset-2 hover:decoration-primary"
                         href={content}
                       >
-                        {"Read more ->"}
+                        {"Read more →"}
                       </a>
                     </div>
                   </div>

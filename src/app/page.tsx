@@ -14,9 +14,12 @@ import { load } from "outstatic/server";
 function addEmailLink(description: string, email: ContactMethod | undefined) {
   const [preface, ending] = description.split("[email]");
   return (
-    <p className="text-lg font-medium">
+    <p className="text-lg font-medium leading-relaxed">
       {preface}
-      <a className="underline underline-offset-2" href={email?.content}>
+      <a
+        className="underline decoration-2 underline-offset-4 hover:decoration-primary"
+        href={email?.content}
+      >
         email
       </a>
       {ending}
@@ -32,29 +35,34 @@ export default async function Index() {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4 dark:bg-gray-800">
-        <div className="max-w-(--breakpoint-md) px-4">
-          <div className="mt-16 flex w-full flex-col">
-            <Image
-              className="relative my-4 rounded-full"
-              src="/images/avatar-1x.jpeg"
-              alt="Avatar Image"
-              width={100}
-              height={100}
-              priority
-            />
-            <h1 className="mb-4 text-4xl font-bold">Vincent Vella</h1>
-            <section className="mb-4">
+      <main className="flex min-h-screen flex-col items-center pb-4">
+        <div className="max-w-(--breakpoint-md) w-full px-4">
+          <div className="mt-12 flex w-full flex-col">
+            <div className="relative mb-6 inline-block w-fit">
+              <div className="bg-primary neo-border absolute inset-0 translate-x-2 translate-y-2 rounded-full" />
+              <Image
+                className="neo-border bg-card relative rounded-full"
+                src="/images/avatar-1x.jpeg"
+                alt="Avatar Image"
+                width={120}
+                height={120}
+                priority
+              />
+            </div>
+            <h1 className="font-display mb-4 text-5xl font-bold tracking-tight md:text-6xl">
+              Vincent Vella
+            </h1>
+            <section className="mb-6">
               {typeof resumeSections.about.description === "string" &&
                 addEmailLink(resumeSections.about.description, email)}
             </section>
-            <div className="flex gap-x-1 pt-1 text-sm">
+            <div className="flex flex-wrap gap-2 pt-1 text-sm">
               {contactMethods.map((method) => (
                 <Button
                   aria-label={method.title.toLowerCase()}
                   key={method.title.toLowerCase()}
-                  variant="ghost"
-                  size="sm"
+                  variant="outline"
+                  size="icon"
                   asChild
                 >
                   <a href={method.content}>

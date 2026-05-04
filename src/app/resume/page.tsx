@@ -40,7 +40,7 @@ export default async function Resume() {
 
   return (
     <Layout className="print:hidden" hideThemeSwitch>
-      <main className="relative mx-auto scroll-my-12 overflow-auto p-4 md:pt-6">
+      <main className="relative mx-auto scroll-my-12 overflow-auto p-4 md:pt-6 print:px-4 print:py-1">
         <Section className="mx-auto w-full max-w-3xl bg-white pb-8 print:pb-0">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
@@ -118,7 +118,7 @@ export default async function Resume() {
             </div>
           </div>
           <div className="grid grid-cols-3 md:divide-x">
-            <div className="col-span-3 mr-2 md:col-span-2 print:col-span-2">
+            <div className="col-span-3 md:col-span-2 md:pr-6 print:col-span-2 print:mr-2 print:pr-0">
               <Section>
                 <p className="text-muted-foreground pt-2 pb-2 text-sm text-pretty">
                   {resumeSections.about.content}
@@ -152,7 +152,7 @@ export default async function Resume() {
                         </h3>
                       </div>
                     </Card.Header>
-                    <Card.Content className="list-disk mt-2">
+                    <Card.Content className="list-disk mt-2 print:mt-1">
                       {positions.map((position) => (
                         <React.Fragment key={position.title}>
                           <div className="space-between flex items-center justify-between gap-x-2 font-semibold">
@@ -239,7 +239,7 @@ export default async function Resume() {
                 ))}
               </Section>
             </div>
-            <div className="col-span-3 md:col-span-1 md:pl-2 print:col-span-1">
+            <div className="col-span-3 md:col-span-1 md:pl-6 print:col-span-1 print:pl-2">
               <Section>
                 <h2 className="text-xl font-bold underline">Skills</h2>
                 <ul className="space-y-1 pl-2">

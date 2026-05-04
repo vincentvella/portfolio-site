@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
 import { Providers } from "./providers";
@@ -10,6 +10,12 @@ import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["500", "600", "700"],
 });
 
 const description =
@@ -116,7 +122,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning={true}
-        className={`${inter.variable} font-sans`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}
       >
         <Providers>{children}</Providers>
       </body>

@@ -12,17 +12,17 @@ const Footer: React.FC<FooterProps> = async ({ className }) => {
   const db = await load();
   const contactMethods = await new ContactMethodLoader(db).load();
   return (
-    <footer className={cn(className)}>
-      <div className="mx-auto p-4 text-end md:flex md:flex-row dark:bg-black dark:text-zinc-200">
+    <footer className={cn("border-t-2 border-foreground mt-16", className)}>
+      <div className="mx-auto p-4 text-end md:flex md:flex-row">
         <div className="flex flex-1" />
-        <div className="flex min-w-80 flex-1 justify-center gap-x-1 pt-1 text-sm">
+        <div className="flex min-w-80 flex-1 justify-center gap-x-2 pt-1 text-sm">
           {contactMethods.map((method) => (
             <Button
               name={method.title.toLowerCase()}
               key={method.title.toLowerCase()}
               aria-label={method.title.toLowerCase()}
-              variant="ghost"
-              size="sm"
+              variant="outline"
+              size="icon"
               asChild
             >
               <a href={method.content}>
@@ -37,7 +37,10 @@ const Footer: React.FC<FooterProps> = async ({ className }) => {
         <div className="flex flex-1 items-center justify-center md:justify-end">
           <h3 className="text-sm font-semibold">
             Powered by{" "}
-            <a className="underline" href="https://nextjs.org/">
+            <a
+              className="underline decoration-2 underline-offset-2 hover:decoration-primary"
+              href="https://nextjs.org/"
+            >
               Vellapps LLC
             </a>
           </h3>

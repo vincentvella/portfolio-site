@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+import { cn } from "@/lib/classname";
 
 export type HeaderLinkProps = {
   text: string;
@@ -26,7 +27,12 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
       href={link}
       role="option"
       aria-selected={isSelected}
-      className="aria-selected:text-blue-600 dark:aria-selected:text-blue-400"
+      className={cn(
+        "rounded-sm px-3 py-1.5 transition-colors",
+        isSelected
+          ? "bg-primary text-primary-foreground"
+          : "hover:bg-muted text-foreground",
+      )}
     >
       {text}
     </Link>

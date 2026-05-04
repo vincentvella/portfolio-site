@@ -8,22 +8,29 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
   const db = await load();
   const summaries = await new PositionLoader(db).loadPositionSummaries();
   return (
-    <Card className="mt-12 p-4 dark:bg-zinc-900 dark:text-zinc-200">
+    <Card variant="neo" className="mt-12 p-6">
       <Card.Header>
-        <h2 className="mb-3 text-2xl leading-none font-semibold tracking-tight">
-          💼 Professional TLDR;
-        </h2>
+        <div className="mb-4 flex items-center gap-2">
+          <span className="bg-accent neo-border inline-flex h-9 w-9 items-center justify-center rounded-md text-lg">
+            💼
+          </span>
+          <h2 className="font-display text-2xl leading-none font-bold tracking-tight">
+            Professional TLDR;
+          </h2>
+        </div>
       </Card.Header>
       <Card.Content>
         {summaries.map(([name, position], i) => {
           const { titles, endDate, startDate, avatar, brandColor } = position;
           return (
             <Fragment key={name}>
-              {i !== 0 && <hr className="my-3" />}
-              <div className="flex justify-between pt-2">
-                <div className="flex flex-row">
+              {i !== 0 && (
+                <hr className="border-foreground my-4 border-t-2 border-dashed" />
+              )}
+              <div className="flex justify-between gap-4 pt-2">
+                <div className="flex flex-row gap-3">
                   <div
-                    className="relative mr-2 h-16 w-16 min-w-16 rounded-full"
+                    className="neo-border relative h-16 w-16 min-w-16 rounded-md"
                     style={{ backgroundColor: brandColor }}
                   >
                     <Image
@@ -37,17 +44,19 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">{name}</h3>
-                    <div className="md:hidden">
-                      {startDate} - {endDate}
+                    <h3 className="font-display text-xl font-bold tracking-tight">
+                      {name}
+                    </h3>
+                    <div className="text-muted-foreground text-sm md:hidden">
+                      {startDate} → {endDate}
                     </div>
-                    <p className="whitespace-break-spaces">
-                      {titles.join(" -> ")}
+                    <p className="whitespace-break-spaces text-sm">
+                      {titles.join(" → ")}
                     </p>
                   </div>
                 </div>
-                <div className="hidden md:block">
-                  {startDate} - {endDate}
+                <div className="text-muted-foreground hidden font-mono text-sm tabular-nums md:block">
+                  {startDate} → {endDate}
                 </div>
               </div>
             </Fragment>

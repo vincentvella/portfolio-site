@@ -18,10 +18,6 @@ companyWebsite: 'https://www.holman.com'
 publishedAt: '2024-03-04T02:57:59.719Z'
 ---
 
-- Developed a tracking dashboard capable of receiving thousands of telemetry updates per second and updating a Google Map with precise locations
+- Built a real-time tracking dashboard ingesting thousands of telemetry updates per second on a live Google Map
 
-- First experience running production React and React Native apps
-
-- Interfaced with and assisted on various backend projects using Rails
-
-- Invented a driving simulator using Arduino and Lua
+- First production experience with React, React Native, and Rails backends

@@ -15,6 +15,7 @@
 
 @theme {
   --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -32,8 +33,7 @@
   --color-destructive-foreground: hsl(var(--destructive-foreground));
 
   --color-muted: hsl(var(--muted));
-  --color-muted-foreground: rgb(51 65 85);
-  --color-muted-background: hsl(var(--muted-foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
@@ -44,102 +44,154 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
+  --color-brand-yellow: hsl(46 100% 62%);
+  --color-brand-coral: hsl(0 100% 71%);
+  --color-brand-teal: hsl(172 53% 55%);
+  --color-brand-violet: hsl(258 90% 75%);
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --shadow-neo-sm: 2px 2px 0 0 hsl(var(--border));
+  --shadow-neo: 4px 4px 0 0 hsl(var(--border));
+  --shadow-neo-lg: 6px 6px 0 0 hsl(var(--border));
+  --shadow-neo-xl: 8px 8px 0 0 hsl(var(--border));
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: hsl(var(--border));
   }
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    --background: 48 33% 97%;
+    --foreground: 0 0% 7%;
 
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 46 100% 62%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
+    --secondary: 0 100% 71%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 48 20% 92%;
+    --muted-foreground: 0 0% 32%;
 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
+    --accent: 172 53% 55%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+    --border: 0 0% 7%;
+    --input: 0 0% 7%;
+    --ring: 46 100% 62%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
+    --background: 0 0% 7%;
+    --foreground: 48 33% 97%;
 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 48 33% 97%;
 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 48 33% 97%;
 
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+    --primary: 46 100% 62%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 0 100% 71%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 72%;
 
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 172 53% 55%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
+    --border: 48 33% 97%;
+    --input: 48 33% 97%;
+    --ring: 46 100% 62%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
+    background-image:
+      linear-gradient(
+        to right,
+        hsl(var(--border) / 0.06) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(var(--border) / 0.06) 1px,
+        transparent 1px
+      );
+    background-size: 32px 32px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), var(--font-inter), sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility neo-border {
+  @apply border-2 border-foreground;
+}
+
+@utility neo-shadow {
+  box-shadow: var(--shadow-neo);
+}
+
+@utility neo-shadow-sm {
+  box-shadow: var(--shadow-neo-sm);
+}
+
+@utility neo-shadow-lg {
+  box-shadow: var(--shadow-neo-lg);
+}
+
+@utility neo-press {
+  @apply transition-[transform,box-shadow] duration-100 ease-out;
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: var(--shadow-neo-lg);
+  }
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-neo-sm);
   }
 }
 
 .print-force-new-page {
   page-break-before: always;
+}
+
+@media print {
+  body {
+    background-image: none !important;
+    background-color: #ffffff !important;
+  }
 }

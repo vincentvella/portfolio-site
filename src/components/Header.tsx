@@ -1,4 +1,4 @@
-import { HeaderLinkProps, HeaderText } from "./HeaderText";
+import { HeaderText } from "./HeaderText";
 import ThemeSwitch from "./ThemeSwitch";
 import { cn } from "@/lib/classname";
 
@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <nav
       className={cn(
-        "layout flex items-center justify-center p-4 dark:bg-zinc-900",
+        "layout flex items-center justify-center p-4 md:p-6",
         className,
       )}
     >
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({
           <div
             role="listbox"
             aria-label="header navigation links"
-            className="flex space-x-3 rounded-full bg-white/90 p-2 px-4 align-middle text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-black dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+            className="neo-border neo-shadow bg-card flex space-x-1 rounded-md p-1 align-middle text-sm font-semibold"
           >
             <HeaderText text="Home" link="/" />
             <HeaderText text="Projects" link="/projects" />
