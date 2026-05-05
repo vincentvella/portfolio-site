@@ -92,7 +92,7 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
                     className="neo-border absolute -left-[2.1rem] top-1.5 h-4 w-4 rounded-sm"
                     style={{ backgroundColor: brandColor }}
                   />
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4">
                     <div className="flex flex-row gap-3">
                       <div
                         data-company-logo
