@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'about'
-description: 'Mobile and web development, woodworking, soldering tiny electronics back together, and an unreasonable amount of opinions about mechanical keyboards. All the same instinct. Drop me an [email] if you want to talk shop.'
+description: 'I make things. Mobile apps, web apps, hacked-together electronics, mechanical keyboards I''ve sunk too many hours into. Drop me an [email] if you''ve got an idea worth building.'
 coverImage: ''
 publishedAt: '2024-03-04T03:33:43.146Z'
 ---
