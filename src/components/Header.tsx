@@ -15,8 +15,9 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <nav
+      aria-label="Primary"
       className={cn(
-        "layout grid grid-cols-[1fr_auto_1fr] items-center gap-3 p-4 md:p-6",
+        "layout grid grid-cols-[auto_1fr_auto] items-center gap-2 p-3 sm:gap-3 sm:p-4 md:p-6",
         className,
       )}
     >
@@ -28,20 +29,18 @@ const Header: React.FC<HeaderProps> = ({
         VV
       </Link>
 
-      <div
-        aria-label="Primary navigation"
-        className="flex items-center gap-2"
-      >
-        <HeaderText text="Home" link="/" />
+      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
         <HeaderText text="Projects" link="/projects" />
         <HeaderText text="Bag" link="/bag" />
         <HeaderText text="Resume" link="/resume" />
       </div>
 
-      <div className="flex h-10 items-center justify-end gap-2 justify-self-end">
+      <div className="flex items-center justify-end gap-2 justify-self-end">
         {hideThemeSwitch ? null : (
           <>
-            <SketchModeToggle />
+            <span className="hidden sm:inline-flex">
+              <SketchModeToggle />
+            </span>
             <ThemeSwitch />
           </>
         )}

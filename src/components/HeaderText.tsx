@@ -24,7 +24,7 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
       href={link}
       aria-current={isSelected ? "page" : undefined}
       className={cn(
-        "neo-border neo-press focus-visible:ring-ring relative inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+        "neo-border neo-press focus-visible:ring-ring relative inline-flex items-center justify-center rounded-md px-2 py-1 text-xs font-bold uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 sm:px-3 sm:py-1.5 sm:text-sm",
         isSelected
           ? "bg-primary text-primary-foreground neo-shadow"
           : "bg-card text-foreground hover:bg-muted",

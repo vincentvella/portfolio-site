@@ -64,17 +64,16 @@ export const PressCoverage = async () => {
                     aria-hidden
                     className={`push-pin absolute -top-2 left-1/2 z-10 h-3.5 w-3.5 -translate-x-1/2 rounded-full ${pinColor}`}
                   />
-                  <div className="flex flex-row gap-4">
+                  <div className="flex flex-col gap-4 sm:flex-row">
                     {coverImage ? (
-                      <div className="relative h-24 w-32 min-w-32 shrink-0">
+                      <div className="relative h-40 w-full sm:h-24 sm:w-32 sm:min-w-32 sm:shrink-0">
                         <Image
                           className="neo-border rounded-sm"
                           src={coverImage}
-                          alt=""
-                          sizes="128px"
+                          alt={`${title} preview`}
+                          sizes="(min-width: 640px) 128px, 100vw"
                           fill
                           style={{ objectFit: "cover" }}
-                          priority
                         />
                       </div>
                     ) : null}
