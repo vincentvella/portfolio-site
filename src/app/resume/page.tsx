@@ -223,13 +223,13 @@ export default async function Resume() {
                 {projects.map((projects) => (
                   <Card key={projects.title}>
                     <Card.Header>
-                      <div className="flex items-center gap-x-2 text-base">
-                        <h3 className="leading-none font-semibold">
+                      <div className="flex min-w-0 items-center gap-x-2 text-base">
+                        <h3 className="leading-none font-semibold whitespace-nowrap shrink-0">
                           <Link href={`projects/${projects.slug}`}>
                             {projects.title}
                           </Link>
                         </h3>
-                        <div className="hidden text-sm sm:block">
+                        <div className="hidden min-w-0 flex-1 truncate text-sm sm:block">
                           -&nbsp;{projects.description}
                         </div>
                       </div>
