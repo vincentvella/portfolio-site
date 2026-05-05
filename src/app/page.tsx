@@ -60,7 +60,7 @@ export default async function Index() {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4">
+      <main className="flex min-h-screen flex-col items-center">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div className="mt-12 flex w-full flex-col">
             <div

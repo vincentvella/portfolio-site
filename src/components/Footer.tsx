@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = async ({ className }) => {
   const db = await load();
   const contactMethods = await new ContactMethodLoader(db).load();
   return (
-    <footer className={cn("border-t-2 border-foreground mt-16", className)}>
+    <footer className={cn("border-t-2 border-foreground mt-6", className)}>
       <div className="mx-auto p-4 text-end md:flex md:flex-row">
         <div className="flex flex-1" />
         <div className="flex min-w-80 flex-1 justify-center gap-x-2 pt-1 text-sm">
