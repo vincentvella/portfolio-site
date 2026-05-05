@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'briqkit'
-description: 'Modular small-business app platform with pluggable integrations'
+description: 'Pluggable app platform for small businesses'
 coverImage: '/images/frame-1--3--a2nz-Q4MD.png'
 stack: [{"label":"React","value":"react"},{"label":"React Native","value":"reactNative"},{"label":"GraphQL","value":"graphQl"},{"label":"Typescript","value":"typescript"},{"label":"NodeJS","value":"nodeJs"},{"label":"Postgres","value":"postgres"},{"label":"NextJS","value":"nextJs"},{"label":"NestJS","value":"nestJs"}]
 bullets: 'Gave non-technical small businesses a branded mobile + web presence without custom development\n\n

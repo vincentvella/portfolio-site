@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'caliburr'
-description: 'Crowdsourced coffee dial-in app — grinder + bean + brew method recipe database'
+description: 'Crowdsourced coffee dial-in recipes'
 coverImage: '/images/caliburr-cover.png'
 stack: [{"label":"Expo","value":"expo"},{"label":"React Native","value":"reactNative"},{"label":"NativeWind","value":"nativewind"},{"label":"Supabase","value":"supabase"},{"label":"Postgres","value":"postgres"},{"label":"TanStack Form","value":"tanstackForm"},{"label":"RevenueCat","value":"revenueCat"},{"label":"Typescript","value":"typescript"}]
 bullets: 'Single Expo Router codebase ships to iOS, Android, and the web at caliburr.coffee\n\n

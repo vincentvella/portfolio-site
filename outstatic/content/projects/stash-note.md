@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'stash-note'
-description: 'Local-first cross-platform rich-text note app with nested notes and inline Excalidraw'
+description: 'Cross-platform rich-text notes, local-first'
 coverImage: '/images/stash-note-cover.png'
 stack: [{"label":"Expo","value":"expo"},{"label":"React Native","value":"reactNative"},{"label":"NativeWind","value":"nativewind"},{"label":"Supabase","value":"supabase"},{"label":"Typescript","value":"typescript"}]
 bullets: 'Lexical-powered rich-text editor reused across web and native via Expo''s web component bridge\n\n

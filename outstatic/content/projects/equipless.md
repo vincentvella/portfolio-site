@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'equipless'
-description: 'Habit-building workout tracker built on Expo server components'
+description: 'Habit-building workout tracker'
 stack: [{"label":"Expo","value":"expo"},{"label":"React Native","value":"reactNative"},{"label":"React Server Components","value":"rsc"},{"label":"Typescript","value":"typescript"}]
 bullets: 'Workout tracker focused on habit formation rather than program-of-the-month churn\n\n
 Built on Expo server components — one of the earliest real apps using the RSC pipeline in React Native\n\n

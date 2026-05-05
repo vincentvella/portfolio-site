@@ -5,7 +5,7 @@ author:
   name: 'Vincent Vella'
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'pod-haven'
-description: 'Minimal local-first podcast listener'
+description: 'Local-first podcast listener'
 stack: [{"label":"Expo","value":"expo"},{"label":"React Native","value":"reactNative"},{"label":"NativeWind","value":"nativewind"},{"label":"SQLite","value":"sqlite"},{"label":"Drizzle ORM","value":"drizzle"},{"label":"Typescript","value":"typescript"}]
 bullets: 'Local-first by design — feeds, episodes, and play state live in on-device SQLite via Drizzle, no account required\n\n
 Built with Expo + NativeWind for a single React Native codebase across iOS and Android\n\n
