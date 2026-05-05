@@ -1,6 +1,7 @@
 import { Badge } from "@/components/Badge";
 import Card from "@/components/Card";
 import Layout from "@/components/Layout";
+import { StampedHeader } from "@/components/StampedHeader";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,14 +16,11 @@ export default async function Projects() {
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
-          <div className="mt-8 mb-8">
-            <h1 className="font-display text-5xl font-bold tracking-tight md:text-6xl">
-              Projects
-            </h1>
-            <p className="text-muted-foreground mt-2 text-lg">
-              Things I&apos;ve built, broken, and shipped.
-            </p>
-          </div>
+          <StampedHeader
+            stamp="Projects"
+            title="Projects"
+            subtitle="Things I've built, broken, and shipped."
+          />
           <div className="grid gap-8">
             {projects.map((project, idx) => (
               <Link

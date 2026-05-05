@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
+import { CursorShadowTracker } from "@/components/CursorShadowTracker";
 import { Providers } from "./providers";
 import { load } from "outstatic/server";
 import { LanguageLoader } from "@/lib/data-loaders/language-loader";
@@ -124,6 +125,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}
       >
+        <CursorShadowTracker />
         <Providers>{children}</Providers>
       </body>
     </html>

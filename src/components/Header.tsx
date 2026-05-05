@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HeaderText } from "./HeaderText";
 import ThemeSwitch from "./ThemeSwitch";
 import { cn } from "@/lib/classname";
@@ -14,30 +15,30 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <nav
       className={cn(
-        "layout flex items-center justify-center p-4 md:p-6",
+        "layout flex items-center justify-between gap-3 p-4 md:p-6",
         className,
       )}
     >
-      <div className="flex-1" />
-      <div className="flex-1">
-        <div className="flex justify-center">
-          <div
-            role="listbox"
-            aria-label="header navigation links"
-            className="neo-border neo-shadow bg-card flex space-x-1 rounded-md p-1 align-middle text-sm font-semibold"
-          >
-            <HeaderText text="Home" link="/" />
-            <HeaderText text="Projects" link="/projects" />
-            <HeaderText text="Resume" link="/resume" />
-          </div>
-        </div>
+      <Link
+        href="/"
+        aria-label="Home"
+        className="neo-border neo-shadow neo-press bg-secondary text-secondary-foreground inline-flex items-center justify-center rounded-md px-2.5 py-1.5 font-display text-base font-bold leading-none tracking-tight"
+      >
+        VV
+      </Link>
+
+      <div
+        role="listbox"
+        aria-label="header navigation links"
+        className="flex items-center gap-2"
+      >
+        <HeaderText text="Home" link="/" />
+        <HeaderText text="Projects" link="/projects" />
+        <HeaderText text="Resume" link="/resume" />
       </div>
-      <div className="flex-1">
-        {hideThemeSwitch ? null : (
-          <div className="flex justify-end">
-            <ThemeSwitch />
-          </div>
-        )}
+
+      <div className="flex min-w-[2.5rem] justify-end">
+        {hideThemeSwitch ? null : <ThemeSwitch />}
       </div>
     </nav>
   );

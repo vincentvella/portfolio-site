@@ -15,9 +15,7 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
   const isSelected = useMemo(() => {
     const segments = pathname.split("/").filter(Boolean);
     const linkSegments = link.split("/").filter(Boolean);
-    if (segments.length === 0 && linkSegments.length === 0) {
-      return true;
-    }
+    if (segments.length === 0 && linkSegments.length === 0) return true;
     return segments.some((segment) => linkSegments.includes(segment));
   }, [pathname, link]);
 
@@ -28,10 +26,10 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
       role="option"
       aria-selected={isSelected}
       className={cn(
-        "rounded-sm px-3 py-1.5 transition-colors",
+        "neo-border neo-press relative inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide",
         isSelected
-          ? "bg-primary text-primary-foreground"
-          : "hover:bg-muted text-foreground",
+          ? "bg-primary text-primary-foreground neo-shadow"
+          : "bg-card text-foreground hover:bg-muted",
       )}
     >
       {text}

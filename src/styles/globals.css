@@ -53,10 +53,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --shadow-neo-sm: 2px 2px 0 0 hsl(var(--border));
-  --shadow-neo: 4px 4px 0 0 hsl(var(--border));
-  --shadow-neo-lg: 6px 6px 0 0 hsl(var(--border));
-  --shadow-neo-xl: 8px 8px 0 0 hsl(var(--border));
+  --shadow-dx: 4px;
+  --shadow-dy: 4px;
+  --shadow-neo-sm: calc(var(--shadow-dx) * 0.5) calc(var(--shadow-dy) * 0.5) 0 0 hsl(var(--border));
+  --shadow-neo: var(--shadow-dx) var(--shadow-dy) 0 0 hsl(var(--border));
+  --shadow-neo-lg: calc(var(--shadow-dx) * 1.5) calc(var(--shadow-dy) * 1.5) 0 0 hsl(var(--border));
+  --shadow-neo-xl: calc(var(--shadow-dx) * 2) calc(var(--shadow-dy) * 2) 0 0 hsl(var(--border));
 }
 
 @layer base {
@@ -174,14 +176,15 @@
 }
 
 @utility neo-press {
-  @apply transition-[transform,box-shadow] duration-100 ease-out;
+  @apply transition-[transform,box-shadow] duration-75 ease-out;
   &:hover {
-    transform: translate(-1px, -1px);
+    transform: translate(calc(var(--shadow-dx) * -0.25), calc(var(--shadow-dy) * -0.25));
     box-shadow: var(--shadow-neo-lg);
   }
   &:active {
-    transform: translate(2px, 2px);
-    box-shadow: var(--shadow-neo-sm);
+    transform: translate(var(--shadow-dx), var(--shadow-dy));
+    box-shadow: 0 0 0 0 hsl(var(--border));
+    transition-duration: 50ms;
   }
 }
 
