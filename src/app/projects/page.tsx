@@ -23,10 +23,38 @@ const ACCENT_BG: Record<AccentColor, string> = {
   "brand-violet": "bg-brand-violet",
 };
 
-function pickAccent(slug: string): AccentColor {
+const TAPE_RIPS = [
+  "tape-rip-1",
+  "tape-rip-2",
+  "tape-rip-3",
+  "tape-rip-4",
+  "tape-rip-5",
+  "tape-rip-6",
+];
+
+const TAPE_WIDTHS = ["w-36", "w-40", "w-44", "w-48"];
+
+const TAPE_ROTATIONS = [
+  "-rotate-12",
+  "-rotate-6",
+  "-rotate-3",
+  "rotate-3",
+  "rotate-6",
+  "rotate-12",
+];
+
+const TAPE_X_OFFSETS = ["-translate-x-6", "-translate-x-2", "translate-x-2", "translate-x-6"];
+
+const CARD_TILTS = ["-2deg", "-1deg", "1deg", "2deg"];
+
+function hash(slug: string): number {
   let h = 0;
   for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
-  return FALLBACK_ACCENTS[Math.abs(h) % FALLBACK_ACCENTS.length];
+  return Math.abs(h);
+}
+
+function pickAccent(slug: string): AccentColor {
+  return FALLBACK_ACCENTS[hash(slug) % FALLBACK_ACCENTS.length];
 }
 
 export default async function Projects() {
@@ -42,18 +70,16 @@ export default async function Projects() {
             subtitle="Things I've built, broken, and shipped."
           />
           <div className="grid gap-x-10 gap-y-14 sm:grid-cols-2">
-            {projects.map((project, idx) => {
+            {projects.map((project) => {
               const accent = project.accentColor ?? pickAccent(project.slug);
-              const tilt =
-                idx % 4 === 0
-                  ? "-1.5deg"
-                  : idx % 4 === 1
-                    ? "1.5deg"
-                    : idx % 4 === 2
-                      ? "1deg"
-                      : "-1deg";
-              const tapeRotation = idx % 2 === 0 ? "-rotate-6" : "rotate-6";
-              const tapeRip = idx % 2 === 0 ? "tape-rip-a" : "tape-rip-b";
+              const seed = hash(project.slug);
+              const tilt = CARD_TILTS[seed % CARD_TILTS.length];
+              const tapeRip = TAPE_RIPS[(seed >> 2) % TAPE_RIPS.length];
+              const tapeWidth = TAPE_WIDTHS[(seed >> 4) % TAPE_WIDTHS.length];
+              const tapeRotation =
+                TAPE_ROTATIONS[(seed >> 6) % TAPE_ROTATIONS.length];
+              const tapeXOffset =
+                TAPE_X_OFFSETS[(seed >> 8) % TAPE_X_OFFSETS.length];
               return (
                 <Link
                   key={project.slug}
@@ -64,7 +90,7 @@ export default async function Projects() {
                   <article className="neo-border neo-shadow-lg neo-press bg-card relative rounded-sm p-3 pb-6 transition-transform duration-200 ease-out group-hover:[rotate:0deg]">
                     <span
                       aria-hidden
-                      className={`${ACCENT_BG[accent]} ${tapeRip} absolute -top-4 left-1/2 z-10 h-9 w-40 -translate-x-1/2 ${tapeRotation}`}
+                      className={`${ACCENT_BG[accent]} ${tapeRip} ${tapeWidth} ${tapeRotation} ${tapeXOffset} absolute -top-4 left-1/2 z-10 h-9`}
                     />
                     <div className="bg-muted relative aspect-[4/3] w-full overflow-hidden">
                       {project.coverImage ? (
