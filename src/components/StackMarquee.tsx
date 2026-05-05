@@ -47,7 +47,7 @@ export function StackMarquee({ tags, className }: StackMarqueeProps) {
       aria-label="Tech stack — scroll horizontally to explore"
       tabIndex={0}
       className={cn(
-        "group/marquee neo-border bg-card relative w-full overflow-hidden overscroll-x-contain py-3 outline-none focus-visible:ring-2 focus-visible:ring-foreground hover:overflow-x-auto focus-within:overflow-x-auto",
+        "group/marquee no-scrollbar neo-border bg-card relative w-full overflow-hidden overscroll-x-contain py-3 outline-none focus-visible:ring-2 focus-visible:ring-foreground hover:overflow-x-auto focus-within:overflow-x-auto",
         className,
       )}
     >

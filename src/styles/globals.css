@@ -193,6 +193,14 @@
   to { transform: translateX(var(--marquee-distance, -50%)); }
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @keyframes avatar-pulse {
   0%, 100% { transform: translate(8px, 8px); }
   50% { transform: translate(11px, 11px); }
