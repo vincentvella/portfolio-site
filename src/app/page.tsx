@@ -11,8 +11,17 @@ import { CurrentlyStamp } from "@/components/CurrentlyStamp";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 import { PressCoverage } from "@/components/PressCoverage";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
+import { RoleCycler } from "@/components/RoleCycler";
 import { StackMarquee } from "@/components/StackMarquee";
 import { load } from "outstatic/server";
+
+const ROLES = [
+  "Senior Software Engineer",
+  "Mobile App Developer",
+  "Indie Maker",
+  "Coffee Tinkerer",
+  "Terminal Hacker",
+];
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
   const [preface, ending] = description.split("[email]");
@@ -55,7 +64,7 @@ export default async function Index() {
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div className="mt-12 flex w-full flex-col">
             <div className="relative mb-6 inline-block w-fit">
-              <div className="bg-primary neo-border absolute inset-0 translate-x-2 translate-y-2 rounded-full" />
+              <div className="bg-primary neo-border avatar-shadow absolute inset-0 rounded-full" />
               <Image
                 className="neo-border bg-card relative rounded-full"
                 src="/images/avatar-1x.jpeg"
@@ -65,9 +74,10 @@ export default async function Index() {
                 priority
               />
             </div>
-            <h1 className="font-display mb-4 text-5xl font-bold tracking-tight md:text-6xl">
+            <h1 className="font-display mb-2 text-5xl font-bold tracking-tight md:text-6xl">
               Vincent Vella
             </h1>
+            <RoleCycler roles={ROLES} className="text-muted-foreground mb-4" />
             <section className="mb-6">
               {typeof resumeSections.about.description === "string" &&
                 addEmailLink(resumeSections.about.description, email)}
