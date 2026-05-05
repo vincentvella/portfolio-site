@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeaderText } from "./HeaderText";
+import { SketchModeToggle } from "./SketchModeToggle";
 import ThemeSwitch from "./ThemeSwitch";
 import { cn } from "@/lib/classname";
 
@@ -37,8 +38,13 @@ const Header: React.FC<HeaderProps> = ({
         <HeaderText text="Resume" link="/resume" />
       </div>
 
-      <div className="flex min-w-[2.5rem] justify-end">
-        {hideThemeSwitch ? null : <ThemeSwitch />}
+      <div className="flex min-w-[2.5rem] items-center justify-end gap-2">
+        {hideThemeSwitch ? null : (
+          <>
+            <SketchModeToggle />
+            <ThemeSwitch />
+          </>
+        )}
       </div>
     </nav>
   );

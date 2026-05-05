@@ -62,7 +62,11 @@ export default async function Projects() {
             title="Projects"
             subtitle="Things I've built, broken, and shipped."
           />
-          <div className="grid gap-x-10 gap-y-14 sm:grid-cols-2">
+          <div
+            className="grid gap-x-10 gap-y-14 sm:grid-cols-2"
+            data-sketch-label="projects grid"
+            data-sketch-label-dir="below"
+          >
             {projects.map((project) => {
               const accent = project.accentColor ?? pickAccent(project.slug);
               const seed = hash(project.slug);

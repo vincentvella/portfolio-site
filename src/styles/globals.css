@@ -274,6 +274,100 @@
   }
 }
 
+/* ─────────────────────────── Sketch mode ─────────────────────────── */
+html.sketch {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 12%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 12%;
+  --secondary: 0 0% 100%;
+  --secondary-foreground: 0 0% 12%;
+  --accent: 0 0% 100%;
+  --accent-foreground: 0 0% 12%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 12%;
+  --border: 0 0% 12%;
+  --shadow-dx: 0px;
+  --shadow-dy: 0px;
+}
+
+html.sketch body {
+  background-image:
+    linear-gradient(to right, hsl(var(--border) / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html.sketch h1,
+html.sketch h2,
+html.sketch h3 {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0;
+}
+
+html.sketch * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html.sketch [class*="neo-border"],
+html.sketch .neo-shadow,
+html.sketch .neo-shadow-sm,
+html.sketch .neo-shadow-lg {
+  border-style: dashed !important;
+  border-width: 2px !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+html.sketch img {
+  filter: grayscale(1) contrast(0.9) opacity(0.85);
+}
+
+html.sketch [data-sketch-label] {
+  position: relative;
+}
+
+html.sketch [data-sketch-label]::after {
+  content: "← " attr(data-sketch-label);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  border: 1px dashed hsl(var(--border));
+  padding: 2px 6px;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 50;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  rotate: 0deg !important;
+}
+
+html.sketch [data-sketch-label][data-sketch-label-dir="below"]::after {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  content: "↑ " attr(data-sketch-label);
+}
+
+/* keep cursor-tracking off in sketch mode */
+html.sketch * {
+  --shadow-dx: 0px;
+  --shadow-dy: 0px;
+}
+
 .print-force-new-page {
   page-break-before: always;
 }

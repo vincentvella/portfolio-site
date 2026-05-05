@@ -63,7 +63,10 @@ export default async function Index() {
       <main className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div className="mt-12 flex w-full flex-col">
-            <div className="relative mb-6 inline-block w-fit">
+            <div
+              className="relative mb-6 inline-block w-fit"
+              data-sketch-label="hero photo"
+            >
               <div className="bg-primary neo-border avatar-shadow absolute inset-0 rounded-full" />
               <Image
                 className="neo-border bg-card relative rounded-full"
@@ -74,10 +77,16 @@ export default async function Index() {
                 priority
               />
             </div>
-            <h1 className="font-display mb-2 text-5xl font-bold tracking-tight md:text-6xl">
+            <h1
+              className="font-display mb-2 text-5xl font-bold tracking-tight md:text-6xl"
+              data-sketch-label="name (h1)"
+            >
               Vincent Vella
             </h1>
-            <RoleCycler roles={ROLES} className="text-muted-foreground mb-4" />
+            <RoleCycler
+              roles={ROLES}
+              className="text-muted-foreground mb-4"
+            />
             <section className="mb-6">
               {typeof resumeSections.about.description === "string" &&
                 addEmailLink(resumeSections.about.description, email)}
@@ -101,7 +110,7 @@ export default async function Index() {
               ))}
             </div>
             {currentlyText ? (
-              <div className="mt-8">
+              <div className="mt-8" data-sketch-label="status sticker">
                 <CurrentlyStamp text={currentlyText} />
               </div>
             ) : null}
@@ -110,7 +119,11 @@ export default async function Index() {
           <PressCoverage />
         </div>
         {stackTags.length > 0 ? (
-          <div className="mt-12 w-full">
+          <div
+            className="mt-12 w-full"
+            data-sketch-label="tech marquee"
+            data-sketch-label-dir="below"
+          >
             <StackMarquee tags={stackTags} />
           </div>
         ) : null}
