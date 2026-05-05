@@ -19,13 +19,15 @@ export function StackMarquee({ tags, className }: StackMarqueeProps) {
   const loop = [...tags, ...tags];
   return (
     <div
-      aria-hidden
+      role="region"
+      aria-label="Tech stack — scroll horizontally to explore"
+      tabIndex={0}
       className={cn(
-        "neo-border bg-card relative w-full overflow-hidden py-3",
+        "group/marquee neo-border bg-card relative w-full overflow-hidden overscroll-x-contain py-3 outline-none focus-visible:ring-2 focus-visible:ring-foreground hover:overflow-x-auto focus-within:overflow-x-auto",
         className,
       )}
     >
-      <div className="flex w-max animate-[marquee_45s_linear_infinite] gap-3 hover:[animation-play-state:paused]">
+      <div className="flex w-max animate-[marquee_45s_linear_infinite] gap-3 group-hover/marquee:[animation-play-state:paused] group-focus-within/marquee:[animation-play-state:paused]">
         {loop.map((tag, idx) => (
           <span
             key={`${tag.value}-${idx}`}
