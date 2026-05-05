@@ -188,6 +188,17 @@
   }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[marquee_45s_linear_infinite\] {
+    animation: none !important;
+  }
+}
+
 .print-force-new-page {
   page-break-before: always;
 }

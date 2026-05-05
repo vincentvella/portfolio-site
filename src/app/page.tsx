@@ -10,6 +10,8 @@ import { ContactMethodIcon } from "@/components/ContactMethodIcon";
 import { CurrentlyStamp } from "@/components/CurrentlyStamp";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 import { PressCoverage } from "@/components/PressCoverage";
+import { ProjectLoader } from "@/lib/data-loaders/project-loader";
+import { StackMarquee } from "@/components/StackMarquee";
 import { load } from "outstatic/server";
 
 function addEmailLink(description: string, email: ContactMethod | undefined) {
@@ -29,7 +31,7 @@ function addEmailLink(description: string, email: ContactMethod | undefined) {
 }
 
 export default async function Index() {
-  const { resumeSections, contactMethods } = await getData();
+  const { resumeSections, contactMethods, projects } = await getData();
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
@@ -40,6 +42,12 @@ export default async function Index() {
       : Array.isArray(currently)
         ? currently.join(" ")
         : null;
+
+  const stackTags = Array.from(
+    new Map(
+      projects.flatMap((p) => p.stack).map((tag) => [tag.value, tag]),
+    ).values(),
+  );
 
   return (
     <Layout>
@@ -91,6 +99,11 @@ export default async function Index() {
           <ProfessionalTLDR />
           <PressCoverage />
         </div>
+        {stackTags.length > 0 ? (
+          <div className="mt-12 w-full">
+            <StackMarquee tags={stackTags} />
+          </div>
+        ) : null}
       </main>
     </Layout>
   );
@@ -102,12 +115,14 @@ async function getData() {
   const results = await Promise.all([
     await new ContactMethodLoader(db).load(),
     await new ResumeSectionLoader(db).stringify("about").stringify("currently").load(),
+    await new ProjectLoader(db).load(),
   ]);
 
-  const [contactMethods, resumeSections] = results;
+  const [contactMethods, resumeSections, projects] = results;
 
   return {
     contactMethods,
     resumeSections,
+    projects,
   };
 }
