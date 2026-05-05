@@ -121,18 +121,18 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
                           ) : null}
                         </div>
                         <p className="text-muted-foreground mt-0.5 text-sm font-mono tabular-nums md:hidden">
-                          {formatDate(startDate)} → {formatDate(endDate)}
+                          {formatDate(endDate)} ← {formatDate(startDate)}
                         </p>
                         <p className="mt-1 whitespace-break-spaces text-sm">
                           {titles.join(" → ")}
                         </p>
                       </div>
                     </div>
-                    <div className="text-muted-foreground hidden font-mono text-xs tabular-nums md:block">
-                      {formatDate(startDate)}
-                      <br className="" />
-                      ↓<br className="" />
+                    <div className="text-muted-foreground hidden text-right font-mono text-xs tabular-nums md:block">
                       {formatDate(endDate)}
+                      <br />
+                      ↑<br />
+                      {formatDate(startDate)}
                     </div>
                   </div>
                 </li>
