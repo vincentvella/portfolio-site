@@ -97,7 +97,6 @@ export default async function Index() {
             <div
               className="flex flex-wrap gap-2 pt-1 text-sm"
               data-sketch-label="contact methods"
-              data-sketch-label-dir="below"
             >
               {contactMethods.map((method) => (
                 <Button
