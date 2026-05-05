@@ -22,7 +22,6 @@ import { load } from "outstatic/server";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
-  title: "Lead Software Engineer",
   location: "Oxford, PA, USA",
 };
 
@@ -36,7 +35,21 @@ export default async function Resume() {
     education,
     contactMethods,
     languages,
+    careerYears,
   } = await getData();
+
+  const currentTitle =
+    positions.flatMap(([, ps]) => ps).find((p) => !p.endDate)?.title ??
+    positions[0]?.[1]?.[0]?.title ??
+    "Software Engineer";
+
+  const aboutContent =
+    typeof resumeSections.about.content === "string"
+      ? resumeSections.about.content.replaceAll(
+          "{years}",
+          String(careerYears),
+        )
+      : resumeSections.about.content;
 
   return (
     <Layout className="print:hidden" hideThemeSwitch>
@@ -46,7 +59,7 @@ export default async function Resume() {
             <div className="flex-1 space-y-1.5">
               <h1 className="text-3xl font-bold">{PERSONAL_INFO.name}</h1>
               <p className="text-prettytext-sm text-muted-foreground max-w-md">
-                {PERSONAL_INFO.title}
+                {currentTitle}
               </p>
               <p className="text-muted-foreground max-w-md items-center text-xs text-pretty print:hidden">
                 {PERSONAL_INFO.location}
@@ -121,7 +134,7 @@ export default async function Resume() {
             <div className="col-span-3 md:col-span-2 md:pr-6 print:col-span-2 print:mr-2 print:pr-0">
               <Section>
                 <p className="text-muted-foreground pt-2 pb-2 text-sm text-pretty">
-                  {resumeSections.about.content}
+                  {aboutContent}
                 </p>
               </Section>
               <Section>
@@ -326,14 +339,16 @@ export default async function Resume() {
 
 async function getData() {
   const db = await load();
+  const positionLoader = new PositionLoader(db);
 
   const results = await Promise.all([
-    await new ContactMethodLoader(db).load(),
-    await new EducationLoader(db).load(),
-    await new LanguageLoader(db).load(),
-    await new PositionLoader(db).load(),
-    await new ProjectLoader(db).load(),
-    await new ResumeSectionLoader(db).stringify("about").load(),
+    new ContactMethodLoader(db).load(),
+    new EducationLoader(db).load(),
+    new LanguageLoader(db).load(),
+    positionLoader.load(),
+    new ProjectLoader(db).load(),
+    new ResumeSectionLoader(db).stringify("about").load(),
+    positionLoader.careerYears(),
   ]);
 
   const [
@@ -343,6 +358,7 @@ async function getData() {
     positions,
     projects,
     resumeSections,
+    careerYears,
   ] = results;
 
   return {
@@ -352,5 +368,6 @@ async function getData() {
     positions,
     projects,
     resumeSections,
+    careerYears,
   };
 }

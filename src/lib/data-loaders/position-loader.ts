@@ -99,6 +99,23 @@ export class PositionLoader {
     return this.data;
   }
 
+  async careerYears(): Promise<number> {
+    if (this.positionData.length === 0) await this.load();
+    let earliestMonth = 12;
+    let earliestYear = Number.MAX_SAFE_INTEGER;
+    for (const p of this.positionData) {
+      const [m, y] = p.startDate.split("/").map(Number);
+      if (y < earliestYear || (y === earliestYear && m < earliestMonth)) {
+        earliestYear = y;
+        earliestMonth = m;
+      }
+    }
+    if (earliestYear === Number.MAX_SAFE_INTEGER) return 0;
+    const start = new Date(earliestYear, earliestMonth - 1, 1);
+    const ms = Date.now() - start.getTime();
+    return Math.floor(ms / (1000 * 60 * 60 * 24 * 365.25));
+  }
+
   async loadPositionSummaries(): Promise<[string, PositionSummary][]> {
     await this.load();
     const positionData = this.data;
