@@ -70,11 +70,12 @@ export default async function Index() {
               <div className="bg-primary neo-border avatar-shadow absolute inset-0 rounded-full" />
               <Image
                 className="neo-border bg-card relative rounded-full"
-                src="/images/avatar-1x.jpeg"
+                src="https://gravatar.com/avatar/1640ba5b7ae0bc5c357205153d5b7a196106c5cad43e4d5585305488647ad5fa?s=240"
                 alt="Avatar Image"
                 width={120}
                 height={120}
                 priority
+                unoptimized
               />
             </div>
             <h1
