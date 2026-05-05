@@ -7,6 +7,7 @@ import {
 import { ResumeSectionLoader } from "@/lib/data-loaders/resume-section-loader";
 import { Button } from "@/components/Button";
 import { ContactMethodIcon } from "@/components/ContactMethodIcon";
+import { CurrentlyStamp } from "@/components/CurrentlyStamp";
 import { ProfessionalTLDR } from "@/components/ProfessionalTLDR";
 import { PressCoverage } from "@/components/PressCoverage";
 import { load } from "outstatic/server";
@@ -32,6 +33,13 @@ export default async function Index() {
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
+  const currently = resumeSections.currently?.content;
+  const currentlyText =
+    typeof currently === "string"
+      ? currently
+      : Array.isArray(currently)
+        ? currently.join(" ")
+        : null;
 
   return (
     <Layout>
@@ -74,6 +82,11 @@ export default async function Index() {
                 </Button>
               ))}
             </div>
+            {currentlyText ? (
+              <div className="mt-8">
+                <CurrentlyStamp text={currentlyText} />
+              </div>
+            ) : null}
           </div>
           <ProfessionalTLDR />
           <PressCoverage />
@@ -88,7 +101,7 @@ async function getData() {
 
   const results = await Promise.all([
     await new ContactMethodLoader(db).load(),
-    await new ResumeSectionLoader(db).stringify("about").load(),
+    await new ResumeSectionLoader(db).stringify("about").stringify("currently").load(),
   ]);
 
   const [contactMethods, resumeSections] = results;

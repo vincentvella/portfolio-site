@@ -642,6 +642,24 @@
     },
     {
       "__outstatic": {
+        "commit": "b774caf",
+        "hash": "1100000001",
+        "path": "outstatic/content/resume-sections/currently.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "resume-sections",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2026-05-05T00:00:00.000Z",
+      "slug": "currently",
+      "status": "published",
+      "title": "Currently"
+    },
+    {
+      "__outstatic": {
         "commit": "24c036cfe0350653be562e017d2b7dd3ab3ba4e0",
         "hash": "3665701064",
         "path": "outstatic/content/positions/gopuff-senior-software-engineer.md"
