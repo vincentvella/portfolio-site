@@ -329,6 +329,7 @@
       "collection": "projects",
       "coverImage": "/images/frame-1--3--a2nz-Q4MD.png",
       "description": "Modular small-business app platform with pluggable integrations",
+      "accentColor": "primary",
       "publishedAt": "2024-03-04T03:04:03.425Z",
       "slug": "briqkit",
       "stack": [
@@ -382,6 +383,7 @@
       "collection": "projects",
       "coverImage": "/images/frame-2-g0nj-IzND.png",
       "description": "Consolidated Performing Arts Calendar for all of PSU",
+      "accentColor": "accent",
       "publishedAt": "2024-03-04T03:05:09.691Z",
       "slug": "pacalendar",
       "stack": [
@@ -432,6 +434,7 @@
       "coverImage": "/images/caliburr-cover.png",
       "description": "Crowdsourced coffee dial-in app — grinder + bean + brew method recipe database",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "secondary",
       "slug": "caliburr",
       "stack": [
         { "label": "Expo", "value": "expo" },
@@ -460,6 +463,7 @@
       "collection": "projects",
       "description": "Zig terminal AI harness with MCP, vim mode, and multi-provider support",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "brand-violet",
       "slug": "velk",
       "stack": [
         { "label": "Zig", "value": "zig" },
@@ -484,6 +488,7 @@
       "collection": "projects",
       "description": "Minimal local-first podcast listener",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "primary",
       "slug": "pod-haven",
       "stack": [
         { "label": "Expo", "value": "expo" },
@@ -510,6 +515,7 @@
       "collection": "projects",
       "description": "Self-hosted feature flag service with environments, targeting rules, and typed flags",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "accent",
       "slug": "togglez",
       "stack": [
         { "label": "Go", "value": "go" },
@@ -532,6 +538,7 @@
       "collection": "projects",
       "description": "Habit-building workout tracker built on Expo server components",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "secondary",
       "slug": "equipless",
       "stack": [
         { "label": "Expo", "value": "expo" },
@@ -557,6 +564,7 @@
       "coverImage": "/images/stash-note-cover.png",
       "description": "Local-first cross-platform rich-text note app with nested notes and inline Excalidraw",
       "publishedAt": "2026-05-04T00:00:00.000Z",
+      "accentColor": "brand-violet",
       "slug": "stash-note",
       "stack": [
         { "label": "Expo", "value": "expo" },

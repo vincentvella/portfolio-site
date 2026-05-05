@@ -11,6 +11,7 @@ bullets: 'Workout tracker focused on habit formation rather than program-of-the-
 Built on Expo server components — one of the earliest real apps using the RSC pipeline in React Native\n\n
 Equipment-light by design: routines that work with bodyweight or whatever you have, so the friction to start a session is near zero'
 publishedAt: '2026-05-04T00:00:00.000Z'
+accentColor: 'secondary'
 ---
 
 A habit-building workout tracker. The premise is that the failure mode of most fitness apps isn't the workout — it's the friction between deciding to train and actually starting — so Equipless is built around routines that need little or no equipment and a UI that gets you into a session with minimal taps.

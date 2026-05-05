@@ -12,6 +12,7 @@ Full multi-tenant model: organizations → projects → environments, with envir
 Typed flags (boolean, string, number, JSON) with variants, plus targeting rules over user attributes and reusable user segments\n\n
 HTTP `/evaluate` endpoint so any client in any language gets the same evaluation logic without per-language SDK drift'
 publishedAt: '2026-05-04T00:00:00.000Z'
+accentColor: 'accent'
 ---
 
 A self-hosted feature flag service written in Go. Most teams reach for LaunchDarkly or GrowthBook and accept that every user attribute and rollout decision now lives in a vendor's database; Togglez is the alternative for when that tradeoff isn't acceptable.

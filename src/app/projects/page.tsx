@@ -52,7 +52,8 @@ export default async function Projects() {
                     : idx % 4 === 2
                       ? "1deg"
                       : "-1deg";
-              const tapeOffset = idx % 2 === 0 ? "-rotate-6" : "rotate-6";
+              const tapeRotation = idx % 2 === 0 ? "-rotate-6" : "rotate-6";
+              const tapeRip = idx % 2 === 0 ? "tape-rip-a" : "tape-rip-b";
               return (
                 <Link
                   key={project.slug}
@@ -63,7 +64,7 @@ export default async function Projects() {
                   <article className="neo-border neo-shadow-lg neo-press bg-card relative rounded-sm p-3 pb-6 transition-transform duration-200 ease-out group-hover:[rotate:0deg]">
                     <span
                       aria-hidden
-                      className={`neo-border ${ACCENT_BG[accent]} absolute -top-3 left-1/2 z-10 h-6 w-24 -translate-x-1/2 ${tapeOffset} rounded-[2px]`}
+                      className={`${ACCENT_BG[accent]} ${tapeRip} absolute -top-4 left-1/2 z-10 h-9 w-40 -translate-x-1/2 ${tapeRotation}`}
                     />
                     <div className="bg-muted relative aspect-[4/3] w-full overflow-hidden">
                       {project.coverImage ? (

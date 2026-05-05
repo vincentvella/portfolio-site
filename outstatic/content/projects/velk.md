@@ -12,6 +12,7 @@ Pluggable provider layer for Anthropic and OpenAI behind a shared streaming inte
 First-class MCP support so the same tool servers used by Claude Code and other clients work here\n\n
 Modal vim editor inside the prompt and OSC-52 clipboard so it behaves correctly over SSH'
 publishedAt: '2026-05-04T00:00:00.000Z'
+accentColor: 'brand-violet'
 ---
 
 A terminal-native AI harness written in Zig 0.16. The goal was a single static binary that starts instantly, has no runtime to manage, and treats the terminal as a real interaction surface rather than a transport for someone else's UI.

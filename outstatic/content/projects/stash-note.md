@@ -13,6 +13,7 @@ Local-first sync built on LegendState + Supabase — edits land instantly and re
 Nested notes, text formatting, link previews, image support, and inline Excalidraw drawings with edit-in-place\n\n
 Ships to iOS, Android, and the web from a single Expo Router codebase'
 publishedAt: '2026-05-04T00:00:00.000Z'
+accentColor: 'brand-violet'
 ---
 
 A cross-platform rich-text note app. The premise was to find out how far a single Expo Router codebase could go for a real editing surface — not "render some text" but the full set of conveniences people expect from Bear or Notion: rich formatting, inline code previews, link unfurling, alignment, image embedding, nested notes-within-notes, and inline Excalidraw drawings that round-trip back to an editable canvas.

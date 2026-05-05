@@ -13,6 +13,7 @@ Community-verified equipment database — five independent confirmations flip a 
 Median + IQR grind-setting aggregation per grinder/brew-method combo so dialing in starts from the crowd, not zero\n\n
 Full admin surface: moderation queue, equipment edit review, backer management, push notifications via Expo + Supabase webhooks'
 publishedAt: '2026-05-04T00:00:00.000Z'
+accentColor: 'secondary'
 ---
 
 A crowdsourced coffee dial-in app. The premise: every espresso shot or pour-over recipe needs the same handful of variables — grinder, grind setting, dose, yield, brew time, water temp — and that data is way more useful pooled than scattered across forum posts. Caliburr is the pool.
