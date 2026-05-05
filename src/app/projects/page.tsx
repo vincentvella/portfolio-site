@@ -1,5 +1,4 @@
 import { Badge } from "@/components/Badge";
-import Card from "@/components/Card";
 import Layout from "@/components/Layout";
 import { StampedHeader } from "@/components/StampedHeader";
 import {
@@ -36,60 +35,68 @@ export default async function Projects() {
   return (
     <Layout>
       <main className="flex min-h-screen flex-col items-center pb-4">
-        <div className="max-w-(--breakpoint-md) w-full px-4">
+        <div className="max-w-(--breakpoint-lg) w-full px-4">
           <StampedHeader
             stamp="Projects"
             title="Projects"
             subtitle="Things I've built, broken, and shipped."
           />
-          <div className="grid gap-8">
-            {projects.map((project) => {
+          <div className="grid gap-x-10 gap-y-14 sm:grid-cols-2">
+            {projects.map((project, idx) => {
               const accent = project.accentColor ?? pickAccent(project.slug);
+              const tilt =
+                idx % 4 === 0
+                  ? "-1.5deg"
+                  : idx % 4 === 1
+                    ? "1.5deg"
+                    : idx % 4 === 2
+                      ? "1deg"
+                      : "-1deg";
+              const tapeOffset = idx % 2 === 0 ? "-rotate-6" : "rotate-6";
               return (
-              <Link
-                key={project.slug}
-                href={`projects/${project.slug}`}
-                className="block neo-press"
-              >
-                <Card variant="neo" className="overflow-hidden">
-                  <div
-                    className={`${ACCENT_BG[accent]} border-b-2 border-foreground px-6 py-4 text-zinc-950`}
-                  >
-                    <Card.Title>{project.title}</Card.Title>
-                    <p className="mt-1 text-sm font-medium">
-                      {project.description}
-                    </p>
-                  </div>
-                  <Card.Content className="p-6">
-                    {project.coverImage ? (
-                      <div className="relative h-64 w-full">
+                <Link
+                  key={project.slug}
+                  href={`projects/${project.slug}`}
+                  className="group block"
+                  style={{ rotate: tilt }}
+                >
+                  <article className="neo-border neo-shadow-lg neo-press bg-card relative rounded-sm p-3 pb-6 transition-transform duration-200 ease-out group-hover:[rotate:0deg]">
+                    <span
+                      aria-hidden
+                      className={`neo-border ${ACCENT_BG[accent]} absolute -top-3 left-1/2 z-10 h-6 w-24 -translate-x-1/2 ${tapeOffset} rounded-[2px]`}
+                    />
+                    <div className="bg-muted relative aspect-[4/3] w-full overflow-hidden">
+                      {project.coverImage ? (
                         <Image
-                          className="mx-auto min-h-64"
+                          className="object-cover"
                           src={project.coverImage}
                           alt={`${project.title} Image`}
-                          style={{ objectFit: "contain" }}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          sizes="(max-width: 640px) 100vw, 400px"
                           fill
                           priority
                         />
-                      </div>
-                    ) : (
-                      <ul className="flex flex-row flex-wrap gap-2">
-                        {project.stack.map((item) => (
-                          <li key={item.value}>
-                            <Badge look="neo" variant="outline">{item.label}</Badge>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    <div className="mt-4 flex flex-row justify-end">
-                      <div className="font-semibold underline decoration-2 underline-offset-2">
-                        {"Read more →"}
-                      </div>
+                      ) : (
+                        <ul className="flex h-full w-full flex-row flex-wrap content-center items-center justify-center gap-1.5 p-4">
+                          {project.stack.slice(0, 6).map((item) => (
+                            <li key={item.value}>
+                              <Badge look="neo" variant="outline">
+                                {item.label}
+                              </Badge>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
-                  </Card.Content>
-                </Card>
-              </Link>
+                    <div className="mt-4 px-1">
+                      <h2 className="font-display text-2xl font-bold leading-tight tracking-tight">
+                        {project.title}
+                      </h2>
+                      <p className="text-muted-foreground mt-1 text-sm leading-snug">
+                        {project.description}
+                      </p>
+                    </div>
+                  </article>
+                </Link>
               );
             })}
           </div>
