@@ -43,7 +43,13 @@ const TAPE_ROTATIONS = [
   "rotate-12",
 ];
 
-const TAPE_X_OFFSETS = ["-translate-x-6", "-translate-x-2", "translate-x-2", "translate-x-6"];
+const TAPE_X_OFFSETS = [
+  "-translate-x-2",
+  "-translate-x-1",
+  "translate-x-0",
+  "translate-x-1",
+  "translate-x-2",
+];
 
 const CARD_TILTS = ["-2deg", "-1deg", "1deg", "2deg"];
 
