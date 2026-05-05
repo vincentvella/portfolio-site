@@ -87,7 +87,8 @@ export default async function Projects() {
                   <article className="neo-border neo-shadow-lg neo-press bg-card relative rounded-sm p-3 pb-6 transition-transform duration-200 ease-out group-hover:[rotate:0deg]">
                     <span
                       aria-hidden
-                      className={`${ACCENT_BG[accent]} ${tapeRip} ${tapeWidth} absolute -top-4 left-1/2 z-10 h-9`}
+                      data-tape
+                      className={`${ACCENT_BG[accent]} ${tapeRip} ${tapeWidth} tape-sheen absolute -top-4 left-1/2 z-10 h-9`}
                       style={{
                         translate: `calc(-50% + ${tapeOffsetPx}px) 0`,
                         rotate: `${tapeRotationDeg}deg`,

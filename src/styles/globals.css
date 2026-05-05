@@ -268,6 +268,19 @@
   filter: drop-shadow(1px 1px 0 hsl(var(--border)));
 }
 
+/* subtle sheen down the center of every tape strip — sits on top of the
+ * accent bg-color so it works regardless of which color the tape is */
+.tape-sheen {
+  background-image: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0) 0%,
+    rgb(255 255 255 / 0.16) 38%,
+    rgb(255 255 255 / 0.22) 50%,
+    rgb(255 255 255 / 0.1) 62%,
+    rgb(255 255 255 / 0) 100%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-\[marquee_45s_linear_infinite\] {
     animation: none !important;
@@ -308,6 +321,24 @@ html.sketch [data-company-logo] {
 html.sketch [data-company-logo] img {
   filter: grayscale(1) contrast(1.5) brightness(0.5) !important;
   opacity: 1 !important;
+}
+
+/* tape becomes white-on-white in sketch — replace the sheen overlay with
+ * a diagonal hatch so it still reads as a piece of tape, and thicken
+ * the outer dark outline since the clip-path strips any normal border */
+html.sketch [data-tape] {
+  background-image: repeating-linear-gradient(
+    45deg,
+    hsl(var(--border) / 0.55) 0px,
+    hsl(var(--border) / 0.55) 1.5px,
+    transparent 1.5px,
+    transparent 7px
+  ) !important;
+  filter:
+    drop-shadow(1px 0 0 hsl(var(--border)))
+    drop-shadow(-1px 0 0 hsl(var(--border)))
+    drop-shadow(0 1px 0 hsl(var(--border)))
+    drop-shadow(0 -1px 0 hsl(var(--border))) !important;
 }
 
 html.sketch body {
