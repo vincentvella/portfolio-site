@@ -29,8 +29,7 @@ const Header: React.FC<HeaderProps> = ({
       </Link>
 
       <div
-        role="listbox"
-        aria-label="header navigation links"
+        aria-label="Primary navigation"
         className="flex items-center gap-2"
       >
         <HeaderText text="Home" link="/" />

@@ -4,8 +4,42 @@ import {
   AccentColor,
   ProjectLoader,
 } from "@/lib/data-loaders/project-loader";
+import { Metadata } from "next";
 import Image from "next/image";
 import { getDocumentSlugs, load } from "outstatic/server";
+
+export async function generateMetadata(props: ProjectProps): Promise<Metadata> {
+  const { slug } = await props.params;
+  const db = await load();
+  try {
+    const project = await new ProjectLoader(db).loadProject(slug);
+    const description = project.description ?? `${project.title} by Vince Vella`;
+    return {
+      title: project.title,
+      description,
+      alternates: { canonical: `/projects/${project.slug}` },
+      openGraph: {
+        title: project.title,
+        description,
+        url: `/projects/${project.slug}`,
+        type: "article",
+        ...(project.coverImage
+          ? { images: [{ url: project.coverImage }] }
+          : {}),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: project.title,
+        description,
+        ...(project.coverImage
+          ? { images: [{ url: project.coverImage }] }
+          : {}),
+      },
+    };
+  } catch {
+    return {};
+  }
+}
 
 type ProjectParams = {
   slug: string;
@@ -49,7 +83,7 @@ export default async function Project(props: ProjectProps) {
   const accent: AccentColor = project.accentColor ?? pickAccent(project.slug);
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4">
+      <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div
             className={`neo-border neo-shadow mt-8 rounded-md px-6 py-5 ${ACCENT_BG[accent]}`}
@@ -66,9 +100,10 @@ export default async function Project(props: ProjectProps) {
               <Image
                 className="block"
                 src={project.coverImage}
-                alt={`${project.title} Image`}
+                alt={`Cover for ${project.title}`}
                 width={500}
                 height={300}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 500px"
                 style={{ width: "auto" }}
                 priority
               />

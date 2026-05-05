@@ -60,22 +60,21 @@ export default async function Index() {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center">
+      <main id="main" className="flex min-h-screen flex-col items-center">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div className="mt-12 flex w-full flex-col">
             <div
               className="relative mb-6 inline-block w-fit"
               data-sketch-label="hero photo"
             >
-              <div className="bg-primary neo-border avatar-shadow absolute inset-0 rounded-full" />
+              <div className="bg-accent neo-border avatar-shadow absolute inset-0 rounded-full" />
               <Image
                 className="neo-border bg-card relative rounded-full"
-                src="https://gravatar.com/avatar/1640ba5b7ae0bc5c357205153d5b7a196106c5cad43e4d5585305488647ad5fa?s=240"
-                alt="Avatar Image"
+                src="/images/avatar-illustration.jpeg"
+                alt="Vince Vella, illustrated portrait"
                 width={120}
                 height={120}
                 priority
-                unoptimized
               />
             </div>
             <h1

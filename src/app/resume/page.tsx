@@ -53,7 +53,7 @@ export default async function Resume() {
 
   return (
     <Layout className="print:hidden" hideThemeSwitch>
-      <main className="relative mx-auto scroll-my-12 overflow-auto p-4 md:pt-6 print:px-4 print:py-1">
+      <main id="main" className="relative mx-auto scroll-my-12 overflow-auto p-4 md:pt-6 print:px-4 print:py-1">
         <Section className="mx-auto w-full max-w-3xl bg-white pb-8 print:pb-0">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">

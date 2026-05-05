@@ -1,10 +1,39 @@
 import Layout from "@/components/Layout";
 import { BagLoader } from "@/lib/data-loaders/bag-loader";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { load } from "outstatic/server";
 import { BagBody } from "../BagBody";
 import { BagHero } from "../BagHero";
+
+export async function generateMetadata(props: BagYearProps): Promise<Metadata> {
+  const { year } = await props.params;
+  const yearNum = Number(year);
+  if (!Number.isInteger(yearNum)) return {};
+  const db = await load();
+  const bag = await new BagLoader(db).loadByYear(yearNum);
+  if (!bag) return {};
+  const description =
+    bag.tagline ??
+    `What I was actually using in ${bag.year} — languages, tools, infra, and hardware.`;
+  return {
+    title: `What's in my bag — ${bag.year}`,
+    description,
+    alternates: { canonical: `/bag/${bag.year}` },
+    openGraph: {
+      title: `What's in my bag — ${bag.year}`,
+      description,
+      url: `/bag/${bag.year}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `What's in my bag — ${bag.year}`,
+      description,
+    },
+  };
+}
 
 type BagYearProps = {
   params: Promise<{ year: string }>;
@@ -25,7 +54,7 @@ export default async function BagYearPage(props: BagYearProps) {
 
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4">
+      <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <BagHero year={bag.year} tagline={bag.tagline} />
           {!isLatest && (

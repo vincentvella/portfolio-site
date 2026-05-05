@@ -87,7 +87,10 @@ export const CommandMenu = ({ links }: Props) => {
         <CommandIcon className="size-5" />
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput
+          aria-label="Search commands and links"
+          placeholder="Type a command or search..."
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Actions">

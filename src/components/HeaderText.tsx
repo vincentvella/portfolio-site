@@ -21,12 +21,10 @@ export const HeaderText: React.FC<HeaderLinkProps> = ({ text, link }) => {
 
   return (
     <Link
-      aria-label={text}
       href={link}
-      role="option"
-      aria-selected={isSelected}
+      aria-current={isSelected ? "page" : undefined}
       className={cn(
-        "neo-border neo-press relative inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide",
+        "neo-border neo-press focus-visible:ring-ring relative inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
         isSelected
           ? "bg-primary text-primary-foreground neo-shadow"
           : "bg-card text-foreground hover:bg-muted",

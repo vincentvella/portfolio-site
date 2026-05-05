@@ -1,9 +1,35 @@
 import Layout from "@/components/Layout";
 import { BagLoader } from "@/lib/data-loaders/bag-loader";
+import { Metadata } from "next";
 import Link from "next/link";
 import { load } from "outstatic/server";
 import { BagBody } from "./BagBody";
 import { BagHero } from "./BagHero";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const db = await load();
+  const latest = await new BagLoader(db).loadLatest();
+  const year = latest?.year ?? new Date().getFullYear();
+  const description =
+    latest?.tagline ??
+    "What I am actually using this year — languages, tools, infra, and hardware.";
+  return {
+    title: `What's in my bag — ${year}`,
+    description,
+    alternates: { canonical: "/bag" },
+    openGraph: {
+      title: `What's in my bag — ${year}`,
+      description,
+      url: "/bag",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `What's in my bag — ${year}`,
+      description,
+    },
+  };
+}
 
 export default async function BagPage() {
   const db = await load();
@@ -15,7 +41,7 @@ export default async function BagPage() {
   if (!latest) {
     return (
       <Layout>
-        <main className="flex min-h-screen flex-col items-center pb-4">
+        <main id="main" className="flex min-h-screen flex-col items-center pb-4">
           <div className="max-w-(--breakpoint-md) w-full px-4">
             <BagHero year={new Date().getFullYear()} tagline="Coming soon." />
           </div>

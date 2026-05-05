@@ -55,7 +55,7 @@ export default async function Projects() {
   const projects = await new ProjectLoader(db).load();
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4">
+      <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-lg) w-full px-4">
           <StampedHeader
             stamp="Projects"
@@ -99,10 +99,9 @@ export default async function Projects() {
                         <Image
                           className="object-cover"
                           src={project.coverImage}
-                          alt={`${project.title} Image`}
+                          alt={`Cover for ${project.title}`}
                           sizes="(max-width: 640px) 100vw, 400px"
                           fill
-                          priority
                         />
                       ) : (
                         <ul className="flex h-full w-full flex-row flex-wrap content-center items-center justify-center gap-1.5 p-4">

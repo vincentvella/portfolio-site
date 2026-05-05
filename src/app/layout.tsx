@@ -41,9 +41,9 @@ const metadata: Metadata = {
     siteName: "Portfolio",
     images: [
       {
-        url: "/images/avatar-3x.jpeg",
-        width: 1800,
-        height: 1600,
+        url: "/images/avatar-illustration.jpeg",
+        width: 1200,
+        height: 1200,
       },
     ],
     locale: "en_US",
@@ -74,13 +74,13 @@ const metadata: Metadata = {
   twitter: {
     creator: "@vellapps",
     site: "@vellapps",
-    card: "summary",
+    card: "summary_large_image",
     description,
     images: [
       {
-        url: "/images/avatar-3x.jpeg",
-        width: 1800,
-        height: 1600,
+        url: "/images/avatar-illustration.jpeg",
+        width: 1200,
+        height: 1200,
       },
     ],
     title: "Vince Vella - Portfolio",
