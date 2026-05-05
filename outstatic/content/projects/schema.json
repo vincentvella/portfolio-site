@@ -117,6 +117,19 @@
       "fieldType": "Text",
       "dataType": "string",
       "title": "bullets"
+    },
+    "accentColor": {
+      "required": false,
+      "description": "Accent color used to brand the project's detail page",
+      "fieldType": "Tags",
+      "dataType": "string",
+      "title": "Accent Color",
+      "values": [
+        { "value": "primary", "label": "Primary (Yellow)" },
+        { "value": "accent", "label": "Accent (Teal)" },
+        { "value": "secondary", "label": "Secondary (Salmon)" },
+        { "value": "brand-violet", "label": "Brand Violet" }
+      ]
     }
   }
 }

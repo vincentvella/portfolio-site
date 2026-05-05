@@ -7,10 +7,13 @@ type Tag = {
   label: string;
 };
 type SelectedFields = (typeof ProjectLoader.pickedFields)[number];
+export type AccentColor = "primary" | "accent" | "secondary" | "brand-violet";
+
 type ProjectFields = OstDocument<{
   description?: string;
   stack: Tag[];
   bullets: string;
+  accentColor?: AccentColor;
 }>;
 type ProjectData = Pick<ProjectFields, SelectedFields>;
 export interface Position extends Omit<ProjectData, "bullets"> {
@@ -27,6 +30,7 @@ export class ProjectLoader {
     "bullets",
     "slug",
     "coverImage",
+    "accentColor",
   ] as const;
   selectedFields = ProjectLoader.pickedFields.map((f) => f) as string[];
 
