@@ -84,15 +84,21 @@ export default async function Index() {
             >
               Vincent Vella
             </h1>
-            <RoleCycler
-              roles={ROLES}
-              className="text-muted-foreground mb-4"
-            />
+            <div data-sketch-label="rotating roles">
+              <RoleCycler
+                roles={ROLES}
+                className="text-muted-foreground mb-4"
+              />
+            </div>
             <section className="mb-6">
               {typeof resumeSections.about.description === "string" &&
                 addEmailLink(resumeSections.about.description, email)}
             </section>
-            <div className="flex flex-wrap gap-2 pt-1 text-sm">
+            <div
+              className="flex flex-wrap gap-2 pt-1 text-sm"
+              data-sketch-label="contact methods"
+              data-sketch-label-dir="below"
+            >
               {contactMethods.map((method) => (
                 <Button
                   aria-label={method.title.toLowerCase()}

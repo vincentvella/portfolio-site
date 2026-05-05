@@ -8,7 +8,12 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
   const db = await load();
   const summaries = await new PositionLoader(db).loadPositionSummaries();
   return (
-    <Card variant="neo" className="mt-12 p-6">
+    <Card
+      variant="neo"
+      className="mt-12 p-6"
+      data-sketch-label="professional summary"
+      data-sketch-label-dir="below"
+    >
       <Card.Header>
         <div className="mb-4 flex items-center gap-2">
           <span className="bg-accent neo-border inline-flex h-9 w-9 items-center justify-center rounded-md text-lg">
@@ -30,6 +35,7 @@ export const ProfessionalTLDR: React.FC = async ({}) => {
               <div className="flex justify-between gap-4 pt-2">
                 <div className="flex flex-row gap-3">
                   <div
+                    data-company-logo
                     className="neo-border relative h-16 w-16 min-w-16 rounded-md"
                     style={{ backgroundColor: brandColor }}
                   >

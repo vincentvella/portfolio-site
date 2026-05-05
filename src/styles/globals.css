@@ -293,6 +293,21 @@ html.sketch {
   --border: 0 0% 12%;
   --shadow-dx: 0px;
   --shadow-dy: 0px;
+  --color-brand-yellow: hsl(0 0% 100%);
+  --color-brand-coral: hsl(0 0% 100%);
+  --color-brand-teal: hsl(0 0% 100%);
+  --color-brand-violet: hsl(0 0% 100%);
+}
+
+/* inline backgroundColor on company logo backdrops bypasses var overrides */
+html.sketch [data-company-logo] {
+  background-color: hsl(var(--background)) !important;
+}
+
+/* boost logo contrast on the now-white backdrop so it doesn't wash out */
+html.sketch [data-company-logo] img {
+  filter: grayscale(1) contrast(1.5) brightness(0.5) !important;
+  opacity: 1 !important;
 }
 
 html.sketch body {

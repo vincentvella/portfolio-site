@@ -9,7 +9,12 @@ export const PressCoverage = async () => {
   const db = await load();
   const coverage = await new PressCoverageLoader(db).load();
   return (
-    <Card variant="neo" className="mt-12 p-6">
+    <Card
+      variant="neo"
+      className="mt-12 p-6"
+      data-sketch-label="press coverage"
+      data-sketch-label-dir="below"
+    >
       <Card.Header>
         <div className="mb-4 flex items-center gap-2">
           <span className="bg-secondary neo-border inline-flex h-9 w-9 items-center justify-center rounded-md text-lg">
