@@ -280,6 +280,31 @@
   );
 }
 
+/* push-pin: glossy dome with a highlight, a small drop-shadow for the
+ * "pinned to a corkboard" feel. Color comes from background-color set
+ * on the element, the radial-gradient adds the dome highlight on top */
+.push-pin {
+  background-image: radial-gradient(
+    circle at 30% 30%,
+    rgb(255 255 255 / 0.85) 0%,
+    rgb(255 255 255 / 0.25) 22%,
+    transparent 50%
+  );
+  box-shadow:
+    0 0 0 2px hsl(var(--border)),
+    1px 2px 0 hsl(var(--border) / 0.6);
+}
+
+/* sketch-mode push-pin: white dome reads as nothing — swap to a filled
+ * black dot with a crosshair (via inset shadows) */
+html.sketch .push-pin {
+  background-image: none !important;
+  background-color: hsl(var(--foreground)) !important;
+  box-shadow:
+    0 0 0 1.5px hsl(var(--background)),
+    0 0 0 3px hsl(var(--foreground)) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-\[marquee_45s_linear_infinite\] {
     animation: none !important;

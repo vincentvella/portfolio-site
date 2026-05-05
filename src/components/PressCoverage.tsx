@@ -2,12 +2,31 @@ import { PressCoverageLoader } from "@/lib/data-loaders/press-coverage-loader";
 import Card from "./Card";
 import { FormattedDateString } from "./FormattedDateString";
 import Image from "next/image";
-import { Fragment } from "react";
 import { load } from "outstatic/server";
+
+const PIN_COLORS = [
+  "bg-secondary",
+  "bg-primary",
+  "bg-accent",
+  "bg-brand-violet",
+];
+
+const TILTS = ["-rotate-1", "rotate-1", "-rotate-[0.5deg]", "rotate-[0.5deg]"];
+
+function publicationFromUrl(url: string): string {
+  try {
+    const u = new URL(url);
+    return u.hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
 
 export const PressCoverage = async () => {
   const db = await load();
   const coverage = await new PressCoverageLoader(db).load();
+  if (coverage.length === 0) return null;
+
   return (
     <Card
       variant="neo"
@@ -16,7 +35,7 @@ export const PressCoverage = async () => {
       data-sketch-label-dir="below"
     >
       <Card.Header>
-        <div className="mb-4 flex items-center gap-2">
+        <div className="mb-6 flex items-center gap-2">
           <span className="bg-secondary neo-border inline-flex h-9 w-9 items-center justify-center rounded-md text-lg">
             📰
           </span>
@@ -26,53 +45,64 @@ export const PressCoverage = async () => {
         </div>
       </Card.Header>
       <Card.Content>
-        {coverage.map((item, index) => {
-          const { publishedAt, title, content, description, slug, coverImage } =
-            item;
-          return (
-            <Fragment key={slug}>
-              {index !== 0 && (
-                <hr className="border-foreground my-4 border-t-2 border-dashed" />
-              )}
-              <div>
-                <section>
-                  <h3 className="font-display text-xl leading-tight font-bold tracking-tight hover:underline">
-                    <a href={content}>{title}</a>
-                  </h3>
-                  <p className="text-muted-foreground min-h-6 font-mono text-xs">
-                    <FormattedDateString date={publishedAt} />
-                  </p>
-                  <div className="my-4 flex flex-row gap-3 pb-4">
-                    <div className="relative h-24 min-w-32">
-                      {!!coverImage && (
+        <ul className="grid gap-y-8 pt-2">
+          {coverage.map((item, index) => {
+            const { publishedAt, title, content, description, slug, coverImage } =
+              item;
+            const publication = publicationFromUrl(content ?? "");
+            const pinColor = PIN_COLORS[index % PIN_COLORS.length];
+            const tilt = TILTS[index % TILTS.length];
+            return (
+              <li key={slug}>
+                <a
+                  href={content}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`neo-border neo-shadow neo-press bg-card relative block ${tilt} rounded-sm p-4 pt-6 transition-transform duration-200 ease-out hover:[rotate:0deg]`}
+                >
+                  <span
+                    aria-hidden
+                    className={`push-pin absolute -top-2 left-1/2 z-10 h-3.5 w-3.5 -translate-x-1/2 rounded-full ${pinColor}`}
+                  />
+                  <div className="flex flex-row gap-4">
+                    {coverImage ? (
+                      <div className="relative h-24 w-32 min-w-32 shrink-0">
                         <Image
                           className="neo-border rounded-sm"
                           src={coverImage}
-                          alt="Avatar Image"
-                          sizes="6.667vw"
+                          alt=""
+                          sizes="128px"
                           fill
                           style={{ objectFit: "cover" }}
                           priority
                         />
-                      )}
+                      </div>
+                    ) : null}
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] font-mono uppercase tracking-widest">
+                        {publication ? (
+                          <span className="neo-border bg-muted text-foreground rounded-sm px-1.5 py-0.5">
+                            {publication}
+                          </span>
+                        ) : null}
+                        <span className="text-muted-foreground">
+                          Filed{" "}
+                          <FormattedDateString date={publishedAt} />
+                        </span>
+                      </div>
+                      <h3 className="font-display text-xl font-black leading-tight tracking-tight md:text-2xl">
+                        {title}
+                      </h3>
+                      <p className="text-muted-foreground mt-2 text-sm">
+                        {description}
+                      </p>
                     </div>
-                    <p className="text-sm">{description}</p>
                   </div>
-                  <div className="relative">
-                    <div className="absolute right-2 bottom-2">
-                      <a
-                        className="font-semibold underline decoration-2 underline-offset-2 hover:decoration-primary"
-                        href={content}
-                      >
-                        {"Read more →"}
-                      </a>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </Fragment>
-          );
-        })}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </Card.Content>
     </Card>
   );
