@@ -268,16 +268,15 @@
   filter: drop-shadow(1px 1px 0 hsl(var(--border)));
 }
 
-/* subtle sheen down the center of every tape strip — sits on top of the
- * accent bg-color so it works regardless of which color the tape is */
-.tape-sheen {
-  background-image: linear-gradient(
-    180deg,
-    rgb(255 255 255 / 0) 0%,
-    rgb(255 255 255 / 0.16) 38%,
-    rgb(255 255 255 / 0.22) 50%,
-    rgb(255 255 255 / 0.1) 62%,
-    rgb(255 255 255 / 0) 100%
+/* diagonal hatch in soft white sits over the tape's accent color — gives
+ * it a textured, tape-like surface instead of flat fill */
+.tape-hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgb(255 255 255 / 0.22) 0px,
+    rgb(255 255 255 / 0.22) 1.5px,
+    transparent 1.5px,
+    transparent 7px
   );
 }
 

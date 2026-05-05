@@ -88,7 +88,7 @@ export default async function Projects() {
                     <span
                       aria-hidden
                       data-tape
-                      className={`${ACCENT_BG[accent]} ${tapeRip} ${tapeWidth} tape-sheen absolute -top-4 left-1/2 z-10 h-9`}
+                      className={`${ACCENT_BG[accent]} ${tapeRip} ${tapeWidth} tape-hatch absolute -top-4 left-1/2 z-10 h-9`}
                       style={{
                         translate: `calc(-50% + ${tapeOffsetPx}px) 0`,
                         rotate: `${tapeRotationDeg}deg`,
