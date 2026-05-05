@@ -1,0 +1,20 @@
+{
+  "title": "bags",
+  "type": "object",
+  "properties": {
+    "year": {
+      "required": true,
+      "description": "The year this bag entry covers (also used as the URL slug)",
+      "fieldType": "Number",
+      "dataType": "number",
+      "title": "Year"
+    },
+    "tagline": {
+      "required": false,
+      "description": "Short subtitle shown under the year heading",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Tagline"
+    }
+  }
+}

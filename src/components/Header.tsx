@@ -35,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({
       >
         <HeaderText text="Home" link="/" />
         <HeaderText text="Projects" link="/projects" />
+        <HeaderText text="Bag" link="/bag" />
         <HeaderText text="Resume" link="/resume" />
       </div>
 

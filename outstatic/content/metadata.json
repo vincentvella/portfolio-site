@@ -727,6 +727,26 @@
       "startDate": "07/2024",
       "status": "published",
       "title": "Lead Software Engineer"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3500000000000000000000000000000bag1",
+        "hash": "2026000001",
+        "path": "outstatic/content/bags/2026.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "collection": "bags",
+      "coverImage": "",
+      "description": "What I am actually using this year.",
+      "publishedAt": "2026-05-05T00:00:00.000Z",
+      "slug": "2026",
+      "status": "published",
+      "title": "Bag — 2026",
+      "year": 2026,
+      "tagline": "What I am actually using this year."
     }
   ]
 }
