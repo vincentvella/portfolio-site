@@ -1,3 +1,4 @@
+import { Badge } from "@/components/Badge";
 import Card from "@/components/Card";
 import Layout from "@/components/Layout";
 import { ProjectLoader } from "@/lib/data-loaders/project-loader";
@@ -39,17 +40,27 @@ export default async function Projects() {
                     </p>
                   </div>
                   <Card.Content className="p-6">
-                    <div className="relative h-64 w-full">
-                      <Image
-                        className="mx-auto min-h-64"
-                        src={project.coverImage ?? ""}
-                        alt={`${project.title} Image`}
-                        style={{ objectFit: "contain" }}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        fill
-                        priority
-                      />
-                    </div>
+                    {project.coverImage ? (
+                      <div className="relative h-64 w-full">
+                        <Image
+                          className="mx-auto min-h-64"
+                          src={project.coverImage}
+                          alt={`${project.title} Image`}
+                          style={{ objectFit: "contain" }}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          fill
+                          priority
+                        />
+                      </div>
+                    ) : (
+                      <ul className="flex flex-row flex-wrap gap-2">
+                        {project.stack.map((item) => (
+                          <li key={item.value}>
+                            <Badge look="neo" variant="outline">{item.label}</Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     <div className="mt-4 flex flex-row justify-end">
                       <div className="font-semibold underline decoration-2 underline-offset-2">
                         {"Read more →"}

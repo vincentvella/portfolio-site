@@ -56,6 +56,58 @@
         {
           "value": "nlp",
           "label": "NLP"
+        },
+        {
+          "value": "expo",
+          "label": "Expo"
+        },
+        {
+          "value": "nativewind",
+          "label": "NativeWind"
+        },
+        {
+          "value": "supabase",
+          "label": "Supabase"
+        },
+        {
+          "value": "drizzle",
+          "label": "Drizzle ORM"
+        },
+        {
+          "value": "sqlite",
+          "label": "SQLite"
+        },
+        {
+          "value": "tanstackForm",
+          "label": "TanStack Form"
+        },
+        {
+          "value": "revenueCat",
+          "label": "RevenueCat"
+        },
+        {
+          "value": "go",
+          "label": "Go"
+        },
+        {
+          "value": "zig",
+          "label": "Zig"
+        },
+        {
+          "value": "anthropic",
+          "label": "Anthropic API"
+        },
+        {
+          "value": "openai",
+          "label": "OpenAI API"
+        },
+        {
+          "value": "mcp",
+          "label": "MCP"
+        },
+        {
+          "value": "rsc",
+          "label": "React Server Components"
         }
       ]
     },

@@ -419,6 +419,157 @@
     },
     {
       "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000001",
+        "path": "outstatic/content/projects/caliburr.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Single Expo Router codebase ships to iOS, Android, and the web at caliburr.coffee\\n\\n Community-verified equipment database — five independent confirmations flip a Postgres trigger that locks the entry as canonical\\n\\n Median + IQR grind-setting aggregation per grinder/brew-method combo so dialing in starts from the crowd, not zero\\n\\n Full admin surface: moderation queue, equipment edit review, backer management, push notifications via Expo + Supabase webhooks",
+      "collection": "projects",
+      "coverImage": "/images/caliburr-cover.png",
+      "description": "Crowdsourced coffee dial-in app — grinder + bean + brew method recipe database",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "caliburr",
+      "stack": [
+        { "label": "Expo", "value": "expo" },
+        { "label": "React Native", "value": "reactNative" },
+        { "label": "NativeWind", "value": "nativewind" },
+        { "label": "Supabase", "value": "supabase" },
+        { "label": "Postgres", "value": "postgres" },
+        { "label": "TanStack Form", "value": "tanstackForm" },
+        { "label": "RevenueCat", "value": "revenueCat" },
+        { "label": "Typescript", "value": "typescript" }
+      ],
+      "status": "published",
+      "title": "Caliburr"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000002",
+        "path": "outstatic/content/projects/velk.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Terminal AI harness written in Zig 0.16 — no runtime, no GC, single static binary\\n\\n Pluggable provider layer for Anthropic and OpenAI behind a shared streaming interface\\n\\n First-class MCP support so the same tool servers used by Claude Code and other clients work here\\n\\n Modal vim editor inside the prompt and OSC-52 clipboard so it behaves correctly over SSH",
+      "collection": "projects",
+      "description": "Zig terminal AI harness with MCP, vim mode, and multi-provider support",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "velk",
+      "stack": [
+        { "label": "Zig", "value": "zig" },
+        { "label": "Anthropic API", "value": "anthropic" },
+        { "label": "OpenAI API", "value": "openai" },
+        { "label": "MCP", "value": "mcp" }
+      ],
+      "status": "published",
+      "title": "Velk"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000003",
+        "path": "outstatic/content/projects/pod-haven.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Local-first by design — feeds, episodes, and play state live in on-device SQLite via Drizzle, no account required\\n\\n Built with Expo + NativeWind for a single React Native codebase across iOS and Android\\n\\n Minimal surface area on purpose: subscribe, listen, resume — nothing else competing for attention",
+      "collection": "projects",
+      "description": "Minimal local-first podcast listener",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "pod-haven",
+      "stack": [
+        { "label": "Expo", "value": "expo" },
+        { "label": "React Native", "value": "reactNative" },
+        { "label": "NativeWind", "value": "nativewind" },
+        { "label": "SQLite", "value": "sqlite" },
+        { "label": "Drizzle ORM", "value": "drizzle" },
+        { "label": "Typescript", "value": "typescript" }
+      ],
+      "status": "published",
+      "title": "Pod Haven"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000004",
+        "path": "outstatic/content/projects/togglez.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Self-hostable feature flag service in Go — Echo for HTTP, GORM on Postgres, Keycloak for auth\\n\\n Full multi-tenant model: organizations → projects → environments, with environment-scoped flag configurations\\n\\n Typed flags (boolean, string, number, JSON) with variants, plus targeting rules over user attributes and reusable user segments\\n\\n HTTP `/evaluate` endpoint so any client in any language gets the same evaluation logic without per-language SDK drift",
+      "collection": "projects",
+      "description": "Self-hosted feature flag service with environments, targeting rules, and typed flags",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "togglez",
+      "stack": [
+        { "label": "Go", "value": "go" },
+        { "label": "Postgres", "value": "postgres" }
+      ],
+      "status": "published",
+      "title": "Togglez"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000005",
+        "path": "outstatic/content/projects/equipless.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Workout tracker focused on habit formation rather than program-of-the-month churn\\n\\n Built on Expo server components — one of the earliest real apps using the RSC pipeline in React Native\\n\\n Equipment-light by design: routines that work with bodyweight or whatever you have, so the friction to start a session is near zero",
+      "collection": "projects",
+      "description": "Habit-building workout tracker built on Expo server components",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "equipless",
+      "stack": [
+        { "label": "Expo", "value": "expo" },
+        { "label": "React Native", "value": "reactNative" },
+        { "label": "React Server Components", "value": "rsc" },
+        { "label": "Typescript", "value": "typescript" }
+      ],
+      "status": "published",
+      "title": "Equipless"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000006",
+        "path": "outstatic/content/projects/stash-note.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Lexical-powered rich-text editor reused across web and native via Expo's web component bridge\\n\\n Local-first sync built on LegendState + Supabase — edits land instantly and reconcile in the background\\n\\n Nested notes, text formatting, link previews, image support, and inline Excalidraw drawings with edit-in-place\\n\\n Ships to iOS, Android, and the web from a single Expo Router codebase",
+      "collection": "projects",
+      "coverImage": "/images/stash-note-cover.png",
+      "description": "Local-first cross-platform rich-text note app with nested notes and inline Excalidraw",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
+      "slug": "stash-note",
+      "stack": [
+        { "label": "Expo", "value": "expo" },
+        { "label": "React Native", "value": "reactNative" },
+        { "label": "NativeWind", "value": "nativewind" },
+        { "label": "Supabase", "value": "supabase" },
+        { "label": "Typescript", "value": "typescript" }
+      ],
+      "status": "published",
+      "title": "Stash Note"
+    },
+    {
+      "__outstatic": {
         "commit": "fc6ae9be096c9db57a4c64d0b79fd12a2b493d89",
         "hash": "4180299601",
         "path": "outstatic/content/positions/software-developer.md"

@@ -26,17 +26,19 @@ export default async function Project(props: ProjectProps) {
           <h2 className="text-muted-foreground mt-2 text-center text-lg">
             {project.description}
           </h2>
-          <div className="neo-border neo-shadow bg-card mx-auto mt-8 w-fit rounded-md p-2">
-            <Image
-              className="block"
-              src={project.coverImage ?? ""}
-              alt={`${project.title} Image`}
-              width={500}
-              height={300}
-              style={{ width: "auto" }}
-              priority
-            />
-          </div>
+          {project.coverImage && (
+            <div className="neo-border neo-shadow bg-card mx-auto mt-8 w-fit rounded-md p-2">
+              <Image
+                className="block"
+                src={project.coverImage}
+                alt={`${project.title} Image`}
+                width={500}
+                height={300}
+                style={{ width: "auto" }}
+                priority
+              />
+            </div>
+          )}
           <section className="grow py-6 leading-relaxed">
             <p>{project.content}</p>
           </section>
