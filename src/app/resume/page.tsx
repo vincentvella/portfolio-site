@@ -22,7 +22,7 @@ import { load } from "outstatic/server";
 
 const PERSONAL_INFO = {
   name: "Vince Vella",
-  title: "Senior Software Engineer",
+  title: "Lead Software Engineer",
   location: "Oxford, PA, USA",
 };
 

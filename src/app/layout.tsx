@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const description =
-  "Senior Software Engineer skilled in TypeScript, React, React Native, Java, and Golang, passionate about crafting high-quality web and mobile applications.";
+  "Lead Software Engineer skilled in TypeScript, React, React Native, Java, and Golang, passionate about crafting high-quality web and mobile applications.";
 
 const metadata: Metadata = {
   metadataBase: new URL(
@@ -30,7 +30,7 @@ const metadata: Metadata = {
   ),
   title: {
     default:
-      "Senior Software Engineer & Web/Mobile App Developer - Vince Vella",
+      "Lead Software Engineer & Web/Mobile App Developer - Vince Vella",
     template: "%s | Vince Vella",
   },
   description,

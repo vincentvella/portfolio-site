@@ -16,7 +16,7 @@ import { StackMarquee } from "@/components/StackMarquee";
 import { load } from "outstatic/server";
 
 const ROLES = [
-  "Senior Software Engineer",
+  "Lead Software Engineer",
   "Mobile App Developer",
   "Indie Maker",
   "Coffee Tinkerer",
