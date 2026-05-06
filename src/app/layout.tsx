@@ -117,8 +117,9 @@ export default function RootLayout({
       <head>
         <script
           defer
-          src="https://umami.vellapps.dev/script.js"
-          data-website-id="fb59fde0-63ce-42e0-82ea-07f051ae28b1"
+          src="/_/u.js"
+          data-website-id="b78a678b-8758-4370-8690-078104b4fcc8"
+          data-host-url="/_/u"
         ></script>
       </head>
       <body

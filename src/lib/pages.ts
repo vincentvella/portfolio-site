@@ -48,6 +48,12 @@ export default async function generateSitemap(
       changeFrequency: "yearly" as const,
       priority: 0.7,
     },
+    {
+      url: `${base}/privacy`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
+    },
     ...bags.map((bag) => ({
       url: `${base}/bag/${bag.year}`,
       lastModified: now,

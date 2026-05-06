@@ -23,17 +23,11 @@ export async function generateMetadata(props: ProjectProps): Promise<Metadata> {
         description,
         url: `/projects/${project.slug}`,
         type: "article",
-        ...(project.coverImage
-          ? { images: [{ url: project.coverImage }] }
-          : {}),
       },
       twitter: {
         card: "summary_large_image",
         title: project.title,
         description,
-        ...(project.coverImage
-          ? { images: [{ url: project.coverImage }] }
-          : {}),
       },
     };
   } catch {

@@ -23,6 +23,18 @@ module.exports = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/_/u.js",
+        destination: "https://umami.vellapps.dev/script.js",
+      },
+      {
+        source: "/_/u/api/send",
+        destination: "https://umami.vellapps.dev/api/send",
+      },
+    ];
+  },
   async redirects() {
     return [
       {

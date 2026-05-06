@@ -44,6 +44,20 @@ export default async function Index() {
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
+  const sameAs = contactMethods
+    .filter((m) => m.type === "social")
+    .map((m) => m.content);
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Vincent Vella",
+    alternateName: "Vince Vella",
+    jobTitle: "Lead Software Engineer",
+    url: "https://vincevella.com",
+    image: "https://vincevella.com/images/avatar-illustration.jpeg",
+    email: email?.content?.replace(/^mailto:/, ""),
+    sameAs,
+  };
   const currently = resumeSections.currently?.content;
   const currentlyText =
     typeof currently === "string"
@@ -60,6 +74,10 @@ export default async function Index() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+      />
       <main id="main" className="flex min-h-screen flex-col items-center">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div className="mt-12 flex w-full flex-col">

@@ -15,7 +15,13 @@ const Footer: React.FC<FooterProps> = async ({ className }) => {
     <footer className={cn("border-t-2 border-foreground mt-6", className)}>
       <div className="mx-auto flex flex-col items-center gap-6 p-4 md:flex-row md:justify-between md:gap-4">
         <p className="text-sm font-medium order-3 md:order-1">
-          © {new Date().getFullYear()} Vince Vella
+          © {new Date().getFullYear()} Vince Vella ·{" "}
+          <a
+            href="/privacy"
+            className="underline decoration-2 underline-offset-2 hover:decoration-primary"
+          >
+            Privacy
+          </a>
         </p>
         <div className="flex gap-x-2 order-1 md:order-2">
           {contactMethods.map((method) => (
