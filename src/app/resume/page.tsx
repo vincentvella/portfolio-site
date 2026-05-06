@@ -18,7 +18,28 @@ import { Badge } from "@/components/Badge";
 import { CommandMenu } from "@/components/CommandMenu";
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 import { load } from "outstatic/server";
+
+export const metadata: Metadata = {
+  title: "Resume",
+  description:
+    "Resume of Vince Vella — Lead Software Engineer focused on cross-platform mobile, full-stack TypeScript, and Go.",
+  alternates: { canonical: "/resume" },
+  openGraph: {
+    title: "Resume — Vince Vella",
+    description:
+      "Resume of Vince Vella — Lead Software Engineer focused on cross-platform mobile, full-stack TypeScript, and Go.",
+    url: "/resume",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resume — Vince Vella",
+    description:
+      "Resume of Vince Vella — Lead Software Engineer focused on cross-platform mobile, full-stack TypeScript, and Go.",
+  },
+};
 
 const PERSONAL_INFO = {
   name: "Vince Vella",

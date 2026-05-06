@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
 import { CursorShadowTracker } from "@/components/CursorShadowTracker";
+import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { Providers } from "./providers";
 import { load } from "outstatic/server";
 import { LanguageLoader } from "@/lib/data-loaders/language-loader";
@@ -127,6 +128,7 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}
       >
         <CursorShadowTracker />
+        <WebVitalsReporter />
         <Providers>{children}</Providers>
       </body>
     </html>

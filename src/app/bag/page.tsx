@@ -50,9 +50,27 @@ export default async function BagPage() {
     );
   }
 
+  const bagLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: `What's in my bag — ${latest.year}`,
+    description:
+      latest.tagline ?? "What I am actually using this year.",
+    url: "https://vincevella.com/bag",
+    datePublished: `${latest.year}-01-01`,
+    author: {
+      "@type": "Person",
+      name: "Vincent Vella",
+      url: "https://vincevella.com",
+    },
+  };
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center pb-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bagLd) }}
+      />
+      <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <BagHero year={latest.year} tagline={latest.tagline} />
           <BagBody bag={latest} />

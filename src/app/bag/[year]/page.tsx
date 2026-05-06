@@ -51,9 +51,27 @@ export default async function BagYearPage(props: BagYearProps) {
 
   const all = await loader.loadAll();
   const isLatest = all[0]?.year === bag.year;
+  const bagLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: `What's in my bag — ${bag.year}`,
+    description:
+      bag.tagline ?? `What I was actually using in ${bag.year}.`,
+    url: `https://vincevella.com/bag/${bag.year}`,
+    datePublished: `${bag.year}-01-01`,
+    author: {
+      "@type": "Person",
+      name: "Vincent Vella",
+      url: "https://vincevella.com",
+    },
+  };
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bagLd) }}
+      />
       <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <BagHero year={bag.year} tagline={bag.tagline} />

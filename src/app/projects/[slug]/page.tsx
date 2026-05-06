@@ -75,8 +75,28 @@ export default async function Project(props: ProjectProps) {
   const { slug } = await props.params;
   const project = await new ProjectLoader(db).loadProject(slug);
   const accent: AccentColor = project.accentColor ?? pickAccent(project.slug);
+  const projectLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: `https://vincevella.com/projects/${project.slug}`,
+    ...(project.coverImage
+      ? { image: `https://vincevella.com${project.coverImage}` }
+      : {}),
+    author: {
+      "@type": "Person",
+      name: "Vincent Vella",
+      url: "https://vincevella.com",
+    },
+    keywords: project.stack.map((s) => s.label).join(", "),
+  };
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
+      />
       <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">
           <div
