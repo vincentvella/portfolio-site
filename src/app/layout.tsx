@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 import "../styles/globals.css";
@@ -86,6 +86,13 @@ const metadata: Metadata = {
     ],
     title: "Vince Vella - Portfolio",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#131313" },
+  ],
 };
 
 export async function generateMetadata(): Promise<Metadata> {

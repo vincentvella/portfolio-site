@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description: "The page you tried to visit doesn't exist on vincevella.com.",
+  robots: { index: false, follow: false },
+};
+
 export default function NotFound() {
   return (
     <main

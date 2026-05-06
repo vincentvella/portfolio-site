@@ -52,8 +52,29 @@ export const PressCoverage = async () => {
             const publication = publicationFromUrl(content ?? "");
             const pinColor = PIN_COLORS[index % PIN_COLORS.length];
             const tilt = TILTS[index % TILTS.length];
+            const articleLd = {
+              "@context": "https://schema.org",
+              "@type": "NewsArticle",
+              headline: title,
+              description,
+              datePublished: publishedAt,
+              url: content,
+              ...(publication ? { publisher: { "@type": "Organization", name: publication } } : {}),
+              ...(coverImage
+                ? { image: coverImage.startsWith("http") ? coverImage : `https://vincevella.com${coverImage}` }
+                : {}),
+              about: {
+                "@type": "Person",
+                name: "Vincent Vella",
+                url: "https://vincevella.com",
+              },
+            };
             return (
               <li key={slug}>
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+                />
                 <a
                   href={content}
                   target="_blank"
