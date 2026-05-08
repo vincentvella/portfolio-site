@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({
     <nav
       aria-label="Primary"
       className={cn(
-        "layout grid grid-cols-[auto_1fr_auto] items-center gap-2 p-3 sm:gap-3 sm:p-4 md:p-6",
+        "layout grid grid-cols-[1fr_auto_1fr] items-center gap-2 p-3 sm:gap-3 sm:p-4 md:p-6",
         className,
       )}
     >
