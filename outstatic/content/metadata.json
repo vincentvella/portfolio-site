@@ -461,6 +461,7 @@
       },
       "bullets": "Terminal AI harness written in Zig 0.16 — no runtime, no GC, single static binary\\n\\n Pluggable provider layer for Anthropic and OpenAI behind a shared streaming interface\\n\\n First-class MCP support so the same tool servers used by Claude Code and other clients work here\\n\\n Modal vim editor inside the prompt and OSC-52 clipboard so it behaves correctly over SSH",
       "collection": "projects",
+      "coverImage": "/images/velk-cover.png",
       "description": "Terminal AI harness in Zig with MCP",
       "publishedAt": "2026-05-04T00:00:00.000Z",
       "accentColor": "brand-violet",
@@ -486,6 +487,7 @@
       },
       "bullets": "Local-first by design — feeds, episodes, and play state live in on-device SQLite via Drizzle, no account required\\n\\n Built with Expo + NativeWind for a single React Native codebase across iOS and Android\\n\\n Minimal surface area on purpose: subscribe, listen, resume — nothing else competing for attention",
       "collection": "projects",
+      "coverImage": "/images/pod-haven-cover.jpeg",
       "description": "Local-first podcast listener",
       "publishedAt": "2026-05-04T00:00:00.000Z",
       "accentColor": "primary",
@@ -513,6 +515,7 @@
       },
       "bullets": "Self-hostable feature flag service in Go — Echo for HTTP, GORM on Postgres, Keycloak for auth\\n\\n Full multi-tenant model: organizations → projects → environments, with environment-scoped flag configurations\\n\\n Typed flags (boolean, string, number, JSON) with variants, plus targeting rules over user attributes and reusable user segments\\n\\n HTTP `/evaluate` endpoint so any client in any language gets the same evaluation logic without per-language SDK drift",
       "collection": "projects",
+      "coverImage": "/images/togglez-cover.png",
       "description": "Self-hosted feature flag service in Go",
       "publishedAt": "2026-05-04T00:00:00.000Z",
       "accentColor": "accent",
@@ -575,6 +578,33 @@
       ],
       "status": "published",
       "title": "Stash Note"
+    },
+    {
+      "__outstatic": {
+        "commit": "b95df3592d0f6bc577528c74a41d62edfb106cd4",
+        "hash": "1000000007",
+        "path": "outstatic/content/projects/nebridal.md"
+      },
+      "author": {
+        "name": "Vincent Vella",
+        "picture": "https://avatars.githubusercontent.com/u/22749569?v=4"
+      },
+      "bullets": "Full rebuild off WordPress + Bold Page Builder onto a static Next.js 16 App Router site on Vercel\\n\\n Inline Calendly booking embed, accessible portfolio gallery with focus-trapping lightbox, rotating testimonials, full blog\\n\\n Old WordPress URLs (portfolio-grid, dated permalinks, wp-admin) mapped via next.config redirects so existing inbound links keep working\\n\\n BeautySalon JSON-LD on home, BlogPosting JSON-LD on posts, dynamic sitemap + robots, cookieless Vercel Analytics, prefers-reduced-motion respected throughout",
+      "collection": "projects",
+      "coverImage": "/images/nebridal-cover.png",
+      "description": "Marketing site for a traveling bridal hair team",
+      "publishedAt": "2026-05-08T00:00:00.000Z",
+      "accentColor": "primary",
+      "slug": "nebridal",
+      "stack": [
+        { "label": "NextJS", "value": "nextJs" },
+        { "label": "React", "value": "react" },
+        { "label": "Typescript", "value": "typescript" },
+        { "label": "Tailwind CSS", "value": "tailwind" },
+        { "label": "Vercel", "value": "vercel" }
+      ],
+      "status": "published",
+      "title": "Northeast Bridal"
     },
     {
       "__outstatic": {

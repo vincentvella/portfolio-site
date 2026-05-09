@@ -6,6 +6,7 @@ author:
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'velk'
 description: 'Terminal AI harness in Zig with MCP'
+coverImage: '/images/velk-cover.png'
 stack: [{"label":"Zig","value":"zig"},{"label":"Anthropic API","value":"anthropic"},{"label":"OpenAI API","value":"openai"},{"label":"MCP","value":"mcp"}]
 bullets: 'Terminal AI harness written in Zig 0.16 — no runtime, no GC, single static binary\n\n
 Pluggable provider layer for Anthropic and OpenAI behind a shared streaming interface\n\n

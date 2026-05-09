@@ -1,5 +1,6 @@
 import { OstDocument } from "outstatic";
 import { markdownToArray } from "../transformers";
+import { getPublicImageDims, type ImageDims } from "../image-dims";
 import { DB } from "./loader";
 
 type Tag = {
@@ -18,6 +19,7 @@ type ProjectFields = OstDocument<{
 type ProjectData = Pick<ProjectFields, SelectedFields>;
 export interface Position extends Omit<ProjectData, "bullets"> {
   bullets: string[];
+  imageDims?: ImageDims;
 }
 
 export class ProjectLoader {
@@ -31,6 +33,7 @@ export class ProjectLoader {
     "slug",
     "coverImage",
     "accentColor",
+    "publishedAt",
   ] as const;
   selectedFields = ProjectLoader.pickedFields.map((f) => f) as string[];
 
@@ -60,6 +63,7 @@ export class ProjectLoader {
     return {
       ...entry,
       bullets: markdownToArray(entry.bullets),
+      imageDims: getPublicImageDims(entry.coverImage),
     };
   }
 

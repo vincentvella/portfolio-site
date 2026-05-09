@@ -6,6 +6,7 @@ author:
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'togglez'
 description: 'Self-hosted feature flag service in Go'
+coverImage: '/images/togglez-cover.png'
 stack: [{"label":"Go","value":"go"},{"label":"Postgres","value":"postgres"}]
 bullets: 'Self-hostable feature flag service in Go — Echo for HTTP, GORM on Postgres, Keycloak for auth\n\n
 Full multi-tenant model: organizations → projects → environments, with environment-scoped flag configurations\n\n

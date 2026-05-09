@@ -108,6 +108,14 @@
         {
           "value": "rsc",
           "label": "React Server Components"
+        },
+        {
+          "value": "tailwind",
+          "label": "Tailwind CSS"
+        },
+        {
+          "value": "vercel",
+          "label": "Vercel"
         }
       ]
     },

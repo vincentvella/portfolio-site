@@ -109,20 +109,39 @@ export default async function Project(props: ProjectProps) {
               {project.description}
             </p>
           </div>
-          {project.coverImage && (
+          {project.coverImage &&
+            project.imageDims &&
+            project.imageDims.aspectRatio < 1 ? (
+            <div className="mx-auto mt-8 flex justify-center">
+              <div className="neo-border relative h-[560px] aspect-[9/19.5] overflow-hidden rounded-[14%/6%] bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)]">
+                <span
+                  aria-hidden
+                  className="bg-foreground/30 absolute left-1/2 top-[2.5%] z-10 h-[2.5%] w-[34%] -translate-x-1/2 rounded-full"
+                />
+                <Image
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={project.coverImage}
+                  alt={`Cover for ${project.title}`}
+                  width={project.imageDims?.width ?? 260}
+                  height={project.imageDims?.height ?? 560}
+                  sizes="260px"
+                  priority
+                />
+              </div>
+            </div>
+          ) : project.coverImage ? (
             <div className="neo-border neo-shadow bg-card mx-auto mt-8 w-fit rounded-md p-2">
               <Image
-                className="block"
+                className="block max-h-[440px] w-auto"
                 src={project.coverImage}
                 alt={`Cover for ${project.title}`}
-                width={500}
-                height={300}
+                width={project.imageDims?.width ?? 500}
+                height={project.imageDims?.height ?? 300}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 500px"
-                style={{ width: "auto" }}
                 priority
               />
             </div>
-          )}
+          ) : null}
           <section className="grow py-6 leading-relaxed">
             <p>{project.content}</p>
           </section>

@@ -123,6 +123,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning={true} lang="en">
       <head>
+        <meta name="darkreader-lock" />
         <script
           defer
           src="/_/u.js"

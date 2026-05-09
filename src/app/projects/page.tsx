@@ -53,6 +53,15 @@ function pickAccent(slug: string): AccentColor {
 export default async function Projects() {
   const db = await load();
   const projects = await new ProjectLoader(db).load();
+  // With-image projects come first; within each group, newest first.
+  const sortedProjects = [...projects].sort((a, b) => {
+    const aHasImage = Boolean(a.coverImage);
+    const bHasImage = Boolean(b.coverImage);
+    if (aHasImage !== bHasImage) return aHasImage ? -1 : 1;
+    const aTime = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+    const bTime = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+    return bTime - aTime;
+  });
   return (
     <Layout>
       <main id="main" className="flex min-h-screen flex-col items-center pb-4">
@@ -67,7 +76,7 @@ export default async function Projects() {
             data-sketch-label="projects grid"
             data-sketch-label-dir="below"
           >
-            {projects.map((project) => {
+            {sortedProjects.map((project) => {
               const accent = project.accentColor ?? pickAccent(project.slug);
               const seed = hash(project.slug);
               const tilt = CARD_TILTS[seed % CARD_TILTS.length];
@@ -96,13 +105,32 @@ export default async function Projects() {
                     />
                     <div className="bg-muted relative aspect-[4/3] w-full overflow-hidden">
                       {project.coverImage ? (
-                        <Image
-                          className="object-cover"
-                          src={project.coverImage}
-                          alt={`Cover for ${project.title}`}
-                          sizes="(max-width: 640px) 100vw, 400px"
-                          fill
-                        />
+                        project.imageDims &&
+                        project.imageDims.aspectRatio < 1 ? (
+                          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 p-3">
+                            <div className="neo-border relative aspect-[9/19.5] h-[92%] overflow-hidden rounded-[14%/6%] bg-card shadow-[0_18px_50px_-10px_rgba(0,0,0,0.4)]">
+                              <span
+                                aria-hidden
+                                className="bg-foreground/30 absolute left-1/2 top-[2.5%] z-10 h-[2.5%] w-[34%] -translate-x-1/2 rounded-full"
+                              />
+                              <Image
+                                className="object-cover"
+                                src={project.coverImage}
+                                alt={`Cover for ${project.title}`}
+                                sizes="(max-width: 640px) 50vw, 200px"
+                                fill
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <Image
+                            className="object-cover"
+                            src={project.coverImage}
+                            alt={`Cover for ${project.title}`}
+                            sizes="(max-width: 640px) 100vw, 400px"
+                            fill
+                          />
+                        )
                       ) : (
                         <ul className="flex h-full w-full flex-row flex-wrap content-center items-center justify-center gap-1.5 p-4">
                           {project.stack.slice(0, 6).map((item) => (

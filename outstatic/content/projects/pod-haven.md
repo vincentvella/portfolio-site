@@ -6,6 +6,7 @@ author:
   picture: 'https://avatars.githubusercontent.com/u/22749569?v=4'
 slug: 'pod-haven'
 description: 'Local-first podcast listener'
+coverImage: '/images/pod-haven-cover.jpeg'
 stack: [{"label":"Expo","value":"expo"},{"label":"React Native","value":"reactNative"},{"label":"NativeWind","value":"nativewind"},{"label":"SQLite","value":"sqlite"},{"label":"Drizzle ORM","value":"drizzle"},{"label":"Typescript","value":"typescript"}]
 bullets: 'Local-first by design — feeds, episodes, and play state live in on-device SQLite via Drizzle, no account required\n\n
 Built with Expo + NativeWind for a single React Native codebase across iOS and Android\n\n
