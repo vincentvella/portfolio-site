@@ -91,11 +91,29 @@ export default async function Project(props: ProjectProps) {
     },
     keywords: project.stack.map((s) => s.label).join(", "),
   };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vincevella.com" },
+      { "@type": "ListItem", position: 2, name: "Projects", item: "https://vincevella.com/projects" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `https://vincevella.com/projects/${project.slug}`,
+      },
+    ],
+  };
   return (
     <Layout>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <main id="main" className="flex min-h-screen flex-col items-center pb-4">
         <div className="max-w-(--breakpoint-md) w-full px-4">

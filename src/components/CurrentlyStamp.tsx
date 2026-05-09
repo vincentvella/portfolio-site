@@ -15,7 +15,7 @@ export function CurrentlyStamp({ text, className }: CurrentlyStampProps) {
         className,
       )}
     >
-      <span className="font-display text-foreground/80 mt-0.5 shrink-0 text-xs font-black uppercase tracking-widest">
+      <span className="font-display text-secondary-foreground/80 mt-0.5 shrink-0 text-xs font-black uppercase tracking-widest">
         Now
       </span>
       <p className="text-sm font-semibold leading-snug">{text}</p>

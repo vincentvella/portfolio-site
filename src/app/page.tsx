@@ -50,13 +50,27 @@ export default async function Index() {
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://vincevella.com/#vince",
     name: "Vincent Vella",
     alternateName: "Vince Vella",
+    givenName: "Vincent",
+    familyName: "Vella",
     jobTitle: "Lead Software Engineer",
     url: "https://vincevella.com",
     image: "https://vincevella.com/images/avatar-illustration.jpeg",
     email: email?.content?.replace(/^mailto:/, ""),
+    knowsLanguage: "en-US",
     sameAs,
+  };
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: "https://vincevella.com",
+    name: "Vince Vella",
+    description:
+      "Personal site, blog, and CV for Vincent Vella — software engineer.",
+    inLanguage: "en-US",
+    author: { "@id": "https://vincevella.com/#vince" },
   };
   const currently = resumeSections.currently?.content;
   const currentlyText =
@@ -74,6 +88,10 @@ export default async function Index() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
