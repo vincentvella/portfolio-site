@@ -18,6 +18,6 @@ companyWebsite: 'https://www.holman.com'
 publishedAt: '2024-03-04T02:56:18.752Z'
 ---
 
-- Engineered data-stream analysis tools generating push, email, and text notifications from vehicle telemetry
+- Built a vehicle-telemetry alerting platform processing real-time data streams from a fleet of thousands and routing push, email, and SMS notifications to the right recipients
 
-- Led a hybrid development team using React Native to ship production iOS, Android, and web apps
+- Led a small team shipping a single React Native codebase to production across iOS, Android, and web

@@ -18,4 +18,6 @@ companyWebsite: 'https://www.capitalone.com'
 publishedAt: '2024-08-04T07:01:56.281Z'
 ---
 
-- Lead Software Engineer on Capital One's "Shopping" team
+- Drove development of internal tooling enabling product and engineering teams to modify and rapidly ship shared UI components across the full product surface — iOS, Android, web, native iOS/Android extensions, and a cross-browser extension
+
+- Led the cross-platform launch of a new identity-verification step in the user redemption flow

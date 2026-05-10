@@ -18,6 +18,6 @@ companyWebsite: 'https://www.holman.com'
 publishedAt: '2024-03-04T02:57:59.719Z'
 ---
 
-- Built a real-time tracking dashboard ingesting thousands of telemetry updates per second on a live Google Map
+- Built a real-time fleet-tracking dashboard rendering thousands of telemetry updates per second on a live Google Map
 
-- First production experience with React, React Native, and Rails backends
+- Shipped customer-facing features across React, React Native, and Rails backends
