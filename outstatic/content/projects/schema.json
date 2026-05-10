@@ -27,7 +27,7 @@
         },
         {
           "value": "nodeJs",
-          "label": "NodeJS"
+          "label": "Node.js"
         },
         {
           "value": "postgres",

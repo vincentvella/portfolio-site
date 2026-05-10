@@ -7,7 +7,7 @@ author:
 slug: 'briqkit'
 description: 'Pluggable app platform for small businesses'
 coverImage: '/images/frame-1--3--a2nz-Q4MD.png'
-stack: [{"label":"React","value":"react"},{"label":"React Native","value":"reactNative"},{"label":"GraphQL","value":"graphQl"},{"label":"Typescript","value":"typescript"},{"label":"NodeJS","value":"nodeJs"},{"label":"Postgres","value":"postgres"},{"label":"NextJS","value":"nextJs"},{"label":"NestJS","value":"nestJs"}]
+stack: [{"label":"React","value":"react"},{"label":"React Native","value":"reactNative"},{"label":"GraphQL","value":"graphQl"},{"label":"Typescript","value":"typescript"},{"label":"Node.js","value":"nodeJs"},{"label":"Postgres","value":"postgres"},{"label":"NextJS","value":"nextJs"},{"label":"NestJS","value":"nestJs"}]
 bullets: 'Gave non-technical small businesses a branded mobile + web presence without custom development\n\n
 Pluggable integration bricks including Toast POS and a built-in rewards/punchcard loyalty system\n\n
 Data-hydrated templates let owners configure their app via a simple form'
