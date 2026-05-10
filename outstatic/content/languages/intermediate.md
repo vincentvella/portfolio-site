@@ -10,7 +10,7 @@ coverImage: ''
 publishedAt: '2024-03-04T03:41:08.104Z'
 ---
 
-Golang
+Go
 
 Swift
 

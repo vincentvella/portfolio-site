@@ -8,7 +8,7 @@ slug: 'velk'
 description: 'Terminal AI harness in Zig with MCP'
 coverImage: '/images/velk-cover.png'
 stack: [{"label":"Zig","value":"zig"},{"label":"Anthropic API","value":"anthropic"},{"label":"OpenAI API","value":"openai"},{"label":"MCP","value":"mcp"}]
-bullets: 'Terminal AI harness written in Zig 0.16 — no runtime, no GC, single static binary\n\n
+bullets: 'Terminal AI harness written in Zig 0.16 — no runtime, no GC, a single static binary\n\n
 Pluggable provider layer for Anthropic and OpenAI behind a shared streaming interface\n\n
 First-class MCP support so the same tool servers used by Claude Code and other clients work here\n\n
 Modal vim editor inside the prompt and OSC-52 clipboard so it behaves correctly over SSH'
