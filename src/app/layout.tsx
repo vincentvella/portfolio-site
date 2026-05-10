@@ -31,12 +31,12 @@ const metadata: Metadata = {
   ),
   title: {
     default:
-      "Lead Software Engineer & Web/Mobile App Developer - Vince Vella",
-    template: "%s | Vince Vella",
+      "Vincent Vella — Lead Software Engineer & Web/Mobile App Developer",
+    template: "%s | Vincent Vella",
   },
   description,
   openGraph: {
-    title: "Vince Vella",
+    title: "Vincent Vella",
     description,
     url: "/",
     siteName: "Portfolio",
@@ -84,7 +84,7 @@ const metadata: Metadata = {
         height: 1200,
       },
     ],
-    title: "Vince Vella - Portfolio",
+    title: "Vincent Vella — Portfolio",
   },
 };
 

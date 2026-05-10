@@ -44,9 +44,10 @@ export default async function Index() {
   const email = contactMethods.find(
     (contactMethod) => contactMethod.title.toLowerCase() === "email",
   );
-  const sameAs = contactMethods
-    .filter((m) => m.type === "social")
-    .map((m) => m.content);
+  const sameAs = [
+    ...contactMethods.filter((m) => m.type === "social").map((m) => m.content),
+    "https://vincentvella.me",
+  ];
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -66,7 +67,8 @@ export default async function Index() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     url: "https://vincevella.com",
-    name: "Vince Vella",
+    name: "Vincent Vella",
+    alternateName: "Vince Vella",
     description:
       "Personal site, blog, and CV for Vincent Vella — software engineer.",
     inLanguage: "en-US",
